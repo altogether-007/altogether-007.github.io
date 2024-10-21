@@ -80,7 +80,7 @@
         function loadChannels() {
             // Simulate delay for loading channels
             setTimeout(() => {
-                fetch('https://iptvcable.netlify.app/M3U/Playlist.m3u')
+                fetch('https://raw.githubusercontent.com/RsLive-Tv/Free-Ip-Tv/refs/heads/main/Playlist.m3u')
                     .then(response => response.text())
                     .then(data => {
                         const lines = data.split('\n');
