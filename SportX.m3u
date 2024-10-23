@@ -53,6 +53,21 @@ http://185.189.225.157/EuroSport1/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.postimg.cc/3JB4bVHQ/image.jpg", DAZN 1
 https://zjdmi53knyt.a.trbcdn.net/dazn1/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/3x7DxvxL/image.jpg", DAZN 2
+https://zjdmi53knyt.a.trbcdn.net/dazn2/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/1Xwf9mhh/image.jpg", DAZN 3
+https://zjdmi53knyt.a.trbcdn.net/dazn3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/YqNhZCzQ/image.jpg", DAZN 4
+https://zjdmi53knyt.a.trbcdn.net/dazn4/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/FzysMT3h/image.jpg", DAZN 5
+https://zjdmi53knyt.a.trbcdn.net/dazn5/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/zGc5Ps6n/image.jpg", DAZN 6
+https://zjdmi53knyt.a.trbcdn.net/dazn6/index.m3u8
+
 #EXTINF:-1 tvg-logo="", Sport
 
 #EXTINF:-1 tvg-logo="", Sport
