@@ -2,6 +2,9 @@
 #EXTINF:-1 tvg-name="T Sports HD" tvg-logo="https://i.postimg.cc/FRVWnVgS/20241005-165038.png",T Sports HD
 https://cdn.livestreambd.com/TSportstv/index.m3u8
 
+#EXTINF:-1 tvg-name="T Sports HD" tvg-logo="https://www.netflixmartbd.com/wp-content/uploads/2021/08/unnamed-1.png",Sony Liv
+https://dai.google.com/linear/hls/event/23bJc4DCSE2-dhd2cG1Jjw/master.m3u8
+
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/Ve4nWezHoaSvbvgaIoLVq1jsQOjx5ogIA_iFhL8fvNHyXLqFFcqi9rqvOVbHko_zsJ2oFVAkrg=s900-c-k-c0x00ffffff-no-rj", A Sports 
 http://125.209.88.166:45793/BRN/ArySports.stream/playlist.m3u8 
 
