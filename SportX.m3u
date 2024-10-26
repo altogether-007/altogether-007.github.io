@@ -1,8 +1,9 @@
 #EXTM3U
 #EXTINF:-1 tvg-logo="https://i.postimg.cc/FRVWnVgS/20241005-165038.png",T Sports HD
 https://cdn.livestreambd.com/TSportstv/index.m3u8
-#EXTINF:-1 tvg-logo="https://assets.khelnow.com/news/uploads/2024/04/Real-Madrid-vs-Barcelona-copy.jpg",Thalna Tv
-https://vsd132.mycdn.me/hls/7169244269249.m3u8/sig/xuf5WILDlDY/expires/1730039910220/srcIp/103.177.124.132/urls/45.136.20.83/clientType/0/srcAg/CHROME/mid/7832552545985/video.m3u8?p
+
+#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/J1BGERSuZJk6fDjoNd95gTY4zwkTzJKIp5NWn1e5M7GaFZF8z2GwzTyThhpW-ePkQwE",GXR WORLD
+https://drjpy7suzu4c5.cloudfront.net/out/v1/0c06db0274c04e64ab6ae0450f5fbda8/index_6.m3u8
 
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/qcDzPkEbeNQ8oII0wIc5FGUaRfUg1BSQI5MDGzT5SX2IFFwRduFL9rtWdMaejYCKtAZIA9E20w=s900-c-k-c0x00ffffff-no-rj",RTA Sports
 https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/variant.m3u8
