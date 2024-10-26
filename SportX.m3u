@@ -1,6 +1,6 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/GpjL1fCZ/20241005-165038.png", Tsports 
-https://cdn.livestreambd.com/TSports/index.m3u8 
+#EXTINF:-1 tvg-name="T Sports HD" tvg-logo="https://i.postimg.cc/FRVWnVgS/20241005-165038.png",T Sports HD
+https://edge01.iptv.digijadoo.net/live/t_sports/playlist.m3u8?md5=g-pwJ7q5HtErS4l2Pz7_zg&expires=1730058784&user=d477246e9e724f81a011b847457e71c4  
 
 #EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/Ve4nWezHoaSvbvgaIoLVq1jsQOjx5ogIA_iFhL8fvNHyXLqFFcqi9rqvOVbHko_zsJ2oFVAkrg=s900-c-k-c0x00ffffff-no-rj", A Sports 
 http://125.209.88.166:45793/BRN/ArySports.stream/playlist.m3u8 
