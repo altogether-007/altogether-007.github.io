@@ -1,3 +1,5 @@
 #EXTM3U
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw4W3J-ILUnYi0fKo14QA8BljtAPgRM3Z99KhedMEpwXP5VMAqPT6FjqA&s=10", FMmoon
 https://stream.spicefmbd.com/stream.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-dj8BuPBijbsTiHDxLxgNWT1He4L2yl4O3XKbrWuTK0tbU24HzJSiYx4&s=10", SpiceFmBD
+https://stream.spicefmbd.com/stream.m3u8
