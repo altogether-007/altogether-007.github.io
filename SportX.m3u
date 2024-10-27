@@ -5,6 +5,9 @@ https://cdn.livestreambd.com/TSportstv/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.postimg.cc/FRVWnVgS/20241005-165038.png",T Sports HD
 https://tsports.iptvbd.xyz/tsports1
 
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/FRVWnVgS/20241005-165038.png",T Sports HD
+https://tsports.iptvbd.xyz/master_480.m3u8
+
 #EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/J1BGERSuZJk6fDjoNd95gTY4zwkTzJKIp5NWn1e5M7GaFZF8z2GwzTyThhpW-ePkQwE",GXR WORLD
 https://drjpy7suzu4c5.cloudfront.net/out/v1/0c06db0274c04e64ab6ae0450f5fbda8/index_6.m3u8
 
