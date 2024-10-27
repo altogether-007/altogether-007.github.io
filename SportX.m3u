@@ -50,9 +50,27 @@ https://rgelive.akamaized.net/hls/live/2043151/radiolive/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAMQ2GzhYagqygjHZgo3EX5GQ4xNkaISwPpw&s", CBS Sports HQ
 https://stitcher.pluto.tv/stitch/hls/channel/5e9f2c05172a0f0007db4786/master.m3u8?deviceType=web&servertSideAds=false&deviceMake=safari&deviceVersion=1&deviceId=spencer&appVersion=1&deviceDNT=0&deviceModel=web&sid=650e8ec1-709e-11ef-81b6-2a0ed5329fa2
 
+#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/6b/Digi_sport.svg/revision/latest/scale-to-width-down/1200?cb=20231115190433", DIGI SPORT 1
+http://45.90.106.98/digisport1/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://logowik.com/content/uploads/images/bein-sports-13097.logowik.com.webp", Bien sport 1
+https://live4.beinconnect.us/YallaGoalApp/beINSports1.m3u8
+
+#EXTINF:-1 tvg-logo="https://pbs.twimg.com/profile_images/1790490069859495936/L535GVHT_400x400.jpg", TUDN USA
+http://165.1.79.137:1235/stream/directv/tudnhd/master.m3u8
+
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ78xx0de3mXV24Zx3J7YfquNMCni-jjD-YYMTvc_LsKdJXlAQFSMSdoG4DfQniwPCtLAE&usqp=CAU", Tennis 2
+https://d3qg0hadt0dkov.cloudfront.net:443/amgtennisus/playlist1080_p.m3u8
+
+#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_lY5BUUOJBrAIv65n-hKXTitJzH5w88ITExj0YqHFv15w=s900-c-k-c0x00ffffff-no-rj", Trace Sports
+https://trace-sportstars-samsungnz.amagi.tv/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://eu1-prod-images.disco-api.com/2023/07/18/64209d2e-8a4c-4056-bb24-836ce9f7922d.png?bf=0&f=jpg&p=true&q=70&w=1920", TNT SPORTS 2
+https://line.4k-beast.co/live/c0:23:8d:96:15:22/44D11F/103145.m3u8
 
 
 
+#EXTINF:-1 tvg-logo="", 
 
 
 
