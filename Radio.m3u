@@ -1,0 +1,26 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvQP5lfOEzxUtjpNjWcFTJNNAyHrAada-OGIbHH5s7e4-Vf7b_8Gkh4CU&s=10", Bangladesh Betar FM 100.0
+https://as1.digitalsynapsebd.com/proxy/bbdktraf/stream
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-dj8BuPBijbsTiHDxLxgNWT1He4L2yl4O3XKbrWuTK0tbU24HzJSiYx4&s=10", Spice FM BD 96.4
+https://stream.spicefmbd.com/stream.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj1UtB_z-mxZOSS3URBzv-PJrvA3AT2tjPB3ycWs-jMC-zJrRW5lkA30U&s=10", Jagobd FM 94.4
+http://128.199.184.111:12496/;stream/1
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP6XbBT3acSATGprZOqJnFIMa6560oSr2pgudafm81Z1PHnd_uXm_27Io&s=10", Radio Padma FM 99.2
+https://radiopadmabd.radioca.st/radiopadma
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDZiSlxOeCuxjxHJ19usQdzOAedG_UcurGKJSm91T2R8CXlb1yQDWcmSVE&s=10", Radio Foorti FM 88.0
+http://119.148.23.88:1021/;stream/1
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfR3ZBviA9qW2MDR_qoc3AESyPPaMRxsT8nQ&s", Radio GoonGoon FM 
+https://audio.streamcast.xyz/radio/8000/radio.mp3?
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxNutSxGlgViiOZTtup2STh40abAW5Lap-8Ze178NRzfizTDWJF3jZpvZt&s=10", Dhaka FM 90.4
+http://118.179.219.244:8000/;
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7LX5MpGt_ilrq8DnVn0FuqsIsQs08nTK-p2utRimg9Hmp5UGX9RGIS03&s=10", FnF FM
+http://eu6.fastcast4u.com:5099/;stream
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsbPKhjrISIXjVxAw456pL1k7yABekedV6lX4CoJJwCtpyh4YWaE4QLM0&s=10", Relaks Radio FM
+https://s3.voscast.com:9893/live
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV3yqahSBp2D3HoQgmsSCodJ50hrovfsMsow&s", Radio Mahananda FM 98.8
+https://streaming.radiomahananda.fm/proxy/radiomahananda/stream
+#EXTINF:-1 tvg-logo="hh", Jagobd FM 94.4
+
+#EXTINF:-1 tvg-logo="hh", Jagobd FM 94.4
+
+#EXTINF:-1 tvg-logo="hh", Jagobd FM 94.4
