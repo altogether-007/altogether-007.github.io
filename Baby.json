@@ -1,18 +1,18 @@
 [
     {
-        "name": "Sony LIV",
-        "url": "https://dai.google.com/ssai/event/biQJgf06SJCitj-nd502ow/master.m3u8",
-        "thumbnail": "https://example.com/path/to/sony-liv-thumbnail.jpg"
+        "name": "Tsports",
+        "url": "https://cdn.livestreambd.com/TSportstv/index.m3u8",
+        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
     },
     {
-        "name": "IND vs BAN",
-        "url": "https://fdev.short.gy/IndVbanxRanapk.m3u8",
-        "thumbnail": "https://example.com/path/to/ind-vs-ban-thumbnail.jpg"
+        "name": "Tsports",
+        "url": "https://iptvcable.netlify.app/Altogether-007/Tsports.m3u8",
+        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
     },
     {
         "name": "Toffee Live",
-        "url": "https://fdev.short.gy/IndVbanxRanapk.m3u8",
-        "thumbnail": "https://example.com/path/to/toffee-live-thumbnail.jpg"
+        "url": "http://bdcable.unaux.com/Altogether-007/Tsports.m3u8",
+        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
     },
     {
         "name": "Republic Bangla",
