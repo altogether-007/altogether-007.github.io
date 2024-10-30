@@ -10,9 +10,284 @@
         "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
     },
     {
-        "name": "Toffee Live",
-        "url": "http://bdcable.unaux.com/Altogether-007/Tsports.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
+        "name": "GXR WORLD",
+        "url": "https://drjpy7suzu4c5.cloudfront.net/out/v1/0c06db0274c04e64ab6ae0450f5fbda8/index_6.m3u8",
+        "thumbnail": "https://play-lh.googleusercontent.com/J1BGERSuZJk6fDjoNd95gTY4zwkTzJKIp5NWn1e5M7GaFZF8z2GwzTyThhpW-ePkQwE"
+    },
+    {
+        "name": "Mu Tv",
+        "url": "https://bcovlive-a.akamaihd.net/r2d2c4ca5bf57456fb1d16255c1a535c8/eu-west-1/eu-west-1/6058004203001/profile_2/chunklist.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvO04xorIj0V1yHmnHOdyVHZVh1Mi9oGmquKEYFHdYTTCSHB2v7KYLb0g&s=10"
+    },
+    {
+        "name": "RTA Sports",
+        "url": "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/variant.m3u8",
+        "thumbnail": "https://yt3.googleusercontent.com/qcDzPkEbeNQ8oII0wIc5FGUaRfUg1BSQI5MDGzT5SX2IFFwRduFL9rtWdMaejYCKtAZIA9E20w=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+        "name": "Eurosport 1",
+        "url": "http://185.189.225.157/EuroSport1/index.m3u8",
+        "thumbnail": "https://i.postimg.cc/6QQd0w7P/a1430cde-3a35-494a-beb3-6c1b5405dc13.png"
+    },
+    {
+        "name": "Euro Sports 1 HD",
+        "url": "http://iptv-hls.idc.md:8200/hls/260/live1.m3u8",
+        "thumbnail": "https://iconape.com/wp-content/files/fs/285350/png/285350.png"
+    },
+    {
+        "name": "Fifa Pulas",
+        "url": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=1545",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbO5pcAGmhMMaqRWj6Xy2m9RsViMtGQdZ60kEiy7hGFUV3iEtsqsFnvbOA&s=10"
+    },
+    {
+        "name": "A Sports",
+        "url": "http://125.209.88.166:45793/BRN/ArySports.stream/playlist.m3u8",
+        "thumbnail": "https://yt3.googleusercontent.com/Ve4nWezHoaSvbvgaIoLVq1jsQOjx5ogIA_iFhL8fvNHyXLqFFcqi9rqvOVbHko_zsJ2oFVAkrg=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+        "name": "GEO SUPER",
+        "url": "http://125.209.88.166:45793/BRN/GeoSuper.stream/playlist.m3u8",
+        "thumbnail": "https://i.postimg.cc/WzCmDfC0/image.jpg"
+    },
+    {
+        "name": "PTV SPORTS",
+        "url": "http://125.209.88.166:45793/BRN/PTVSports.stream/playlist.m3u8",
+        "thumbnail": "https://i.postimg.cc/NFxMSNvR/PTV-Sports.png"
+    },
+    {
+        "name": "TEN SPORTS",
+        "url": "http://125.209.88.166:45793/BRN/TenSports.stream/playlist.m3u8",
+        "thumbnail": "https://i.postimg.cc/659TnNCc/10-Sydney-1984-2.png"
+    },
+    {
+        "name": "TYC SPORTS",
+        "url": "https://d1xm2jznwi5xzj.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_14.m3u8",
+        "thumbnail": "https://i.postimg.cc/WbGN9Yw3/image.png"
+    },
+    {
+        "name": "Bein SportsXtra",
+        "url": "https://d63fabad.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWVzX0ZJRkFQbHVzU3BhbmlzaF9ITFM/playlist.m3u8",
+        "thumbnail": "https://i.postimg.cc/ZndmPFq7/image.jpg"
+    },
+    {
+        "name": "More Than Sports",
+        "url": "https://mts1.iptv-playoutcenter.de/mts/mts-web/playlist.m3u8",
+        "thumbnail": "https://i.postimg.cc/qR8VzBDS/image.jpg"
+    },
+    {
+        "name": "Sport5",
+        "url": "https://rgelive.akamaized.net/hls/live/2043151/radiolive/playlist.m3u8",
+        "thumbnail": "https://pbs.twimg.com/profile_images/1751524670338220033/q17Mn5OI_400x400.jpg"
+    },
+    {
+        "name": "DIGI SPORT 1",
+        "url": "http://45.90.106.98/digisport1/index.m3u8",
+        "thumbnail": "https://play-lh.googleusercontent.com/29dtV0Xw2tuaXTWba1VOCZkrQWX4jkkCAViHa0IttlJMOQEKnRh-lFJtAW0_06alkQg"
+    },
+    {
+        "name": "Bien sport 1",
+        "url": "https://live4.beinconnect.us/YallaGoalApp/beINSports1.m3u8",
+        "thumbnail": "https://logowik.com/content/uploads/images/bein-sports-13097.logowik.com.webp"
+    },
+    {
+        "name": "TUDN USA",
+        "url": "http://165.1.79.137:1235/stream/directv/tudnhd/master.m3u8",
+        "thumbnail": "https://pbs.twimg.com/profile_images/1790490069859495936/L535GVHT_400x400.jpg"
+    },
+    {
+        "name": "TNT SPORTS 2",
+        "url": "https://line.4k-beast.co/live/c0:23:8d:96:15:22/44D11F/103145.m3u8",
+        "thumbnail": "https://eu1-prod-images.disco-api.com/2023/07/18/64209d2e-8a4c-4056-bb24-836ce9f7922d.png?bf=0&f=jpg&p=true&q=70&w=1920"
+    },
+    {
+        "name": "INFO SPORTS",
+        "url": "http://212.102.60.80/Infosport/index.m3u8",
+        "thumbnail": "https://i.postimg.cc/6q1dF5Xr/image.png"
+    },
+    {
+        "name": "Sony Liv",
+        "url": "https://dai.google.com/linear/hls/event/23bJc4DCSE2-dhd2cG1Jjw/master.m3u8",
+        "thumbnail": "https://www.netflixmartbd.com/wp-content/uploads/2021/08/unnamed-1.png"
+    },
+    {
+        "name": "EkushyTv",
+        "url": "https://ekusheyserver.com/etvlivesn.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMG2PYT8xQBTG7qjHG2d9u6I-oRIqrqE5Ksrl817LlMzCreApR5ncM5WtK&s=10"
+    },
+    {
+        "name": "AsianTv",
+        "url": "https://mtlivestream.com/asian/ytlive/index.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmsLxhngsCNz4zU0XTgTvBVrHpBwkXseJPQg&s"
+    },
+    {
+        "name": "DeeptoTv",
+        "url": "https://byphdgllyk.gpcdn.net/hls/deeptotv/index.m3u8?",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG1ER2ZaoFsI7j0b0Kh0SkAujcqq2nkPzplACEcU8MTrdm46C-z-45jkY&s=10"
+    },
+    {
+        "name": "RTV",
+        "url": "https://streamingengine.rtvplus.tv/rtvpluslive/rtvpluslive.stream/playlist.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQizCBUrNdaJoJoXYOM1IdUueKiR85NiRxp7I3u6_IWsnwLJ1GbiXeToZY&s=10"
+    },
+    {
+        "name": "MOVIE BANGLA",
+        "url": "http://alvetv.com/moviebanglatv/8080/index.m3u8",
+        "thumbnail": "https://i.postimg.cc/mr68ZtBn/20240822-231053.png"
+    },
+    {
+        "name": "DESHI TV",
+        "url": "https://deshitv.deshitv24.net/live/myStream/playlist.m3u8",
+        "thumbnail": "https://i.postimg.cc/jdgh66sL/20240825_071205.png"
+    },
+    {
+        "name": "Channeli",
+        "url": "https://channel-i-tv.rockstreamer.com/chlive/121212/chunks.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCxCzI8gIAq2VY13LOY_ZUKTY3UBH2kcYk0OdDMv5pf8pyaNf6ssHuKWo&s=10"
+    },
+    {
+        "name": "PEACE TV BANGLA",
+        "url": "https://dzkyvlfyge.erbvr.com/PeaceTvBangla/index.m3u8",
+        "thumbnail": "https://i.postimg.cc/3NX7N01h/PEACE-TV-BANGLA.jpg"
+    },
+    {
+        "name": "Peace Tv English",
+        "url": "https://dzkyvlfyge.erbvr.com/PeaceTvEnglish/index.m3u8",
+        "thumbnail": "https://i.postimg.cc/HWcd17fr/Peace-TV-logo-2015-jpeg.jpg"
+    },
+    {
+        "name": "Peace Tv Urdu",
+        "url": "https://dzkyvlfyge.erbvr.com/PeaceTvUrdu/index.m3u8",
+        "thumbnail": "https://i.postimg.cc/7Lt8px91/logo-50.png"
+    },
+    {
+        "name": "ISLAM BANGLA",
+        "url": "https://pull-cdnw.anystream.uk/live/cf46c8b0018c10009acded4c00000000/playlist.m3u8",
+        "thumbnail": "https://i.postimg.cc/YCscpx7g/ISLAM-BANGLA.jpg"
+    },
+    {
+        "name": "DISCOVARY KIDS",
+        "url": "https://varun-iptv.netlify.app/m3u/Discovery_Kids.m3u8",
+        "thumbnail": "https://i.postimg.cc/kgshLgGc/DISCOVARY-KIDS.jpg"
+    },
+    {
+        "name": "GUBBARE",
+        "url": "https://epiconvh.s.llnwi.net/gubbare/master.m3u8",
+        "thumbnail": "https://i.postimg.cc/9fNgFgGw/GUBBARE.png"
+    },
+    {
+        "name": "RONGEEN TV",
+        "url": "https://server.thelegitpro.in/rongeentv/rongeentv/tracks-v1a1/mono.m3u8",
+        "thumbnail": "https://i.postimg.cc/TYX7wDW0/RONGEEN-TV.jpg"
+    },
+    {
+        "name": "KHUSBO",
+        "url": "https://cdn3.pishow.tv/live/283/master.m3u8",
+        "thumbnail": "https://i.postimg.cc/Qdksh7tJ/KHUSBO.jpg"
+    },
+    {
+        "name": "PBS KIDS",
+        "url": "https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8?DVR",
+        "thumbnail": "https://i.postimg.cc/Lspshs9m/image.png"
+    },
+    {
+        "name": "SPACE TOON",
+        "url": "https://streams.spacetoon.com/live/stchannel/smil:livesmil.smil/chunklist.m3u8",
+        "thumbnail": "https://i.postimg.cc/nVjMdgPb/image.png"
+    },
+    {
+        "name": "ZEE BANGLA HD",
+        "url": "https://catchup.yuppcdn.net/amazonv2/36/preview/zeebangla/master/chunklist.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4JcChOWsd72TWMOlIm7aFv-t9kSopWnOOduZpE6busV2w2qZ81oA4Fts&s=10"
+    },
+    {
+        "name": "STAR JALSHA",
+        "url": "https://yupptvcatchupire.yuppcdn.net/preview/starjalsha/1800.m3u8?hdnts",
+        "thumbnail": "https://i.postimg.cc/brfTs7dr/STAR-JALSHA.jpg"
+    },
+    {
+        "name": "STAR JALSHA",
+        "url": "https://catchup.yuppcdn.net/amazonv2/36/preview/starjalsha/master/chunklist.m3u8",
+        "thumbnail": "https://i.postimg.cc/brfTs7dr/STAR-JALSHA.jpg"
+    },
+    {
+        "name": "ENTER10 BANGLA",
+        "url": "https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_720p/chunks.m3u8",
+        "thumbnail": "https://i.postimg.cc/15PBP1LY/ENTER10-BANGLA.jpg"
+    },
+    {
+        "name": "COLORS BANGLA",
+        "url": "https://yupptvcatchupire.yuppcdn.net/preview/colorsbanglahd/800.m3u8?",
+        "thumbnail": "https://i.postimg.cc/DyggwYhf/COLORS-BANGLA.jpg"
+    },
+    {
+        "name": "9XM",
+        "url": "https://d2q8p4pe5spbak.cloudfront.net/bpk-tv/9XM/9XM.isml/index.m3u8",
+        "thumbnail": "https://i.postimg.cc/yNJXn1ZW/9XM.jpg"
+    },
+    {
+        "name": "MASTI MUSIC",
+        "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/mastiii/master.m3u8",
+        "thumbnail": "https://i.postimg.cc/wx55wb75/MASTI-MUSIC.jpg"
+    },
+    {
+        "name": "SANGEETBANGLA",
+        "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Sangeetbangla/default/index.m3u8",
+        "thumbnail": "https://i.postimg.cc/jS1yDpFT/SANGEETBANGLA.jpg"
+    },
+    {
+        "name": "B4U MUSIC",
+        "url": "https://cdn2.pishow.tv/live/141/master.m3u8",
+        "thumbnail": "https://i.postimg.cc/G2wYQkRS/B4-U-MUSIC.png"
+    },
+    {
+        "name": "9xjalwa",
+        "url": "https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/9x-jalwa/47bdb49d-f6f3-4927-a9ea-12c4c5afc732/0.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBzeAjeYZEumMie4CYeiouLkA4yU2QODPVkA&s"
+    },
+    {
+        "name": "9XJhakaas",
+        "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/9Xjhakaas/default/9Xjhakaas.m3u8",
+        "thumbnail": "https://pbs.twimg.com/profile_images/1485885211271639043/MMpjFMKh_400x400.png"
+    },
+    {
+        "name": "9XTashan",
+        "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/9Xtashan/default/9Xtashan.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNAoI7l33Ag780ZZZfuSw0_cQTogWzQgtwOg&s"
+    },
+    {
+        "name": "MusicIndia",
+        "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Musicindia/default/index.m3u8",
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_nLdCAaH9x9Vf9sYm4vjY49sOL7PbDxf8dlAU1H5p-49A=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+        "name": "YrfMusic",
+        "url": "https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/yrf-music/5e60e1a9-c796-4bf2-ab37-a1d9c98ca0b3/4.m3u8",
+        "thumbnail": "https://yt3.googleusercontent.com/NFJYDc5R-PaqmJhY7-UOiAW0SPBx9KkB8ODQxnPqDHn3dGfBgYzfJxTox-fjzoEtMfWlr14oANM=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+        "name": "WILD EARTH",
+        "url": "https://wildearth-roku.amagi.tv/masterR720P.m3u8",
+        "thumbnail": "https://i.postimg.cc/sfZsrWst/20240823_023726.png"
+    },
+    {
+        "name": "DISCOVARYHD",
+        "url": "https://iptvcable.netlify.app/M3U8/Discovery/Discovery_Channel.m3u8",
+        "thumbnail": "https://i.postimg.cc/CLL8mMyY/DISCOVARYHD.png"
+    },
+    {
+        "name": "LoveNature",
+        "url": "https://d18dyiwu97wm6q.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/LoveNature4K2-prod/playlist.m3u8",
+        "thumbnail": "https://yt3.googleusercontent.com/TmKbexraFVIXX24q2qRPk-iccbH86XG0qsjbl7Og4UCESjQw33TGSajqQehYI83LdDupXOr7dw=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+        "name": "DDBharati",
+        "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Ddbharti/default/index.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRkRcNVarKvwxsj7gcVhn7TySxef7okle9Kg&s"
+    },
+    {
+        "name": "DDNATIONAL",
+        "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Ddnational/default/index.m3u8",
+        "thumbnail": "https://yt3.googleusercontent.com/CX3lyzNXEV-TzoGD84MvHPzpBsZ2RW5_WNZXqtk-oiczee78Kv2tZsnnMJDfICOJdqas5Pvuyw=s900-c-k-c0x00ffffff-no-rj"
     },
     {
         "name": "Republic Bangla",
@@ -20,102 +295,53 @@
         "thumbnail": "https://example.com/path/to/republic-bangla-thumbnail.jpg"
     },
     {
-        "name": "SportX",
-        "url": "https://raw.githubusercontent.com/altogether-007/altogether-007.github.io/refs/heads/main/SportX.m3u",
-        "thumbnail": "https://example.com/path/to/sportx-thumbnail.jpg"
-    },
-       { "name": "Tsports",
-        "url": "https://cdn.livestreambd.com/TSportstv/index.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
+        "name": "NewsNation",
+        "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Newsnation/default/index.m3u8",
+        "thumbnail": "https://radioink.com/wp-content/uploads/2024/01/NewsNation.webp"
     },
     {
-        "name": "Tsports",
-        "url": "https://iptvcable.netlify.app/Altogether-007/Tsports.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
+        "name": "TV9Bangla",
+        "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9banaen8yq/liveabr/playlist.m3u8",
+        "thumbnail": "https://yt3.googleusercontent.com/vZFILuFswtjUIU5oRCc79rxRdML5A_c-D_6AdvgAAd0hqSrJihyJFkT_CTSjYwSrHgiPAAozebY=s900-c-k-c0x00ffffff-no-rj"
     },
     {
-        "name": "Toffee Live",
-        "url": "http://bdcable.unaux.com/Altogether-007/Tsports.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
+        "name": "ZeeNews",
+        "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Zeenews/default/index.m3u8",
+        "thumbnail": "https://yt3.googleusercontent.com/vZFILuFswtjUIU5oRCc79rxRdML5A_c-D_6AdvgAAd0hqSrJihyJFkT_CTSjYwSrHgiPAAozebY=s900-c-k-c0x00ffffff-no-rj"
     },
     {
-        "name": "Republic Bangla",
-        "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-456368/main.m3u8",
-        "thumbnail": "https://example.com/path/to/republic-bangla-thumbnail.jpg"
+        "name": "BANGLA PLUS",
+        "url": "https://live-stream.utkalbongo.com/hls/livebanglatvstream.m3u8",
+        "thumbnail": "https://i.postimg.cc/zDspgszK/20240426-170712.png"
     },
     {
-        "name": "SportX",
-        "url": "https://raw.githubusercontent.com/altogether-007/altogether-007.github.io/refs/heads/main/SportX.m3u",
-        "thumbnail": "https://example.com/path/to/sportx-thumbnail.jpg"
-    },
-       { "name": "Tsports",
-        "url": "https://cdn.livestreambd.com/TSportstv/index.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
+        "name": "TARA TV",
+        "url": "http://103.145.48.150:90/laosat24/taratv/index.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb7TJ7dxWFjs3y0sMCduzNOXTbuZQO1dRtmo0exiK_6isDkiahYjP9XeNU&s=10"
     },
     {
-        "name": "Tsports",
-        "url": "https://iptvcable.netlify.app/Altogether-007/Tsports.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
+        "name": "SANANDA",
+        "url": "http://54.38.79.60:2020/sananda/index.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTylaokf1TCdYunrrVZdAbn9A1lolFbzxMEmLAOGipEbT9xQaqF4-eo27nn&s=10"
     },
     {
-        "name": "Toffee Live",
-        "url": "http://bdcable.unaux.com/Altogether-007/Tsports.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
+        "name": "AMAR DIGITAL",
+        "url": "https://live-stream.utkalbongo.com/utkalbongo/stream2/hls/amarbanglatwolivestream.m3u8",
+        "thumbnail": "https://i.postimg.cc/vBsg9b7J/AMAR-DIGITAL.png"
     },
     {
-        "name": "Republic Bangla",
-        "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-456368/main.m3u8",
-        "thumbnail": "https://example.com/path/to/republic-bangla-thumbnail.jpg"
+        "name": "AMAR BANGLA",
+        "url": "https://live-stream.utkalbongo.com/utkalbongo/stream10/hls/amarbangla.m3u8",
+        "thumbnail": "https://i.postimg.cc/NFGKJDzb/AMAR-BANGLA.jpg"
     },
     {
-        "name": "SportX",
-        "url": "https://raw.githubusercontent.com/altogether-007/altogether-007.github.io/refs/heads/main/SportX.m3u",
-        "thumbnail": "https://example.com/path/to/sportx-thumbnail.jpg"
+        "name": "MON",
+        "url": "https://live-stream.utkalbongo.com/utkalbongo/stream7/hls/montvlivestream.m3u8",
+        "thumbnail": "https://i.postimg.cc/zvdV9WmN/MON.png"
     },
     {
-        "name": "Tsports",
-        "url": "https://cdn.livestreambd.com/TSportstv/index.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
-    },
-    {
-        "name": "Tsports",
-        "url": "https://iptvcable.netlify.app/Altogether-007/Tsports.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
-    },
-    {
-        "name": "Toffee Live",
-        "url": "http://bdcable.unaux.com/Altogether-007/Tsports.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
-    },
-    {
-        "name": "Republic Bangla",
-        "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-456368/main.m3u8",
-        "thumbnail": "https://example.com/path/to/republic-bangla-thumbnail.jpg"
-    },
-    {
-        "name": "SportX",
-        "url": "https://raw.githubusercontent.com/altogether-007/altogether-007.github.io/refs/heads/main/SportX.m3u",
-        "thumbnail": "https://example.com/path/to/sportx-thumbnail.jpg"
-    },
-       { "name": "Tsports",
-        "url": "https://cdn.livestreambd.com/TSportstv/index.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
-    },
-    {
-        "name": "Tsports",
-        "url": "https://iptvcable.netlify.app/Altogether-007/Tsports.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
-    },
-    {
-        "name": "Toffee Live",
-        "url": "http://bdcable.unaux.com/Altogether-007/Tsports.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
-    },
-    {
-        "name": "Republic Bangla",
-        "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-456368/main.m3u8",
-        "thumbnail": "https://example.com/path/to/republic-bangla-thumbnail.jpg"
+        "name": "RUPOSI BANGLA",
+        "url": "https://cdn3.pishow.tv/live/281/master.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiKv6tBK4wPHO6Nb2LMNn1RCldpWa3F9RA0rSfNhMG8dn5CZuIeXi51JCU&s=10"
     }
-
-    
 ]
