@@ -24,7 +24,7 @@
         "url": "https://raw.githubusercontent.com/altogether-007/altogether-007.github.io/refs/heads/main/SportX.m3u",
         "thumbnail": "https://example.com/path/to/sportx-thumbnail.jpg"
     },
-        "name": "Tsports",
+       { "name": "Tsports",
         "url": "https://cdn.livestreambd.com/TSportstv/index.m3u8",
         "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
     },
