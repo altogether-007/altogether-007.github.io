@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Sony LIV",
+        "url": "https://dai.google.com/ssai/event/biQJgf06SJCitj-nd502ow/master.m3u8",
+        "thumbnail": "https://example.com/path/to/sony-liv-thumbnail.jpg"
+    },
+    {
+        "name": "IND vs BAN",
+        "url": "https://fdev.short.gy/IndVbanxRanapk.m3u8",
+        "thumbnail": "https://example.com/path/to/ind-vs-ban-thumbnail.jpg"
+    },
+    {
+        "name": "Toffee Live",
+        "url": "https://fdev.short.gy/IndVbanxRanapk.m3u8",
+        "thumbnail": "https://example.com/path/to/toffee-live-thumbnail.jpg"
+    },
+    {
+        "name": "Republic Bangla",
+        "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-456368/main.m3u8",
+        "thumbnail": "https://example.com/path/to/republic-bangla-thumbnail.jpg"
+    },
+    {
+        "name": "SportX",
+        "url": "https://raw.githubusercontent.com/altogether-007/altogether-007.github.io/refs/heads/main/SportX.m3u",
+        "thumbnail": "https://example.com/path/to/sportx-thumbnail.jpg"
+    }
+]
