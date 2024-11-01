@@ -104,11 +104,7 @@
         "url": "http://212.102.60.80/Infosport/index.m3u8",
         "thumbnail": "https://i.postimg.cc/6q1dF5Xr/image.png"
     },
-    {
-        "name": "Sony Liv",
-        "url": "https://dai.google.com/linear/hls/event/23bJc4DCSE2-dhd2cG1Jjw/master.m3u8",
-        "thumbnail": "https://www.netflixmartbd.com/wp-content/uploads/2021/08/unnamed-1.png"
-    },
+    
     {
         "name": "EkushyTv",
         "url": "https://ekusheyserver.com/etvlivesn.m3u8",
@@ -140,7 +136,7 @@
         "thumbnail": "https://i.postimg.cc/jdgh66sL/20240825_071205.png"
     },
     {
-        "name": "Channeli",
+        "name": "Channel i",
         "url": "https://channel-i-tv.rockstreamer.com/chlive/121212/chunks.m3u8",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCxCzI8gIAq2VY13LOY_ZUKTY3UBH2kcYk0OdDMv5pf8pyaNf6ssHuKWo&s=10"
     },
@@ -205,7 +201,7 @@
         "thumbnail": "https://i.postimg.cc/brfTs7dr/STAR-JALSHA.jpg"
     },
     {
-        "name": "STAR JALSHA",
+        "name": "STAR JALSHA2",
         "url": "https://catchup.yuppcdn.net/amazonv2/36/preview/starjalsha/master/chunklist.m3u8",
         "thumbnail": "https://i.postimg.cc/brfTs7dr/STAR-JALSHA.jpg"
     },
@@ -230,7 +226,7 @@
         "thumbnail": "https://i.postimg.cc/wx55wb75/MASTI-MUSIC.jpg"
     },
     {
-        "name": "SANGEETBANGLA",
+        "name": "SANGEET BANGLA",
         "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Sangeetbangla/default/index.m3u8",
         "thumbnail": "https://i.postimg.cc/jS1yDpFT/SANGEETBANGLA.jpg"
     },
@@ -255,7 +251,7 @@
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNAoI7l33Ag780ZZZfuSw0_cQTogWzQgtwOg&s"
     },
     {
-        "name": "MusicIndia",
+        "name": "Music India",
         "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Musicindia/default/index.m3u8",
         "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_nLdCAaH9x9Vf9sYm4vjY49sOL7PbDxf8dlAU1H5p-49A=s900-c-k-c0x00ffffff-no-rj"
     },
@@ -270,42 +266,42 @@
         "thumbnail": "https://i.postimg.cc/sfZsrWst/20240823_023726.png"
     },
     {
-        "name": "DISCOVARYHD",
+        "name": "DISCOVARY HD",
         "url": "https://iptvcable.netlify.app/M3U8/Discovery/Discovery_Channel.m3u8",
         "thumbnail": "https://i.postimg.cc/CLL8mMyY/DISCOVARYHD.png"
     },
     {
-        "name": "LoveNature",
+        "name": "Love Nature",
         "url": "https://d18dyiwu97wm6q.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/LoveNature4K2-prod/playlist.m3u8",
         "thumbnail": "https://yt3.googleusercontent.com/TmKbexraFVIXX24q2qRPk-iccbH86XG0qsjbl7Og4UCESjQw33TGSajqQehYI83LdDupXOr7dw=s900-c-k-c0x00ffffff-no-rj"
     },
     {
-        "name": "DDBharati",
+        "name": "DD Bharati",
         "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Ddbharti/default/index.m3u8",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRkRcNVarKvwxsj7gcVhn7TySxef7okle9Kg&s"
     },
     {
-        "name": "DDNATIONAL",
+        "name": "DD NATIONAL",
         "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Ddnational/default/index.m3u8",
         "thumbnail": "https://yt3.googleusercontent.com/CX3lyzNXEV-TzoGD84MvHPzpBsZ2RW5_WNZXqtk-oiczee78Kv2tZsnnMJDfICOJdqas5Pvuyw=s900-c-k-c0x00ffffff-no-rj"
     },
     {
         "name": "Republic Bangla",
         "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-456368/main.m3u8",
-        "thumbnail": "https://example.com/path/to/republic-bangla-thumbnail.jpg"
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_m527VVqIizTYVokDM8DjG7ybw0haHOp0ZxNvmSfOD3wyI=s900-c-k-c0x00ffffff-no-rj"
     },
     {
-        "name": "NewsNation",
+        "name": "News Nation",
         "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Newsnation/default/index.m3u8",
         "thumbnail": "https://radioink.com/wp-content/uploads/2024/01/NewsNation.webp"
     },
     {
-        "name": "TV9Bangla",
+        "name": "TV9 Bangla",
         "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9banaen8yq/liveabr/playlist.m3u8",
-        "thumbnail": "https://yt3.googleusercontent.com/vZFILuFswtjUIU5oRCc79rxRdML5A_c-D_6AdvgAAd0hqSrJihyJFkT_CTSjYwSrHgiPAAozebY=s900-c-k-c0x00ffffff-no-rj"
+        "thumbnail": "https://yt3.googleusercontent.com/pCoR8t3yBtAGqL4vWw5d4IZIAPxi9xo8oUuLMnq85HimA349V8cN95A-jNcINTa9s1XH96fmSVY=s900-c-k-c0x00ffffff-no-rj"
     },
     {
-        "name": "ZeeNews",
+        "name": "Zee News",
         "url": "https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Zeenews/default/index.m3u8",
         "thumbnail": "https://yt3.googleusercontent.com/vZFILuFswtjUIU5oRCc79rxRdML5A_c-D_6AdvgAAd0hqSrJihyJFkT_CTSjYwSrHgiPAAozebY=s900-c-k-c0x00ffffff-no-rj"
     },
@@ -338,11 +334,6 @@
         "name": "MON",
         "url": "https://live-stream.utkalbongo.com/utkalbongo/stream7/hls/montvlivestream.m3u8",
         "thumbnail": "https://i.postimg.cc/zvdV9WmN/MON.png"
-    },
-    {
-        "name": "Disney",
-        "url": "http://119.156.26.155:8000/play/a05u/index.m3u8",
-        "thumbnail": "https://i.postim9WmN/MON.png"
     },
     {
         "name": "RUPOSI BANGLA",
