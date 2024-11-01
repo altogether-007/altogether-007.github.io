@@ -94,16 +94,7 @@
         "url": "http://45.90.106.98/digisport1/index.m3u8",
         "thumbnail": "https://play-lh.googleusercontent.com/29dtV0Xw2tuaXTWba1VOCZkrQWX4jkkCAViHa0IttlJMOQEKnRh-lFJtAW0_06alkQg"
     },
-    {
-        "name": "Bien sport 1",
-        "url": "https://live4.beinconnect.us/YallaGoalApp/beINSports1.m3u8",
-        "thumbnail": "https://logowik.com/content/uploads/images/bein-sports-13097.logowik.com.webp"
-    },
-    {
-        "name": "TUDN USA",
-        "url": "http://165.1.79.137:1235/stream/directv/tudnhd/master.m3u8",
-        "thumbnail": "https://pbs.twimg.com/profile_images/1790490069859495936/L535GVHT_400x400.jpg"
-    },
+  
     {
         "name": "TNT SPORTS 2",
         "url": "https://line.4k-beast.co/live/c0:23:8d:96:15:22/44D11F/103145.m3u8",
