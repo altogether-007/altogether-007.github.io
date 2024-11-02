@@ -20,9 +20,19 @@
         "thumbnail": "https://play-lh.googleusercontent.com/J1BGERSuZJk6fDjoNd95gTY4zwkTzJKIp5NWn1e5M7GaFZF8z2GwzTyThhpW-ePkQwE"
     },
     {
-        "name": "GXR",
-        "url": "https://iptvcable.netlify.app/Altogether-007/BeinSports3.m3u8",
-        "thumbnail": "https://play-lh.googleusercontent.com/J1BGERSuZJk6fDjoNd95gTY4zwkTzJKIp5NWn1e5M7GaFZF8z2GwzTyThhpW-ePkQwE"
+        "name": "Sonic",
+        "url": "https://iptvcable.netlify.app/Altogether-007/SONIC.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI7jqQNmrU9M5OsuybdQ5jFCpYSz1NX20BE8vFR-xcOfhV781I6xXtacE&s=10"
+    },
+    {
+        "name": "SonyYAY",
+        "url": "https://iptvcable.netlify.app/Altogether-007/SonyYAY.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIzp0DJEzIgMof2Xui9k-eyIM8GE2eaLP1fj6bGHljqKsjixIRmH7dI_Gf&s=10"
+    },
+    {
+        "name": "StarSports1 Hin",
+        "url": "https://iptvcable.netlify.app/Altogether-007/StarSports1hin-1.m3u8",
+        "thumbnail": "https://admin.indiantelevision.com/sites/default/files/styles/smartcrop_800x800/public/images/tv-images/2018/05/05/Star_Sports-Hindi.jpg?itok=ww67DqM_"
     },
     {
         "name": "Mu Tv",
