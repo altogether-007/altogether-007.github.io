@@ -15,24 +15,44 @@
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpfadXz4wvkWwnzn_eccY07zbAedn3T9kYqazvJnVNz4dpVyiy-ydimhsf&s=10"
     },
     {
-        "name": "GXR WORLD",
-        "url": "https://drjpy7suzu4c5.cloudfront.net/out/v1/0c06db0274c04e64ab6ae0450f5fbda8/index_6.m3u8",
-        "thumbnail": "https://play-lh.googleusercontent.com/J1BGERSuZJk6fDjoNd95gTY4zwkTzJKIp5NWn1e5M7GaFZF8z2GwzTyThhpW-ePkQwE"
-    },
-    {
-        "name": "Sonic",
-        "url": "https://iptvcable.netlify.app/Altogether-007/SONIC.m3u8",
-        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI7jqQNmrU9M5OsuybdQ5jFCpYSz1NX20BE8vFR-xcOfhV781I6xXtacE&s=10"
-    },
-    {
-        "name": "SonyYAY",
-        "url": "https://iptvcable.netlify.app/Altogether-007/SonyYAY.m3u8",
-        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIzp0DJEzIgMof2Xui9k-eyIM8GE2eaLP1fj6bGHljqKsjixIRmH7dI_Gf&s=10"
+        "name": "StarSports1 Hindi",
+        "url": "https://iptvcable.netlify.app/Altogether-007/StarSports1hin.m3u8",
+        "thumbnail": "https://admin.indiantelevision.com/sites/default/files/styles/smartcrop_800x800/public/images/tv-images/2018/05/05/Star_Sports-Hindi.jpg?itok=ww67DqM_"
     },
     {
         "name": "StarSports1 Hin",
         "url": "https://iptvcable.netlify.app/Altogether-007/StarSports1hin-1.m3u8",
         "thumbnail": "https://admin.indiantelevision.com/sites/default/files/styles/smartcrop_800x800/public/images/tv-images/2018/05/05/Star_Sports-Hindi.jpg?itok=ww67DqM_"
+    },
+    {
+        "name": "StarSports2",
+        "url": "https://iptvcable.netlify.app/Altogether-007/StarSports2.m3u8",
+        "thumbnail": "https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-1021-j5nj3c68-v1/imageContent-1021-j5nj3c68-m1.png"
+    },
+    {
+        "name": "Sports18 1",
+        "url": "https://iptvcable.netlify.app/Altogether-007/Sports18-1.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD8Jhz5c9KzYcU8__FjTrEOLWOFoBg6QMHBw&usqp=CAU"
+    },
+    {
+        "name": "Sports18 2",
+        "url": "https://iptvcable.netlify.app/Altogether-007/Sports18-2.m3u8",
+        "thumbnail": "https://jiotvimages.cdn.jio.com/dare_images/images/Sports18_2.png"
+    },
+    {
+        "name": "Sports18 3",
+        "url": "https://iptvcable.netlify.app/Altogether-007/Sports18-3.m3u8",
+        "thumbnail": "https://jiotvimages.cdn.jio.com/dare_images/images/Sports18_3.png"
+    },
+    {
+        "name": "Sports18 Khel",
+        "url": "https://iptvcable.netlify.app/Altogether-007/Sports18khel.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZPU0Dv-uW4MzdUY-QhNbD9TQxs8i1Wa72-wh0G-XvOPs2In3H5BRT7BU&s=10"
+    },
+    {
+        "name": "GXR WORLD",
+        "url": "https://drjpy7suzu4c5.cloudfront.net/out/v1/0c06db0274c04e64ab6ae0450f5fbda8/index_6.m3u8",
+        "thumbnail": "https://play-lh.googleusercontent.com/J1BGERSuZJk6fDjoNd95gTY4zwkTzJKIp5NWn1e5M7GaFZF8z2GwzTyThhpW-ePkQwE"
     },
     {
         "name": "Mu Tv",
@@ -185,6 +205,16 @@
         "name": "RONGEEN TV",
         "url": "https://server.thelegitpro.in/rongeentv/rongeentv/tracks-v1a1/mono.m3u8",
         "thumbnail": "https://i.postimg.cc/TYX7wDW0/RONGEEN-TV.jpg"
+    },
+        {
+        "name": "Sonic",
+        "url": "https://iptvcable.netlify.app/Altogether-007/SONIC.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI7jqQNmrU9M5OsuybdQ5jFCpYSz1NX20BE8vFR-xcOfhV781I6xXtacE&s=10"
+    },
+    {
+        "name": "SonyYAY",
+        "url": "https://iptvcable.netlify.app/Altogether-007/SonyYAY.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIzp0DJEzIgMof2Xui9k-eyIM8GE2eaLP1fj6bGHljqKsjixIRmH7dI_Gf&s=10"
     },
     {
         "name": "KHUSBO",
