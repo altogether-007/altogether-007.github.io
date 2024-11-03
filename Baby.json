@@ -60,6 +60,31 @@
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZPU0Dv-uW4MzdUY-QhNbD9TQxs8i1Wa72-wh0G-XvOPs2In3H5BRT7BU&s=10"
     },
     {
+        "name": "Sony Sports1",
+        "url": "https://iptvcable.netlify.app/Altogether-007/SonySports1.m3u8",
+        "thumbnail": "https://jiotvimages.cdn.jio.com/dare_images/images/Ten_HD.png"
+    },
+    {
+        "name": "Sony Sports2",
+        "url": "https://iptvcable.netlify.app/Altogether-007/SonySports2.m3u8",
+        "thumbnail": "https://dtat2ks7dludr.cloudfront.net/spnsportsindia/channel_logos/SONY_SportsTen2_SD.png"
+    },
+    {
+        "name": "Sony Sports3",
+        "url": "https://iptvcable.netlify.app/Altogether-007/SonySports3.m3u8",
+        "thumbnail": "https://static.wikia.nocookie.net/logopedia/images/f/ff/Sony_Sports_Ten_3.png/revision/latest/scale-to-width-down/460?cb=20221025085433"
+    },
+    {
+        "name": "Sony Sports4",
+        "url": "https://iptvcable.netlify.app/Altogether-007/SonySports4.m3u8",
+        "thumbnail": "https://static.wikia.nocookie.net/logopedia/images/9/95/Sony_Sports_Ten_4.png/revision/latest?cb=20221025090401"
+    },
+    {
+        "name": "Sony Sports5",
+        "url": "https://iptvcable.netlify.app/Altogether-007/SonySports5.m3u8",
+        "thumbnail": "https://www.sonypicturesnetworks.com/images/logos/SONY_SportsTen5_HD_Logo_CLR.png"
+    },
+    {
         "name": "GXR WORLD",
         "url": "https://drjpy7suzu4c5.cloudfront.net/out/v1/0c06db0274c04e64ab6ae0450f5fbda8/index_6.m3u8",
         "thumbnail": "https://play-lh.googleusercontent.com/J1BGERSuZJk6fDjoNd95gTY4zwkTzJKIp5NWn1e5M7GaFZF8z2GwzTyThhpW-ePkQwE"
@@ -225,6 +250,11 @@
         "name": "SonyYAY",
         "url": "https://iptvcable.netlify.app/Altogether-007/SonyYAY.m3u8",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIzp0DJEzIgMof2Xui9k-eyIM8GE2eaLP1fj6bGHljqKsjixIRmH7dI_Gf&s=10"
+    },
+    {
+        "name": "Cartoon Network",
+        "url": "https://iptvcable.netlify.app/CartoonNetworkhin.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_b_9OZgchIQ5zhlO-KIwiViYdgvtoTXeFLw&usqp=CAU"
     },
     {
         "name": "KHUSBO",
