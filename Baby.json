@@ -30,6 +30,16 @@
         "thumbnail": "https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-1021-j5nj3c68-v1/imageContent-1021-j5nj3c68-m1.png"
     },
     {
+        "name": "StarSports select 1",
+        "url": "https://iptvcable.netlify.app/Altogether-007/StarSportsSel1.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmnoX6f5Jh6Nxs2DPCdjTsUxRDmJWLi8gZdCCDpb4s9cTn_2FA94fy5lvS&s=10"
+    },
+    {
+        "name": "StarSports select 2",
+        "url": "https://iptvcable.netlify.app/Altogether-007/StarSportsSel2.m3u8",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhsizxHngdr4wceBiUzMVyBSdTj5PJwyTiFglQu8im2TORnSczfTadmf0&s=10"
+    },
+    {
         "name": "Sports18 1",
         "url": "https://iptvcable.netlify.app/Altogether-007/Sports18-1.m3u8",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD8Jhz5c9KzYcU8__FjTrEOLWOFoBg6QMHBw&usqp=CAU"
