@@ -1,11 +1,7 @@
 [
+    
     {
         "name": "Tsports",
-        "url": "https://cdn.hotflixbd.online/hotflix/T-Sports/index.m3u8",
-        "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
-    },
-    {
-        "name": "Tsports2",
         "url": "https://iptvcable.netlify.app/Altogether-007/Tsports.m3u8",
         "thumbnail": "https://i.postimg.cc/FRVWnVgS/20241005-165038.png"
     },
