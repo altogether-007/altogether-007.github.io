@@ -53,6 +53,6 @@
             },
             {
                 "name": "YTVideoDL",
-                "liveLink": "https://gear-box.vercel.app/YT-VIDEO-DOWNLOADER/index.html,
-            }
+                 "liveLink": "https://gear-box.vercel.app/YT-VIDEO-DOWNLOADER/index.html",
+             }
 ]
