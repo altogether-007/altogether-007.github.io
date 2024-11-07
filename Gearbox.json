@@ -1,0 +1,17 @@
+[
+            {
+                "name": "Project Alpha",
+                "liveLink": "https://alpha-project.vercel.app",
+                "description": "A revolutionary project."
+            },
+            {
+                "name": "Project Beta",
+                "liveLink": "https://beta-project.vercel.app",
+                "description": "Another awesome project."
+            },
+            {
+                "name": "Project Gamma",
+                "liveLink": "https://gamma-project.vercel.app",
+                "description": "The most advanced project yet."
+            }
+        ]
