@@ -1,8 +1,14 @@
 [
     {
-        "name": "GaziTv",
+        "name": "Gazi Tv",
         "url": "https://gtv-and-t-sports-live.tiiny.io/player.php?id=gtv",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpfadXz4wvkWwnzn_eccY07zbAedn3T9kYqazvJnVNz4dpVyiy-ydimhsf&s=10"
+    },
+    
+    {
+        "name": "Nagorik Tv",
+        "url": "https://jadoo-iptv.tiiny.io/player.php?id=nagorik_tv",
+        "thumbnail": "https://nagorik.com/wp-content/uploads/2024/04/Logo.png"
     },
     {
         "name": "Tsports",
