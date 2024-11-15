@@ -1,15 +1,15 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="pic", Altogether 007
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/63nNfFKF/Altogether.png", Altogether 007
 https://iptvcable.netlify.app/https://altogether-007.github.io/Altogether-007.mp4
 
 
-#EXTINF:-1 tvg-logo="pic", Cartoon Network
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBNQErEpRzLPLQi_iJoc070F4FhKaqRh_el_F57ef3VwFpp3xDoYi6qWGy&s=10", Cartoon Network
 https://iptvcable.netlify.app/Altogether-007/CartoonNetworkhin.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Sonic
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI7jqQNmrU9M5OsuybdQ5jFCpYSz1NX20BE8vFR-xcOfhV781I6xXtacE&s=10", Sonic
 https://iptvcable.netlify.app/Altogether-007/SONIC.m3u8
 
-#EXTINF:-1 tvg-logo="pic", SonyYaY
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/35/Sony_Yay_new.png", SonyYaY
 https://iptvcable.netlify.app/Altogether-007/SonyYAY.m3u8
 
 <<<<<<<<----------------->>>>>>>>>
@@ -21,51 +21,51 @@ https://iptvcable.netlify.app/Altogether-007/Tsports.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM8-hmJjPP2shDkmu11AJjmX2AKVz3ThP2S3naDU7Yjm56vFNzI8uTSdo&s=10", Gazi Tv
 https://iptvcable.netlify.app/Altogether-007/GaziTv.m3u8 
 
-#EXTINF:-1 tvg-logo="pic", Sony Sports 1
+#EXTINF:-1 tvg-logo="https://dtat2ks7dludr.cloudfront.net/spnsportsindia/channel_logos/SONY_SportsTen1_HD.png", Sony Sports 1
 https://iptvcable.netlify.app/Altogether-007/SonySports1.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Sony Sports 2
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbdho8ETskFR9WpDlOrqbyuno-b3153QpeAQ&s", Sony Sports 2
 https://iptvcable.netlify.app/Altogether-007/SonySports2.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Sony Sports 3
+#EXTINF:-1 tvg-logo="https://dtat2ks7dludr.cloudfront.net/spnsportsindia/channel_logos/SONY_SportsTen3_HD.png", Sony Sports 3
 https://iptvcable.netlify.app/Altogether-007/SonySports3.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Sony Sports 4
+#EXTINF:-1 tvg-logo="https://dtat2ks7dludr.cloudfront.net/spnsportsindia/channel_logos/SONY_SportsTen4_HD.png", Sony Sports 4
 https://iptvcable.netlify.app/Altogether-007/SonySports4.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Sony Sports 5
+#EXTINF:-1 tvg-logo="https://dtat2ks7dludr.cloudfront.net/spnsportsindia/channel_logos/SONY_SportsTen5_HD.png", Sony Sports 5
 https://iptvcable.netlify.app/Altogether-007/SonySports5.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Sports18 1
+#EXTINF:-1 tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Sports18_1_HD.png", Sports18 1
 https://iptvcable.netlify.app/Altogether-007/Sports18-1.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Sports18 2
+#EXTINF:-1 tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Sports18_2.png", Sports18 2
 https://iptvcable.netlify.app/Altogether-007/Sports18-2.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Sports18 3
+#EXTINF:-1 tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Sports18_3.png", Sports18 3
 https://iptvcable.netlify.app/Altogether-007/Sports18-3.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Sports18 khel
+#EXTINF:-1 tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Sports18_Khel.png", Sports18 khel
 https://iptvcable.netlify.app/Altogether-007/Sports18khel.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Star Sports 1 Hindi
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Star_Sports_1_HD.png/2560px-Star_Sports_1_HD.png", Star Sports 1 Hindi
 https://iptvcable.netlify.app/Altogether-007/StarSports1hin-1.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Star Sports 1 Hindi
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSbQYPtCQpDyIUycG7t6916M4uFfCQc_-HTosVQGQVwF3W2_GYKWOgfXE&s=10", Star Sports 1 Hindi
 https://iptvcable.netlify.app/Altogether-007/StarSports1hin.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Star Sports 2
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLS-lIP6RXEk3fVoZUDTKQepIGcTfnla4lskJHo1hislprrmvXo83yroY&s=10", Star Sports 2
 https://iptvcable.netlify.app/Altogether-007/StarSports2.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Star Sports Select 1
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbwyIx255tT4LWQWeMxU91ocR1NZ6z9NkDig&s", Star Sports Select 1
 https://iptvcable.netlify.app/Altogether-007/StarSportsSel1.m3u8
 
-#EXTINF:-1 tvg-logo="pic", Star Sports Select 2
+#EXTINF:-1 tvg-logo="https://assets.airtel.in/static-assets/cms/dth/images/channellogo/Star-Sports-Select-2-hd.png", Star Sports Select 2
 https://iptvcable.netlify.app/Altogether-007/StarSportsSel2.m3u8
 
 <<<<<<<<----------------->>>>>>>>>
 	
-#EXTINF:-1 tvg-logo="pic", Star Jolsha Movies 
+#EXTINF:-1 tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_m-ErSMpMzKe9hSvK2-i-y3z7-1SA3Q5r_irXehULBv9R0=s900-c-k-c0x00ffffff-no-rj", Star Jolsha Movies 
 https://iptvcable.netlify.app/Altogether-007/StarJolshaMovies.m3u8
 
 
