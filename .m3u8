@@ -1,6 +1,88 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="pic", name
+https://iptvcable.netlify.app/
+
+
+#EXTINF:-1 tvg-logo="pic", Cartoon Network
+https://iptvcable.netlify.app/Altogether-007/CartoonNetworkhin.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Sonic
+https://iptvcable.netlify.app/Altogether-007/SONIC.m3u8
+
+#EXTINF:-1 tvg-logo="pic", SonyYaY
+https://iptvcable.netlify.app/Altogether-007/SonyYAY.m3u8
+
+<<<<<<<<----------------->>>>>>>>>
+
 #EXTINF:-1 tvg-logo="https://i.postimg.cc/GpjL1fCZ/20241005-165038.png", Tsports 
-https://cdn.livestreambd.com/TSports/index.m3u8 
+https://iptvcable.netlify.app/Altogether-007/Tsports.m3u8
+ 
 
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM8-hmJjPP2shDkmu11AJjmX2AKVz3ThP2S3naDU7Yjm56vFNzI8uTSdo&s=10", Gazi Tv
-https://hotflixbd.online/GTV/index.m3u8 
+https://iptvcable.netlify.app/Altogether-007/GaziTv.m3u8 
+
+#EXTINF:-1 tvg-logo="pic", Sony Sports 1
+https://iptvcable.netlify.app/Altogether-007/SonySports1.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Sony Sports 2
+https://iptvcable.netlify.app/Altogether-007/SonySports2.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Sony Sports 3
+https://iptvcable.netlify.app/Altogether-007/SonySports3.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Sony Sports 4
+https://iptvcable.netlify.app/Altogether-007/SonySports4.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Sony Sports 5
+https://iptvcable.netlify.app/Altogether-007/SonySports5.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Sports18 1
+https://iptvcable.netlify.app/Altogether-007/Sports18-1.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Sports18 2
+https://iptvcable.netlify.app/Altogether-007/Sports18-2.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Sports18 3
+https://iptvcable.netlify.app/Altogether-007/Sports18-3.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Sports18 khel
+https://iptvcable.netlify.app/Altogether-007/Sports18khel.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Star Sports 1 Hindi
+https://iptvcable.netlify.app/Altogether-007/StarSports1hin-1.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Star Sports 1 Hindi
+https://iptvcable.netlify.app/Altogether-007/StarSports1hin.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Star Sports 2
+https://iptvcable.netlify.app/Altogether-007/StarSports2.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Star Sports Select 1
+https://iptvcable.netlify.app/Altogether-007/StarSportsSel1.m3u8
+
+#EXTINF:-1 tvg-logo="pic", Star Sports Select 2
+https://iptvcable.netlify.app/Altogether-007/StarSportsSel2.m3u8
+
+<<<<<<<<----------------->>>>>>>>>
+	
+#EXTINF:-1 tvg-logo="pic", Star Jolsha Movies 
+https://iptvcable.netlify.app/Altogether-007/StarJolshaMovies.m3u8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
