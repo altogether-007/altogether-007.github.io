@@ -61,7 +61,7 @@ https://iptvcable.netlify.app/Altogether-007/StarSportsSel2.m3u8
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Channel9_bd.svg/800px-Channel9_bd.svg.png", Channel9
 https://iptvcable.netlify.app/Altogether-007/Bangladesh/Channel9.m3u8
 	
-#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://upload.wikimedia.org/wikipedia/bn/b/b9/%E0%A6%8F%E0%A6%95%E0%A7%81%E0%A6%B6%E0%A7%87_%E0%A6%9F%E0%A7%87%E0%A6%B2%E0%A6%BF%E0%A6%AD%E0%A6%BF%E0%A6%B6%E0%A6%A8.svg", EkushyTv
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3AttwzEy0-jvCtYFju4viRlvTDHPXOqZCEcXXUiOxyiN5V-3XMOi3djo&s=10", EkushyTv
 https://iptvcable.netlify.app/Altogether-007/Bangladesh/EkushyTv.m3u8
 	
 	
@@ -72,7 +72,7 @@ https://iptvcable.netlify.app/Altogether-007/Kolkata/StarJolshaMovies.m3u8
 #EXTINF:-1 group-title="Kolkata" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d4/Sony_Aath_new.png", Sony Aath
 https://iptvcable.netlify.app/Altogether-007/Kolkata/SonyAath.m3u8
 
-#EXTINF:-1 group-title="Kolkata" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d4/Sony_Aath_new.png", Colors Bangla Hd
+#EXTINF:-1 group-title="Kolkata" tvg-logo="https://upload.wikimedia.org/wikipedia/en/7/7b/Colors_Bangla.png", Colors Bangla Hd
 https://iptvcable.netlify.app/Altogether-007/Kolkata/ColorsBanglaHD.m3u8
 
 #EXTINF:-1 group-title="Kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpN5qktc_HtDbFFHYV8zvoVBsDK5Z1mo-GjQ&s", Star Jolsha
