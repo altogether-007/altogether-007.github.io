@@ -56,8 +56,15 @@ https://iptvcable.netlify.app/Altogether-007/StarSportsSel2.m3u8
 
 
 
+
+
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Channel9_bd.svg/800px-Channel9_bd.svg.png", Channel9
 https://iptvcable.netlify.app/Altogether-007/Bangladesh/Channel9.m3u8
+	
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://upload.wikimedia.org/wikipedia/bn/b/b9/%E0%A6%8F%E0%A6%95%E0%A7%81%E0%A6%B6%E0%A7%87_%E0%A6%9F%E0%A7%87%E0%A6%B2%E0%A6%BF%E0%A6%AD%E0%A6%BF%E0%A6%B6%E0%A6%A8.svg", EkushyTv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/EkushyTv.m3u8
+	
+	
 	
 #EXTINF:-1 group-title="Kolkata" tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_m-ErSMpMzKe9hSvK2-i-y3z7-1SA3Q5r_irXehULBv9R0=s900-c-k-c0x00ffffff-no-rj", Star Jolsha Movies 
 https://iptvcable.netlify.app/Altogether-007/Kolkata/StarJolshaMovies.m3u8
@@ -65,6 +72,11 @@ https://iptvcable.netlify.app/Altogether-007/Kolkata/StarJolshaMovies.m3u8
 #EXTINF:-1 group-title="Kolkata" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d4/Sony_Aath_new.png", Sony Aath
 https://iptvcable.netlify.app/Altogether-007/Kolkata/SonyAath.m3u8
 
+#EXTINF:-1 group-title="Kolkata" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d4/Sony_Aath_new.png", Colors Bangla Hd
+https://iptvcable.netlify.app/Altogether-007/Kolkata/ColorsBanglaHD.m3u8
+
+#EXTINF:-1 group-title="Kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpN5qktc_HtDbFFHYV8zvoVBsDK5Z1mo-GjQ&s", Star Jolsha
+https://iptvcable.netlify.app/Altogether-007/Kolkata/StarJalsha.m3u8
 
 
 
@@ -84,8 +96,15 @@ https://iptvcable.netlify.app/Altogether-007/Cartoon/SONIC.m3u8
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/35/Sony_Yay_new.png", SonyYaY
 https://iptvcable.netlify.app/Altogether-007/Cartoon/SonyYAY.m3u8
 
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS09GDLqbyCyEdbEiL4WSENm2l9l_k12aERGpvxnsDUv4WRk-vlRWQgHZFq&s=10", POGO
+https://iptvcable.netlify.app/Altogether-007/Cartoon/POGO.m3u8
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://cdn6.aptoide.com/imgs/c/8/5/c85cfb9e41175a27e904247af5ec77db_icon.png", Nick Hindi
+https://iptvcable.netlify.app/Altogether-007/Cartoon/NickHindi.m3u8
 
 
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTerg__lLRxfNcamdtoNS2Y0t5VLjO976Pcag&s", Discovery Bangla
+Altogether-007/Documentary/DiscoveryBangla.m3u8
 
 
 
