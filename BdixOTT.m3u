@@ -3,6 +3,8 @@
 https://imgur.com/kAWv7EU.mp4
 
 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlfEj2Jh8AWTrVEoiE8p729oRrJ6yfKoYKdTIreXndfzZzywU9RBMbaOw&s=10", Disney
+http://119.156.26.155:8000/play/a05u/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBNQErEpRzLPLQi_iJoc070F4FhKaqRh_el_F57ef3VwFpp3xDoYi6qWGy&s=10", Cartoon Network
 https://iptvcable.netlify.app/Altogether-007/CartoonNetworkhin.m3u8
