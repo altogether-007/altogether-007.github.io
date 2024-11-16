@@ -1,5 +1,5 @@
 IPTV PLAYLIST
-https://altogether-007.github.io/Zyvin.m3u
+https://altogether-007.github.io/BdixOTT.m3u
 
 
 IPTV Players Link
