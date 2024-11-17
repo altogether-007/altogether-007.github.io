@@ -97,10 +97,10 @@ https://iptvcable.netlify.app/Altogether-007/Kolkata/StarJalsha.m3u8
 
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlfEj2Jh8AWTrVEoiE8p729oRrJ6yfKoYKdTIreXndfzZzywU9RBMbaOw&s=10", Disney
-https://iptvcable.netlify.app/Altogether-007/Cartoon/Disney.m3u8
+http://119.156.26.155:8000/play/a05u/index.m3u8
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpMCoR3VuXQCF0y_pAqLnCcoVE6fOJKAiLpw&s", Hungama
-https://iptvcable.netlify.app/Altogether-007/Cartoon/Hungama.m3u8
+http://119.156.26.155:8000/play/a05t/index.m3u8
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBNQErEpRzLPLQi_iJoc070F4FhKaqRh_el_F57ef3VwFpp3xDoYi6qWGy&s=10", Cartoon Network
 https://iptvcable.netlify.app/Altogether-007/Cartoon/CartoonNetworkhin.m3u8
@@ -121,7 +121,7 @@ https://iptvcable.netlify.app/Altogether-007/Cartoon/NickHindi.m3u8
 https://iptvcable.netlify.app/Altogether-007/Cartoon/RongeenTv.m3u8
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://i.ibb.co/yBYRgLt/20240813-063955.png", Gubbare
-https://iptvcable.netlify.app/Altogether-007/Cartoon/Gubbare.m3u8
+https://epiconvh.s.llnwi.net/gubbare/master.m3u8
 
 
 
@@ -175,7 +175,6 @@ https://cdn.bestream.io:19360/elfaro1/elfaro1.m3u8
 
 #EXTINF:-1 group-title="Islamic" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU9qXUk8hVXEeVGAluHlY2veTVUcfUeyubRtM1NbQQapNT8l_bXx--P9k&s=10",Mercy tv
 https://cdn2.pishow.tv/live/147/master.m3u8
-
 
 
 
