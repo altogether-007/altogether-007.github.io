@@ -21,6 +21,10 @@ https://iptvcable.netlify.app/Altogether-007/Tsports.m3u8
 #EXTINF:-1 group-title="Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM8-hmJjPP2shDkmu11AJjmX2AKVz3ThP2S3naDU7Yjm56vFNzI8uTSdo&s=10", Gazi Tv
 https://iptvcable.netlify.app/Altogether-007/GaziTv.m3u8 
 
+#EXTINF:-1 group-title="Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbA87mgTW6BL00Lm3TboXRvJcc318-lYW-ag&s", Eurosport
+https://altogether-007.vercel.app/Discovery/api/Eurosport.m3u8
+
+
 #EXTINF:-1 group-title="Sports" tvg-logo="https://dtat2ks7dludr.cloudfront.net/spnsportsindia/channel_logos/SONY_SportsTen1_HD.png", Sony Sports 1
 https://iptvcable.netlify.app/Altogether-007/SonySports1.m3u8
 
@@ -193,7 +197,7 @@ http://119.156.26.155:8000/play/a05t/index.m3u8
 https://iptvcable.netlify.app/Altogether-007/Cartoon/NickHindi.m3u8
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI7jqQNmrU9M5OsuybdQ5jFCpYSz1NX20BE8vFR-xcOfhV781I6xXtacE&s=10", Sonic
-https://iptvcable.netlify.app/Altogether-007/Cartoon/SONIC.m3u8
+https://keralamaxtv.com/sliv/stream.php?id=168569&e=.m3u8|referer=https://keralamaxtv.com//
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS09GDLqbyCyEdbEiL4WSENm2l9l_k12aERGpvxnsDUv4WRk-vlRWQgHZFq&s=10", POGO
 https://iptvcable.netlify.app/Altogether-007/Cartoon/POGO.m3u8
@@ -207,6 +211,7 @@ https://iptvcable.netlify.app/Altogether-007/Cartoon/Gubbare.m3u8
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://i.ibb.co/yBYRgLt/20240813-063955.png", RONGEEN TV
 https://iptvcable.netlify.app/Altogether-007/Cartoon/RongeenTv.m3u8
 
+https://altogether-007.vercel.app/Discovery/api/Discovery_Kids.m3u8
 
 
 
@@ -215,6 +220,50 @@ https://iptvcable.netlify.app/Altogether-007/Cartoon/RongeenTv.m3u8
 
 #EXTINF:-1 group-title="Documentary" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTerg__lLRxfNcamdtoNS2Y0t5VLjO976Pcag&s", Discovery Bangla
 https://iptvcable.netlify.app/Altogether-007/Documentary/DiscoveryBangla.m3u8
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://standfirst-designweek-production.imgix.net/uploads/2018/10/25115647/AnimalPlanet_Vertical_OneLineLarge_RGB-002.jpg?fit=crop&crop=faces&q=80&auto=compress,format&w=647&h=500", Animal planet
+https://altogether-007.vercel.app/Discovery/api/Animal_Planet.m3u8
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://eu1-prod-images.disco-api.com/2023/08/08/b2118319-0565-34ee-bccf-6228b1ec0426.png?bf=0&f=jpg&p=true&q=70&w=1920", DMAX
+https://altogether-007.vercel.app/Discovery/api/DMAX.m3u8
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_lq1X3lW3djcTr4x8s__Ds5eoR_Af2TZMavK7Dr6dkIdw=s900-c-k-c0x00ffffff-no-rj", Discovery+
+https://altogether-007.vercel.app/Discovery/api/Discovery+.m3u8
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTerg__lLRxfNcamdtoNS2Y0t5VLjO976Pcag&s", Discovery
+https://altogether-007.vercel.app/Discovery/api/Discovery_Channel.m3u8
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://eu1-prod-images.disco-api.com/2023/06/14/6caf3353-36aa-3dd0-931d-ceada7b8cb96.png?bf=0&f=jpg&p=true&q=70&w=1920", DiscoveryScience
+https://altogether-007.vercel.app/Discovery/api/Discovery_Science.m3u8
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzB2Vxvf1QOeB8hGL3GjU8EyeHm2Mve30uvA&s", DiscoveryTurbo
+https://altogether-007.vercel.app/Discovery/api/Discovery_Turbo.m3u8
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Food_Network_logo.svg/1200px-Food_Network_logo.svg.png", FoodNetwork
+https:/altogether-007.vercel.app/Discovery/api/Food%20Network.m3u8
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlehx4fmC66L3dwYXXmG47-S_dDCGRHWj7Lg&s", HGTV
+https://altogether-007.vercel.app/Discovery/api/HGTV.m3u8
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/4/41/InvestigationDiscovery.png", InvestigationDiscovery
+https://altogether-007.vercel.app/Discovery/api/Investigation_Discovery.m3u8
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://iconape.com/wp-content/png_logo_vector/tlc-logo.png", TLC
+https://altogether-007.vercel.app/Discovery/api/TLC.m3u8 
+
+#EXTINF:-1 group-title="Documentary" tvg-logo="https://travel.home.sndimg.com/content/dam/images/travel/editorial/homepage/TRVL-default-image_4x3.jpg.rend.hgtvcom.616.462.suffix/1539121995359.jpeg", TRVL
+https://altogether-007.vercel.app/Discovery/api/TRVL_Channel.m3u8
+
+
+
+
+
+
+
+
+
+
+
 
 
 
