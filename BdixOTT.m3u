@@ -6,6 +6,33 @@ https://imgur.com/kAWv7EU.mp4
 
 
 
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qokcs5Qt253SegEQFWq8bcR_Tvq0f_4lsFgIgsfuxQ&s",24/7 Bollywood Movie
+https://iptvcable.netlify.app/Altogether-007/247Channel/BollywoodMovie.m3u8
+
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyPrZqyLxCYQr5nzjtlgslgqBgoIsGjYWd8fyhQeUzIANvoLUMe6S3NU4&s=10",Netflix Action
+https://iptvcable.netlify.app/Altogether-007/247Channel/NetflixAction.m3u8
+
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyiDWkk7oaPQP4zBaZOAJ5Pd49ycrkifc8jeRxN1FjXCoTseOrPpy1Ux8&s=10",24/7 Hollywood Movie 1
+https://iptvcable.netlify.app/Altogether-007/247Channel/HollywoodMovie1.m3u8
+
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3VYnnWTghMUcVgLBNJ0Z3c4QMxPBHweGJ4DNg0ybSwQ&s",South hindi Dubbed
+https://iptvcable.netlify.app/Altogether-007/247Channel/SouthHindiDubbed.m3u8
+
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://parade.com/.image/t_share/MTkyODQ2ODI2MjcxOTQyMzUy/classic-horror-movie-remakes-the-ring-2002.jpg",Horror Drama(hindi)
+https://iptvcable.netlify.app/Altogether-007/247Channel/HorrorDrama.m3u8
+
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://mir-s3-cdn-cf.behance.net/projects/404/6424239.546c7d15d17d4.jpg",Dubbed turkish drama(urdu 1)
+https://vodzong.mjunoon.tv:8087/streamtest/Urdu1-158-4/playlist.m3u8|referer=https://vodzong.mjunoon.tv:8087//
+
+
+
+
+
+
+
+
+
+
 #EXTINF:-1 group-title="Sports" tvg-logo="https://i.postimg.cc/GpjL1fCZ/20241005-165038.png", Tsports 
 https://iptvcable.netlify.app/Altogether-007/Tsports.m3u8
  
@@ -175,6 +202,7 @@ https://cdn.bestream.io:19360/elfaro1/elfaro1.m3u8
 
 #EXTINF:-1 group-title="Islamic" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU9qXUk8hVXEeVGAluHlY2veTVUcfUeyubRtM1NbQQapNT8l_bXx--P9k&s=10",Mercy tv
 https://cdn2.pishow.tv/live/147/master.m3u8
+
 
 
 
