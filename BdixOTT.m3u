@@ -6,22 +6,22 @@ https://imgur.com/kAWv7EU.mp4
 
 
 
-#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qokcs5Qt253SegEQFWq8bcR_Tvq0f_4lsFgIgsfuxQ&s",24/7 Bollywood Movie
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qokcs5Qt253SegEQFWq8bcR_Tvq0f_4lsFgIgsfuxQ&s", 24/7 Bollywood Movie
 https://iptvcable.netlify.app/Altogether-007/247Channel/BollywoodMovie.m3u8
 
-#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyPrZqyLxCYQr5nzjtlgslgqBgoIsGjYWd8fyhQeUzIANvoLUMe6S3NU4&s=10",Netflix Action
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyPrZqyLxCYQr5nzjtlgslgqBgoIsGjYWd8fyhQeUzIANvoLUMe6S3NU4&s=10", Netflix Action
 https://iptvcable.netlify.app/Altogether-007/247Channel/NetflixAction.m3u8
 
-#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyiDWkk7oaPQP4zBaZOAJ5Pd49ycrkifc8jeRxN1FjXCoTseOrPpy1Ux8&s=10",24/7 Hollywood Movie 1
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyiDWkk7oaPQP4zBaZOAJ5Pd49ycrkifc8jeRxN1FjXCoTseOrPpy1Ux8&s=10", 24/7 Hollywood Movie 1
 https://iptvcable.netlify.app/Altogether-007/247Channel/HollywoodMovie1.m3u8
 
-#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3VYnnWTghMUcVgLBNJ0Z3c4QMxPBHweGJ4DNg0ybSwQ&s",South hindi Dubbed
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3VYnnWTghMUcVgLBNJ0Z3c4QMxPBHweGJ4DNg0ybSwQ&s", South hindi Dubbed
 https://iptvcable.netlify.app/Altogether-007/247Channel/SouthHindiDubbed.m3u8
 
-#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://parade.com/.image/t_share/MTkyODQ2ODI2MjcxOTQyMzUy/classic-horror-movie-remakes-the-ring-2002.jpg",Horror Drama(hindi)
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://parade.com/.image/t_share/MTkyODQ2ODI2MjcxOTQyMzUy/classic-horror-movie-remakes-the-ring-2002.jpg", Horror Drama(hindi)
 https://iptvcable.netlify.app/Altogether-007/247Channel/HorrorDrama.m3u8
 
-#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://mir-s3-cdn-cf.behance.net/projects/404/6424239.546c7d15d17d4.jpg",Dubbed turkish drama(urdu 1)
+#EXTINF:-1 group-title="24/7 Channel" tvg-logo="https://mir-s3-cdn-cf.behance.net/projects/404/6424239.546c7d15d17d4.jpg", Dubbed turkish drama(urdu 1)
 https://vodzong.mjunoon.tv:8087/streamtest/Urdu1-158-4/playlist.m3u8|referer=https://vodzong.mjunoon.tv:8087//
 
 
@@ -96,10 +96,72 @@ https://iptvcable.netlify.app/Altogether-007/Bangladesh/EkushyTv.m3u8
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThYHt4yjNmyR2579DSXG8tuekTtYudy5uODu8Z1OzhPFvlgcq5Wg5KwYc&s=10", SRK tv
 https://iptvcable.netlify.app/Altogether-007/Bangladesh/SRKtv.m3u8
 
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/45/Mytv_Bangladesh_Logo.png", My TV
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/MyTv.m3u8
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://play-lh.googleusercontent.com/HRmqkaMrGmM5fphzcCoYbqWQZLhFKI3Mjc4RWLvgnipk7KI094BIhZEXdlVLR89jrQ", Vokta Tv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/VoktaTv.m3u8
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwC1FLrSDqYkWTu0CK8zCygVIBMpoQq_ef4g&s",Doyel Tv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/DoyelTv.m3u8
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQttOoq1gC8VFet-OuGNB-kwAdoxMPCkgsEyh7DOQr0mLmXb6wRbE8-J22l&s=10", Matribumi Tv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/MatribumiTv.m3u8
+
+#EXTINF:-1 group-title="Bangla" tvg-logo="https://yt3.ggpht.com/ytc/AMLnZu8HCmRXIV5i61tWmlMRBrt-Aq-SL_snYkK6zORy=s900-c-k-c0x00ffffff-no-rj", Movie Bangla
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/MovieBangla.m3u8
+
+#EXTINF:-1 group-title="Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0aXuHhGADmE7hh4UqmyQLRLpTCW9k2hBpD232rDNsEH51YeVfNVsYWWo&s=10", Kids Creations
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/KidsCreations.m3u8
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl51CN0odcPjCA1PcX8M3ze0WhK4R44ID3Ew&s", Magic bangla tv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/Magicbanglatv.m3u8
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3FTsPoV3OV4Tas7Efx2op1C4lilKyxYkcJx-rCg1f9HeXOQvRIjH8NXurrA&s", Me Tv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/MeTv.m3u8
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="http://live.probashinews24.tv/images/logo.png", Probashi Tv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/ProbashiTv.m3u8
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBcCig8liSTxxTOglj7-IFmKKyTij_LSRCwA&s", Nandan Tv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/NandanTv.m3u8
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1LJLVkY8wZBI7QP8GW1t2uQpKYcG3WUuCgA&s", RTV
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/RTV.m3u8
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Bangladesh_Television_Logo.svg/1200px-Bangladesh_Television_Logo.svg.png", Btv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/BTV.m3u8
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdCGsEMHmjePno7O2rluZtzxqkZ5k20-oWqg&s", Bangla news tv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/BanglaNewsTv.m3u8
+
+
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTByug-Cd5uLhhGqID0mWAJSvgaVq1N0r4ELXr2d2UTw_uBqsbFr38KJDc&s=10", Jhankar Tv
+https://dbcanada.sonarbanglatv.com/jhankartv/jtv/index.m3u8
+
+
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/31/Deepto_TV_logo.png", DeeptoTv
+https://byphdgllyk.gpcdn.net/hls/deeptotv/index.m3u8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	
-	
+
 #EXTINF:-1 group-title="kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYt_tdZ3HYZO0zbHKxDJxrphZ1Le5KsTHWBNjh_ed2sF09UaBJBTBKjNKW&s=10", Zee Bangla
 https://iptvcable.netlify.app/Altogether-007/Kolkata/ZeeBangla.m3u8
 
