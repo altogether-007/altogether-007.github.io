@@ -6,7 +6,7 @@ IPTV Players Link
 
 VLC (Windows): https://www.videolan.org/vlc/
 
-MyIPTV Player (Windows) (Recommended) : https://bit.ly/2VoB33Q
+TvMate IPTV Player (Windows) (Recommended) : https://bit.ly/2VoB33Q
 
 IPTV player (android) : https://play.google.com/store/apps/details?id=ru.iptvremote.android.iptv
 
