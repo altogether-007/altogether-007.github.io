@@ -170,8 +170,6 @@ https://iptvcable.netlify.app/Altogether-007/Kolkata/TaraBanglaMovie.m3u8
 https://iptvcable.netlify.app/Altogether-007/Kolkata/StarJolshaMovies.m3u8
 
 
-#EXTINF:-1 group-title="kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDwOx5TU7pdyRikBXuex1FzsGDxD7KAsjrqQ&usqp=CAU", Sananda Tv
-http://54.38.79.60:2020/sananda/index.m3u8
 
 
 
@@ -181,36 +179,33 @@ http://54.38.79.60:2020/sananda/index.m3u8
 
 
 
-
-
-
-
-#EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlfEj2Jh8AWTrVEoiE8p729oRrJ6yfKoYKdTIreXndfzZzywU9RBMbaOw&s=10", Disney
-https://iptvcable.netlify.app/Altogether-007/Cartoon/Disney.m3u8
-
-#EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpMCoR3VuXQCF0y_pAqLnCcoVE6fOJKAiLpw&s", Hungama
-https://iptvcable.netlify.app/Altogether-007/Cartoon/Hungama.m3u8
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBNQErEpRzLPLQi_iJoc070F4FhKaqRh_el_F57ef3VwFpp3xDoYi6qWGy&s=10", Cartoon Network
 https://iptvcable.netlify.app/Altogether-007/Cartoon/CartoonNetworkhin.m3u8
 
-#EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI7jqQNmrU9M5OsuybdQ5jFCpYSz1NX20BE8vFR-xcOfhV781I6xXtacE&s=10", Sonic
-https://iptvcable.netlify.app/Altogether-007/Cartoon/SONIC.m3u8
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlfEj2Jh8AWTrVEoiE8p729oRrJ6yfKoYKdTIreXndfzZzywU9RBMbaOw&s=10", Disney
+http://119.156.26.155:8000/play/a05u/index.m3u8
 
-#EXTINF:-1 group-title="Cartoon" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/35/Sony_Yay_new.png", SonyYaY
-https://iptvcable.netlify.app/Altogether-007/Cartoon/SonyYAY.m3u8
-
-#EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS09GDLqbyCyEdbEiL4WSENm2l9l_k12aERGpvxnsDUv4WRk-vlRWQgHZFq&s=10", POGO
-https://iptvcable.netlify.app/Altogether-007/Cartoon/POGO.m3u8
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpMCoR3VuXQCF0y_pAqLnCcoVE6fOJKAiLpw&s", Hungama
+http://119.156.26.155:8000/play/a05t/index.m3u8
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://cdn6.aptoide.com/imgs/c/8/5/c85cfb9e41175a27e904247af5ec77db_icon.png", Nick Hindi
 https://iptvcable.netlify.app/Altogether-007/Cartoon/NickHindi.m3u8
 
-#EXTINF:-1 group-title="Cartoon" tvg-logo="https://i.ibb.co/yBYRgLt/20240813-063955.png", RONGEEN TV
-https://iptvcable.netlify.app/Altogether-007/Cartoon/RongeenTv.m3u8
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI7jqQNmrU9M5OsuybdQ5jFCpYSz1NX20BE8vFR-xcOfhV781I6xXtacE&s=10", Sonic
+https://iptvcable.netlify.app/Altogether-007/Cartoon/SONIC.m3u8
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS09GDLqbyCyEdbEiL4WSENm2l9l_k12aERGpvxnsDUv4WRk-vlRWQgHZFq&s=10", POGO
+https://iptvcable.netlify.app/Altogether-007/Cartoon/POGO.m3u8
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/35/Sony_Yay_new.png", SonyYaY
+https://iptvcable.netlify.app/Altogether-007/Cartoon/SonyYAY.m3u8
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://i.ibb.co/yBYRgLt/20240813-063955.png", Gubbare
 https://iptvcable.netlify.app/Altogether-007/Cartoon/Gubbare.m3u8
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://i.ibb.co/yBYRgLt/20240813-063955.png", RONGEEN TV
+https://iptvcable.netlify.app/Altogether-007/Cartoon/RongeenTv.m3u8
 
 
 
