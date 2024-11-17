@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/63nNfFKF/Altogether.png", Altogether 007
+#EXTINF:-1 group-title="Intro" tvg-logo="https://i.postimg.cc/63nNfFKF/Altogether.png", Altogether 007
 https://imgur.com/kAWv7EU.mp4
 
 
@@ -93,24 +93,44 @@ https://iptvcable.netlify.app/Altogether-007/Bangladesh/Channel9.m3u8
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3AttwzEy0-jvCtYFju4viRlvTDHPXOqZCEcXXUiOxyiN5V-3XMOi3djo&s=10", EkushyTv
 https://iptvcable.netlify.app/Altogether-007/Bangladesh/EkushyTv.m3u8
 
-
-
+#EXTINF:-1 group-title="Bangladesh" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThYHt4yjNmyR2579DSXG8tuekTtYudy5uODu8Z1OzhPFvlgcq5Wg5KwYc&s=10", SRK tv
+https://iptvcable.netlify.app/Altogether-007/Bangladesh/SRKtv.m3u8
 
 
 
 	
 	
-#EXTINF:-1 group-title="Kolkata" tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_m-ErSMpMzKe9hSvK2-i-y3z7-1SA3Q5r_irXehULBv9R0=s900-c-k-c0x00ffffff-no-rj", Star Jolsha Movies 
-https://iptvcable.netlify.app/Altogether-007/Kolkata/StarJolshaMovies.m3u8
-
-#EXTINF:-1 group-title="Kolkata" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d4/Sony_Aath_new.png", Sony Aath
-https://iptvcable.netlify.app/Altogether-007/Kolkata/SonyAath.m3u8
+#EXTINF:-1 group-title="kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYt_tdZ3HYZO0zbHKxDJxrphZ1Le5KsTHWBNjh_ed2sF09UaBJBTBKjNKW&s=10", Zee Bangla
+https://iptvcable.netlify.app/Altogether-007/Kolkata/ZeeBangla.m3u8
 
 #EXTINF:-1 group-title="Kolkata" tvg-logo="https://upload.wikimedia.org/wikipedia/en/7/7b/Colors_Bangla.png", Colors Bangla Hd
 https://iptvcable.netlify.app/Altogether-007/Kolkata/ColorsBanglaHD.m3u8
 
 #EXTINF:-1 group-title="Kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpN5qktc_HtDbFFHYV8zvoVBsDK5Z1mo-GjQ&s", Star Jolsha
 https://iptvcable.netlify.app/Altogether-007/Kolkata/StarJalsha.m3u8
+
+#EXTINF:-1 group-title="kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwX8YAIUv2wASFgHQLA1gqWkaQZtNaH9LWY5YDnJa7pg&s", Enter 10 Bangla
+https://iptvcable.netlify.app/Altogether-007/Kolkata/EnteerTenBangla.m3u8
+
+#EXTINF:-1 group-title="kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR19iZeDWCRTVE2uO2g6lJ7rfMJYpFLPfsKdA&usqp=CAU", Sangeet Bangla
+https://iptvcable.netlify.app/Altogether-007/Kolkata/SangeetBangla.m3u8
+
+#EXTINF:-1 group-title="Kolkata" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d4/Sony_Aath_new.png", Sony Aath
+https://iptvcable.netlify.app/Altogether-007/Kolkata/SonyAath.m3u8
+
+#EXTINF:-1 group-title="kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWwAH9zylGlCiA7Ak-96qVSJvbVeic36CE7AxO3jT71g&s", Bangla plus
+https://iptvcable.netlify.app/Altogether-007/Kolkata/BanglaPlus.m3u8
+
+#EXTINF:-1 group-title="kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWwUyv4yOvRJxQRRNROFj3e0LVNjDNNi1eE-OPjPeqW2FwSxfcoZSAM1A&s=10", Tara Bangla Movie
+https://iptvcable.netlify.app/Altogether-007/Kolkata/TaraBanglaMovie.m3u8
+
+#EXTINF:-1 group-title="Kolkata" tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_m-ErSMpMzKe9hSvK2-i-y3z7-1SA3Q5r_irXehULBv9R0=s900-c-k-c0x00ffffff-no-rj", Star Jolsha Movies 
+https://iptvcable.netlify.app/Altogether-007/Kolkata/StarJolshaMovies.m3u8
+
+
+#EXTINF:-1 group-title="kolkata" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDwOx5TU7pdyRikBXuex1FzsGDxD7KAsjrqQ&usqp=CAU", Sananda Tv
+http://54.38.79.60:2020/sananda/index.m3u8
+
 
 
 
