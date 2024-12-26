@@ -1,26 +1,71 @@
 [
     {
-        "name": "Bangladesh Betar FM 100.0",
+        "name": "Bangladesh Betar FM",
         "url": "https://as1.digitalsynapsebd.com/proxy/bbdktraf/stream",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvQP5lfOEzxUtjpNjWcFTJNNAyHrAada-OGIbHH5s7e4-Vf7b_8Gkh4CU&s=10"
     },
     {
-        "name": "Spice FM BD 96.4",
+        "name": "Spice FM BD",
         "url": "https://stream.spicefmbd.com/stream.m3u8",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-dj8BuPBijbsTiHDxLxgNWT1He4L2yl4O3XKbrWuTK0tbU24HzJSiYx4&s=10"
     },
     {
-        "name": "Jagobd FM 94.4",
+        "name": "Jagobd FM",
         "url": "http://128.199.184.111:12496/;stream/1",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj1UtB_z-mxZOSS3URBzv-PJrvA3AT2tjPB3ycWs-jMC-zJrRW5lkA30U&s=10"
     },
     {
-        "name": "Radio Padma FM 99.2",
-        "url": "https://radiopadmabd.radioca.st/radiopadma",
-        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDZiSlxOeCuxjxHJ19usQdzOAedG_UcurGKJSm91T2R8CXlb1yQDWcmSVE&s=10"
+        "name": "Sayaji FM",
+        "url": "https://sayajifm.radioca.st/stream/;?1707488287650",
+        "thumbnail": "https://sayajifm.com/wp-content/uploads/2020/07/Sayaji-FM.png"
     },
     {
-        "name": "Radio Foorti FM 88.0",
+        "name": "Islam",
+        "url": "http://www.islamicpath.net:9898/stream.mp3",
+        "thumbnail": "https://play-lh.googleusercontent.com/Bn5pHHctkhw_eb39cvu_Rt9GJcM0wrN7ak40Pzdo1gVjzzgZzIHsvGXibd3ZePY1N3E"
+     },
+     {
+        "name": "Voice of Islam",
+        "url": "http://voiceofislam.appsunder.com:8000/voiceofislam.mp3",
+        "thumbnail": "https://www.voiceofislam.ca/sites/default/files/itunes_800.png"
+    },
+     {
+        "name": "Bhumi",
+        "url": "https://listen.openstream.co/5013/audio",
+        "thumbnail": "https://cdn.instant.audio/images/logos/radio-bd-com/bhumi.png"
+     },
+     {
+        "name": "Radio Baksho",
+        "url": "https://str3.openstream.co/1703?aw_0_1st.collectionid%3D5013%26stationId%3D5013%26publisherId%3D1727%26k%3D1729624595",
+        "thumbnail": "https://i.ibb.co/ry42Nhk/1000010471.png"
+    },
+       {
+        "name": "Capital FM",
+        "url": "https://stream.zeno.fm/4nzaapqw34zuv.aac",
+        "thumbnail": "https://cdn.instant.audio/images/logos/radio-bd-com/capital.png"
+    },
+        {
+        "name": "Shadhin FM",
+        "url": "https://stream.zeno.fm/umq9q5uuva5tv",
+        "thumbnail": "https://cdn.instant.audio/images/logos/radio-bd-com/shadhin.png"
+    },
+     {
+        "name": "Radio Today",
+        "url": "https://stream.zeno.fm/0zha3rfq02quv",
+        "thumbnail": "https://cdn.instant.audio/images/logos/radio-bd-com/today.png"
+    },
+     {
+        "name": "Peoples Radio",
+        "url": "https://s3.myradiostream.com/14498/;",
+        "thumbnail": "https://cdn.instant.audio/images/logos/radio-bd-com/peoples.png"
+    },
+     {
+        "name": "Bangla Net",
+        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/SP_R3563475_SC",
+        "thumbnail": "https://cdn.instant.audio/images/logos/radio-bd-com/bangla-net.png"
+    },
+    {
+        "name": "Radio Foorti FM",
         "url": "http://119.148.23.88:1021/;stream/1",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP6XbBT3acSATGprZOqJnFIMa6560oSr2pgudafm81Z1PHnd_uXm_27Io&s=10"
     },
@@ -30,7 +75,7 @@
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfR3ZBviA9qW2MDR_qoc3AESyPPaMRxsT8nQ&s"
     },
     {
-        "name": "Dhaka FM 90.4",
+        "name": "Dhaka FM",
         "url": "http://118.179.219.244:8000/;",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxNutSxGlgViiOZTtup2STh40abAW5Lap-8Ze178NRzfizTDWJF3jZpvZt&s=10"
     },
@@ -45,7 +90,7 @@
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsbPKhjrISIXjVxAw456pL1k7yABekedV6lX4CoJJwCtpyh4YWaE4QLM0&s=10"
     },
     {
-        "name": "Radio Mahananda FM 98.8",
+        "name": "Radio Mahananda FM",
         "url": "https://streaming.radiomahananda.fm/proxy/radiomahananda/stream",
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV3yqahSBp2D3HoQgmsSCodJ50hrovfsMsow&s"
     }
