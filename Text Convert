@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Case Converter</title>
+    <style>
+        body {
+            background-color: #2c0e00; /* ডার্ক ব্রাউন ব্যাকগ্রাউন্ড */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #000;
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            color: white;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            background: transparent;
+            border: none;
+            color: #ccc;
+            font-size: 18px;
+            resize: none;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            text-align: right;
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* বাটন কালার কোড */
+        .sc { background-color: #d35400; } /* Sentence case */
+        .lc { background-color: #44ad0e; } /* lower case */
+        .uc { background-color: #0088cc; } /* UPPER CASE */
+        .cc { background-color: #6a1b9a; } /* Capitalized Case */
+        .ac { background-color: #f39c12; } /* aLtErNaTiNg cAsE */
+        .tc { background-color: #00695c; } /* Title Case */
+        .ic { background-color: #880e4f; } /* InVerSe CaSe */
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <textarea id="inputText" placeholder="Type or paste your content here...">MOBILE INFO</textarea>
+    
+    <div class="stats">
+        Character Count: <span id="charCount">11</span> | 
+        Word Count: <span id="wordCount">2</span> | 
+        Line Count: <span id="lineCount">1</span>
+    </div>
+
+    <div class="button-group">
+        <button class="sc" onclick="toSentenceCase()"><span>Sc</span> Sentence case</button>
+        <button class="lc" onclick="toLowerCase()"><span>lc</span> lower case</button>
+        <button class="uc" onclick="toUpperCase()"><span>UC</span> UPPER CASE</button>
+        <button class="cc" onclick="toCapitalizedCase()"><span>CC</span> Capitalized Case</button>
+        <button class="ac" onclick="toAlternatingCase()"><span>aC</span> aLtErNaTiNg cAsE</button>
+        <button class="tc" onclick="toTitleCase()"><span>TC</span> Title Case</button>
+        <button class="ic" onclick="toInverseCase()"><span>iC</span> InVeRsE CaSe</button>
+    </div>
+</div>
+
+<script>
+    const textarea = document.getElementById('inputText');
+
+    function updateStats() {
+        const text = textarea.value;
+        document.getElementById('charCount').innerText = text.length;
+        document.getElementById('wordCount').innerText = text.trim() ? text.trim().split(/\s+/).length : 0;
+        document.getElementById('lineCount').innerText = text ? text.split(/\r\n|\r|\n/).length : 0;
+    }
+
+    textarea.addEventListener('input', updateStats);
+
+    function toLowerCase() {
+        textarea.value = textarea.value.toLowerCase();
+        updateStats();
+    }
+
+    function toUpperCase() {
+        textarea.value = textarea.value.toUpperCase();
+        updateStats();
+    }
+
+    function toSentenceCase() {
+        let text = textarea.value.toLowerCase();
+        textarea.value = text.charAt(0).toUpperCase() + text.slice(1);
+        updateStats();
+    }
+
+    function toTitleCase() {
+        textarea.value = textarea.value.toLowerCase().split(' ').map(word => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }).join(' ');
+        updateStats();
+    }
+
+    function toInverseCase() {
+        let s = textarea.value;
+        let output = "";
+        for (let i = 0; i < s.length; i++) {
+            let character = s[i];
+            if (character == character.toUpperCase()) {
+                output += character.toLowerCase();
+            } else {
+                output += character.toUpperCase();
+            }
+        }
+        textarea.value = output;
+        updateStats();
+    }
+    
+    function toAlternatingCase() {
+        let chars = textarea.value.toLowerCase().split("");
+        for (let i = 1; i < chars.length; i += 2) {
+            chars[i] = chars[i].toUpperCase();
+        }
+        textarea.value = chars.join("");
+        updateStats();
+    }
+    
+    function toCapitalizedCase() {
+        textarea.value = textarea.value.toLowerCase().split(' ').map(word => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }).join(' ');
+        updateStats();
+    }
+</script>
+
+</body>
+</html>
