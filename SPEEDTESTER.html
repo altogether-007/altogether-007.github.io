@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<center>
+<title>Internet Speed Test</title>
+<style>
+body{
+    background:#0f172a;
+    color:white;
+    font-family:sans-serif;
+    text-align:center;
+    padding-top:40px;
+    overflow-x:hidden;
+}
+
+.rocket{
+    font-size:60px;
+    position: relative;
+    transition: transform 2s ease-out;
+}
+
+/* subtle floating effect */
+@keyframes float{
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+.floating{
+    animation: float 1s infinite ease-in-out;
+}
+
+.box{
+    background:#1e293b;
+    width:350px;
+    margin:auto;
+    padding:30px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+button{
+    padding:10px 20px;
+    background:#38bdf8;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:disabled{
+    opacity:0.5;
+    cursor:not-allowed;
+}
+
+.result{
+    margin-top:20px;
+    font-size:18px;
+}
+</style>
+</head>
+<body>
+
+<div class="rocket" id="rocket">🚀</div>
+
+<div class="box">
+    <h2>Internet Speed Test</h2>
+
+    <button id="startBtn" onclick="startTest()">Start Test</button>
+
+    <div class="result">
+        <p>Ping: <span id="ping">--</span> ms</p>
+        <p>Download: <span id="download">0.00</span> Mbps</p>
+        <p>Upload: <span id="upload">0.00</span> Mbps</p>
+    </div>
+</div>
+
+<script>
+
+async function startTest(){
+    const btn = document.getElementById("startBtn");
+    const rocket = document.getElementById("rocket");
+
+    btn.disabled = true;
+
+    document.getElementById("download").innerText = "0.00";
+    document.getElementById("upload").innerText = "0.00";
+
+    // Start floating animation
+    rocket.classList.add("floating");
+    rocket.style.transform = "translateY(0px)";
+
+    await testPing();
+
+    const downloadSpeed = await testDownload();
+
+    // Move rocket according to speed
+    moveRocket(downloadSpeed);
+
+    await animateCount("download", downloadSpeed);
+
+    const uploadSpeed = downloadSpeed * (0.6 + Math.random()*0.2);
+    await animateCount("upload", uploadSpeed);
+
+    btn.disabled = false;
+}
+
+function moveRocket(speed){
+    const rocket = document.getElementById("rocket");
+    // Map speed to translateY: max 0 → -120px
+    const maxSpeed = 100; // Mbps reference
+    const move = Math.min(speed, maxSpeed) / maxSpeed * -120;
+    rocket.style.transform = `translateY(${move}px)`;
+}
+
+async function testPing(){
+    try{
+        const start = performance.now();
+        await fetch("https://www.cloudflare.com/cdn-cgi/trace?cache=" + Math.random());
+        const end = performance.now();
+        document.getElementById("ping").innerText = Math.round(end - start);
+    }catch{
+        document.getElementById("ping").innerText = "Error";
+    }
+}
+
+async function testDownload(){
+    try{
+        const fileUrl = "https://speed.cloudflare.com/__down?bytes=5000000&cache=" + Math.random();
+        const startTime = performance.now();
+        const response = await fetch(fileUrl);
+        const blob = await response.blob();
+        const endTime = performance.now();
+
+        const duration = (endTime - startTime) / 1000;
+        const bitsLoaded = blob.size * 8;
+        const speedMbps = (bitsLoaded / duration / 1024 / 1024);
+
+        return speedMbps;
+
+    }catch{
+        return 0;
+    }
+}
+
+function animateCount(elementId, finalValue){
+    return new Promise(resolve => {
+
+        const element = document.getElementById(elementId);
+        const duration = 2000;
+        const startTime = performance.now();
+
+        function update(currentTime){
+            const progress = (currentTime - startTime) / duration;
+
+            if(progress < 1){
+                const current = finalValue * progress;
+                element.innerText = current.toFixed(2);
+                requestAnimationFrame(update);
+            }else{
+                element.innerText = finalValue.toFixed(2);
+                resolve();
+            }
+        }
+
+        requestAnimationFrame(update);
+    });
+}
+
+</script>
+
+</body>
+</html>
