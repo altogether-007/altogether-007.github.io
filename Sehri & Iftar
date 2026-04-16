@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramadan Sehri Iftar Widget BD</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:white;
+}
+
+.widget{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(12px);
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    width:360px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h2{
+    margin-bottom:5px;
+}
+
+.small{
+    font-size:14px;
+    opacity:.85;
+}
+
+.time-box{
+    background:rgba(255,255,255,0.15);
+    padding:15px;
+    margin:12px 0;
+    border-radius:12px;
+}
+
+.time{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.countdown{
+    font-size:20px;
+    margin-top:15px;
+    font-weight:bold;
+    color:#ffd369;
+}
+</style>
+</head>
+
+<body>
+
+<div class="widget">
+    <h2>🌙 Ramadan Bangladesh</h2>
+    <div class="small" id="todayDate"></div>
+    <div class="small" id="rojaNumber"></div>
+
+    <div class="time-box">
+        <div>Sehri Ends (Fajr)</div>
+        <div class="time" id="sehriTime">Loading...</div>
+    </div>
+
+    <div class="time-box">
+        <div>Iftar Time (Maghrib)</div>
+        <div class="time" id="iftarTime">Loading...</div>
+    </div>
+
+    <div class="countdown" id="countdown">Loading countdown...</div>
+</div>
+
+<script>
+
+// 🔥 Bangladesh Roja Adjustment
+let bdRamadanOffset = -1; 
+// যদি API ২ দেখায় কিন্তু BD তে ১ হয় → -1 রাখো
+// যদি মিল থাকে → 0 করে দিবে
+
+function cleanTime(timeStr){
+    return timeStr.split(" ")[0];
+}
+
+function format12Hour(timeStr){
+    let clean = cleanTime(timeStr);
+    let [hour, minute] = clean.split(":");
+    hour = parseInt(hour);
+    let ampm = hour >= 12 ? "PM" : "AM";
+    hour = hour % 12;
+    hour = hour ? hour : 12;
+    return `${hour}:${minute} ${ampm}`;
+}
+
+const today = new Date();
+document.getElementById("todayDate").innerText =
+    today.toDateString();
+
+fetch("https://api.aladhan.com/v1/timingsByCity?city=Dhaka&country=Bangladesh&method=1")
+.then(res=>res.json())
+.then(data=>{
+
+    const timings = data.data.timings;
+    const hijri = data.data.date.hijri;
+
+    const fajr = cleanTime(timings.Fajr);
+    const maghrib = cleanTime(timings.Maghrib);
+
+    document.getElementById("sehriTime").innerText =
+        format12Hour(fajr);
+
+    document.getElementById("iftarTime").innerText =
+        format12Hour(maghrib);
+
+    // BD Adjusted Roja Number
+    let bdRoja = parseInt(hijri.day) + bdRamadanOffset;
+    if(bdRoja < 1) bdRoja = 1;
+
+    document.getElementById("rojaNumber").innerText =
+        "Today: Roja #" + bdRoja + " (Bangladesh)";
+
+    const [h, m] = maghrib.split(":");
+    const iftarDate = new Date();
+    iftarDate.setHours(parseInt(h));
+    iftarDate.setMinutes(parseInt(m));
+    iftarDate.setSeconds(0);
+
+    function updateCountdown(){
+        const now = new Date();
+        let distance = iftarDate - now;
+
+        if(distance <= 0){
+            document.getElementById("countdown").innerText =
+                "Iftar Time! 🌙";
+            return;
+        }
+
+        const hours = Math.floor(distance / (1000*60*60));
+        const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+        const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+        document.getElementById("countdown").innerText =
+            "Iftar in: " + hours + "h " + minutes + "m " + seconds + "s";
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown,1000);
+
+})
+.catch(()=>{
+    document.getElementById("countdown").innerText =
+        "Error loading data";
+});
+
+</script>
+
+</body>
+</html>
