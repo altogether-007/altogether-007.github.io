@@ -23,6 +23,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
+
         h1 { 
             font-size: 22px; 
             color: #333; 
