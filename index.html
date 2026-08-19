@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altogether 007</title>
+
+    <meta name="title" content="Altogether 007 - All-in-One Useful Tools Hub">
+    <meta name="description" content="Altogether 007 is a versatile web portal featuring video downloaders, AI tools, games, speed testers, music, medical info, and more. All your essential tools in one place.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://altogether-007.github.io/">
+    <meta property="og:title" content="Altogether 007 - All-in-One Useful Tools Hub">
+    <meta property="og:image" content="https://i.postimg.cc/63nNfFKF/Altogether.png">
+
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/63nNfFKF/Altogether.png">
+
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            color: #00bfff;
+            margin: 20px 0 10px 10px;
+            font-size: 18px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            display: none;
+        }
+
+        .file-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .directory-item {
+            text-align: center;
+            border-radius: 12px;
+            background-color: #1a1a1a;
+            padding: 12px;
+            /* এখানে সাদা বর্ডার/আউটলাইন যোগ করা হয়েছে */
+            border: 2px solid #00FFFF; 
+            transition: transform .3s ease, border-color .3s ease;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .directory-item:hover {
+            transform: scale(1.03);
+            border-color: #00bfff; /* হোভার করলে বর্ডার নীল হয়ে যাবে */
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+        }
+
+        .directory-item img {
+            width: 80%;
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            border: 2px solid #00FFFF;
+            transition: transform .3s ease;
+        }
+
+        .directory-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .title-wrapper {
+            position: relative;
+            margin-top: 10px;
+            padding: 8px 28px 8px 8px;
+            border: 1px solid #00FFFF;
+            border-radius: 6px;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 18px;
+        }
+
+        .tool-title {
+            text-decoration: none;
+            color: #00bfff;
+            font-weight: 700;
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            width: 100%;
+        }
+
+        .fav-star {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #555;
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.2s, transform 0.2s;
+            line-height: 1;
+        }
+
+        .fav-star:hover {
+            transform: translateY(-50%) scale(1.2);
+            color: #fff;
+        }
+
+        .fav-star.active {
+            color: #ffd700;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Altogether 007</h1>
+
+    <h2 id="fav-heading" class="section-title">⭐ FAVORITES</h2>
+    <div id="fav-container" class="file-container"></div>
+
+    <h2 id="all-heading" class="section-title" style="display:block;">ALL TOOLS (A-Z)</h2>
+    <div id="main-container" class="file-container">
+
+        <!-- সবগুলো আইটেম আগের মতোই আছে -->
+        <div class="directory-item" data-id="avd">
+            <a href="https://altogether-007.github.io/AVD.html"><img src="https://images.dwncdn.net/images/t_app-icon-l/p/363c7a4b-d622-4380-91f3-ffc609ffffe2/296503600/2071_4-78704196-logo" alt="AVD"></a>
+            <div class="title-wrapper">
+                <a href="https://altogether-007.github.io/AVD.html" class="tool-title">ALL VIDEO DOWNLOADER</a>
+                <span class="fav-star" onclick="toggleFav('avd')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="games">
+            <a href="https://altogether-007.github.io/GAME.html"><img src="https://image.winudf.com/v2/image1/Y29tLm9uZXN0dWRpby5nYW1lQm95X2ljb25fMTY1MjExODA3OF8wODg/icon.png?w=184&fakeurl=1" alt="GAMES"></a>
+            <div class="title-wrapper">
+                <a href="https://altogether-007.github.io/GAME.html" class="tool-title">GAMES</a>
+                <span class="fav-star" onclick="toggleFav('games')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="tv">
+            <a href="https://altogether-007.github.io/TV.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIW4YRHkdp_SfpTVtkkqUPjHECX5B2-Ku1jEmoGXgfrFBJZXh2PGEvY_w&s=10" alt="TV"></a>
+            <div class="title-wrapper">
+                <a href="https://altogether-007.github.io/TV.html" class="tool-title">TV</a>
+                <span class="fav-star" onclick="toggleFav('tv')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="fibwatch">
+            <a href="https://f.pondit.xyz/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSQ0Php9p3pXSQzhG_0VYjjVNKXbPrgUX4dD-FHb_-xQ&s=10" alt="Fibwatch"></a>
+            <div class="title-wrapper">
+                <a href="https://f.pondit.xyz/" class="tool-title">Fibwatch</a>
+                <span class="fav-star" onclick="toggleFav('fibwatch')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="moviebox">
+            <a href="https://moviebox.ph/"><img src="https://movie-box.pk/wp-content/uploads/2025/11/movie-box.webp" alt="Moviebox"></a>
+            <div class="title-wrapper">
+                <a href="https://moviebox.ph/" class="tool-title">Moviebox</a>
+                <span class="fav-star" onclick="toggleFav('moviebox')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="netflix">
+            <a href="https://netmirror.gg"><img src="https://netmirrorapp.su/wp-content/uploads/2025/12/netmirorr-icon-300x300.webp" alt="Netflix"></a>
+            <div class="title-wrapper">
+                <a href="https://netmirror.gg" class="tool-title">Netflix</a>
+                <span class="fav-star" onclick="toggleFav('netflix')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="ai">
+            <a href="https://altogether-007.github.io/AI.html"><img src="https://img.freepik.com/premium-vector/generate-ai-artificial-intelligence-logo-ai-logo-concept_268834-2200.jpg?semt=ais_hybrid&w=740&q=80" alt="AI"></a>
+            <div class="title-wrapper">
+                <a href="https://altogether-007.github.io/AI.html" class="tool-title">AI</a>
+                <span class="fav-star" onclick="toggleFav('ai')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="tempmail">
+            <a href="https://temp-mail.org/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb04OT-uCyJHrauU1Gt8JqFwHfD1uJwkVWQUYFArJsyg&s" alt="TempMail"></a>
+            <div class="title-wrapper">
+                <a href="https://temp-mail.org/" class="tool-title">TempMail</a>
+                <span class="fav-star" onclick="toggleFav('tempmail')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="tunestation">
+            <a href="https://tunestation-official.vercel.app/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/3840px-Spotify_logo_without_text.svg.png" alt="TUNESTATION"></a>
+            <div class="title-wrapper">
+                <a href="https://tunestation-official.vercel.app/" class="tool-title">TUNESTATION</a>
+                <span class="fav-star" onclick="toggleFav('tunestation')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="radiogarden">
+            <a href="https://radio.garden/"><img src="https://play-lh.googleusercontent.com/07lewhVI4GklVBi_ehhOXxmB_bPaWWTiyqHAlQP6VsYD7h9R4d8hskNAy4SCOx0leNx-=w240-h480-rw" alt="RADIO GARDEN"></a>
+            <div class="title-wrapper">
+                <a href="https://radio.garden/" class="tool-title">RADIO GARDEN</a>
+                <span class="fav-star" onclick="toggleFav('radiogarden')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="translate">
+            <a href="https://translate.google.com/"><img src="https://www.gstatic.com/marketing-cms/5e/ec/5b5baeb34571b791b2020d4cacad/meta-image.png" alt="TRANSLATE"></a>
+            <div class="title-wrapper">
+                <a href="https://translate.google.com/" class="tool-title">TRANSLATE</a>
+                <span class="fav-star" onclick="toggleFav('translate')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="prescriptionreader">
+            <a href="https://prescriptionreaderai.msproduction.in/"><img src="https://play-lh.googleusercontent.com/KhqGT7HWjKpZTgygegQzhXe5OwUedXMyCZ4CVjmNg2ifa6bP3G2VahKn8CkrESDTY305" alt="PRESCRIPTION READER"></a>
+            <div class="title-wrapper">
+                <a href="https://prescriptionreaderai.msproduction.in/" class="tool-title">PRESCRIPTION READER</a>
+                <span class="fav-star" onclick="toggleFav('prescriptionreader')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="medexplus">
+            <a href="https://medex.com.bd/"><img src="https://play-lh.googleusercontent.com/DPOal5uUkNAzhf0eVL4Im9HuQor6AAYGHPJi9Rj90FvGMYQ25Fo2P8JMM9t0uVWd03Gl" alt="MEDEX PLUS"></a>
+            <div class="title-wrapper">
+                <a href="https://medex.com.bd/" class="tool-title">MEDEX PLUS</a>
+                <span class="fav-star" onclick="toggleFav('medexplus')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="mobileinfo">
+            <a href="https://m.gsmarena.com/"><img src="https://yt3.googleusercontent.com/N9Qlp4XZp5IMR4z1JRFT2p2AookwU-bniyAhN8jFe-DfpKlvhklPBUlYo4Bkbh4h0Gwfs1BoRA=s900-c-k-c0x00ffffff-no-rj" alt="MOBILE INFO"></a>
+            <div class="title-wrapper">
+                <a href="https://m.gsmarena.com/" class="tool-title">MOBILE INFO</a>
+                <span class="fav-star" onclick="toggleFav('mobileinfo')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="iteraplay">
+            <a href="https://iteraplay.com/"><img src="https://play-lh.googleusercontent.com/b9KKZIvnQ_X3eIqHXeR4e0Ftd3lrDgAIkJ8N1fAvgl6zpTLuX8m74aVlRnoeLQCcAnLMbSMRJGLvsmghheZe" alt="iTeraPlay"></a>
+            <div class="title-wrapper">
+                <a href="https://iteraplay.com/" class="tool-title">iTeraPlay</a>
+                <span class="fav-star" onclick="toggleFav('iteraplay')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="virustotal">
+            <a href="https://www.virustotal.com/gui/home/upload"><img src="https://images.icon-icons.com/2699/PNG/512/virustotal_logo_icon_171247.png" alt="VirusTotal"></a>
+            <div class="title-wrapper">
+                <a href="https://www.virustotal.com/gui/home/upload" class="tool-title">VirusTotal</a>
+                <span class="fav-star" onclick="toggleFav('virustotal')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="namaztime">
+            <a href="https://altogether-007.github.io/NamazTime.html"><img src="https://cdn-icons-png.freepik.com/256/14929/14929883.png?semt=ais_white_label" alt="Namaz Time"></a>
+            <div class="title-wrapper">
+                <a href="https://altogether-007.github.io/NamazTime.html" class="tool-title">Namaz Time</a>
+                <span class="fav-star" onclick="toggleFav('namaztime')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="datecalculator">
+            <a href="https://altogether.unaux.com/DateCalculator/"><img src="https://play-lh.googleusercontent.com/u7JRnieLjaMAe0RjC_FXGuUolY7jfOkZsEEMS3bY9laQBjM66AIreXgm-w_fLeagST0=w240-h480-rw" alt="Date Calculator"></a>
+            <div class="title-wrapper">
+                <a href="https://altogether.unaux.com/DateCalculator/" class="tool-title">Date Calculator</a>
+                <span class="fav-star" onclick="toggleFav('datecalculator')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="cashoutcharge">
+            <a href="https://altogether.unaux.com/CashoutCharge/"><img src="https://cdn-icons-png.flaticon.com/512/684/684240.png" alt="CashoutCharge"></a>
+            <div class="title-wrapper">
+                <a href="https://altogether.unaux.com/CashoutCharge/" class="tool-title">CashOutCharge</a>
+                <span class="fav-star" onclick="toggleFav('cashoutcharge')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="speedtester">
+            <a href="https://altogether.unaux.com/SPEEDTESTER/"><img src="https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F3053%2FPNG%2F512%2Fspeedtest_macos_bigsur_icon_189707.png&id=189707&pack_or_individual=pack" alt="SPEED TESTER"></a>
+            <div class="title-wrapper">
+                <a href="https://altogether.unaux.com/SPEEDTESTER/" class="tool-title">SPEED TESTER</a>
+                <span class="fav-star" onclick="toggleFav('speedtester')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="clock">
+            <a href="https://altogether.unaux.com/Clock/"><img src="https://img.icons8.com/clouds/1200/apple-clock.jpg" alt="CLOCK"></a>
+            <div class="title-wrapper">
+                <a href="https://altogether.unaux.com/Clock/" class="tool-title">CLOCK</a>
+                <span class="fav-star" onclick="toggleFav('clock')">★</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let favorites = JSON.parse(localStorage.getItem('altogether_favs')) || [];
+
+        function sortMainContainer() {
+            const mainContainer = document.getElementById('main-container');
+            const items = Array.from(mainContainer.children);
+            items.sort((a, b) => {
+                const titleA = a.querySelector('.tool-title').innerText.trim().toUpperCase();
+                const titleB = b.querySelector('.tool-title').innerText.trim().toUpperCase();
+                return titleA.localeCompare(titleB);
+            });
+            items.forEach(item => mainContainer.appendChild(item));
+        }
+
+        function renderFavorites() {
+            const favContainer = document.getElementById('fav-container');
+            const favHeading = document.getElementById('fav-heading');
+            favContainer.innerHTML = '';
+            
+            const allItems = document.querySelectorAll('#main-container .directory-item');
+
+            allItems.forEach(item => {
+                const id = item.getAttribute('data-id');
+                const star = item.querySelector('.fav-star');
+                if (favorites.includes(id)) {
+                    star.classList.add('active');
+                    const clone = item.cloneNode(true);
+                    favContainer.appendChild(clone);
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+            
+            favHeading.style.display = favorites.length > 0 ? 'block' : 'none';
+        }
+
+        function toggleFav(id) {
+            favorites = favorites.includes(id) ? favorites.filter(favId => favId !== id) : [...favorites, id];
+            localStorage.setItem('altogether_favs', JSON.stringify(favorites));
+            renderFavorites();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            sortMainContainer();
+            renderFavorites();
+        });
+    </script>
+</body>
+</html>
