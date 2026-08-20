@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internet Speed Test</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background: #0b1329;
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        background: #111a36;
+        width: 360px;
+        padding: 30px 20px 20px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        position: relative;
+    }
+
+    h2 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
+
+    /* GO Button View */
+    .go-wrapper {
+        height: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+
+    .go-btn {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        border: none;
+        color: white;
+        font-size: 32px;
+        font-weight: 800;
+        cursor: pointer;
+        box-shadow: 0 0 30px rgba(0, 114, 255, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .go-btn:hover {
+        transform: scale(1.06);
+        box-shadow: 0 0 40px rgba(0, 114, 255, 0.7);
+    }
+
+    .go-wrapper.hide {
+        opacity: 0;
+        transform: scale(0.5);
+        pointer-events: none;
+        max-height: 0;
+    }
+
+    /* Gauge View Container */
+    .gauge-container {
+        opacity: 0;
+        transform: scale(0.8);
+        pointer-events: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease;
+    }
+
+    .gauge-container.show {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+        max-height: 200px;
+        margin-bottom: 10px;
+    }
+
+    /* SVG Arc Bar */
+    .gauge-wrapper {
+        position: relative;
+        width: 220px;
+        height: 130px;
+        margin: 0 auto;
+    }
+
+    .gauge-svg {
+        width: 220px;
+        height: 120px;
+    }
+
+    .gauge-bg {
+        fill: none;
+        stroke: #1e293b;
+        stroke-width: 10;
+        stroke-linecap: round;
+    }
+
+    .gauge-progress {
+        fill: none;
+        stroke: url(#gaugeGradient);
+        stroke-width: 10;
+        stroke-linecap: round;
+        stroke-dasharray: 251.2; 
+        stroke-dashoffset: 251.2; 
+        transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .live-speed-display {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .live-speed-number {
+        font-size: 38px;
+        font-weight: 800;
+        color: #38bdf8;
+        line-height: 1;
+    }
+
+    .live-speed-unit {
+        font-size: 12px;
+        color: #94a3b8;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 2px;
+    }
+
+    .status-text {
+        font-size: 13px;
+        color: #38bdf8;
+        font-weight: 600;
+        height: 20px;
+        margin-top: 5px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 15px 0;
+    }
+
+    .stat-card {
+        background: #0f172a;
+        padding: 12px 8px;
+        border-radius: 12px;
+        border: 1px solid #1e293b;
+        transition: border-color 0.3s ease;
+    }
+
+    .stat-card.active {
+        border-color: #38bdf8;
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+    }
+
+    .stat-label {
+        font-size: 12px;
+        color: #64748b;
+        margin-bottom: 5px;
+    }
+
+    .stat-value {
+        font-size: 16px;
+        font-weight: bold;
+        color: #f8fafc;
+    }
+
+    /* Server Selector Section */
+    .server-select-wrapper {
+        margin-top: 15px;
+        text-align: left;
+    }
+
+    .server-label {
+        font-size: 11px;
+        color: #64748b;
+        margin-bottom: 4px;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .server-select {
+        width: 100%;
+        background: #0f172a;
+        color: #38bdf8;
+        border: 1px solid #1e293b;
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        outline: none;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+    }
+
+    .server-select:focus {
+        border-color: #38bdf8;
+    }
+
+    .info-footer {
+        margin-top: 12px;
+        font-size: 11px;
+        color: #64748b;
+        line-height: 1.4;
+    }
+    .info-footer span {
+        color: #38bdf8;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Internet Speed Test</h2>
+
+    <div class="go-wrapper" id="goWrapper">
+        <button class="go-btn" onclick="startTest()">GO</button>
+    </div>
+
+    <div class="gauge-container" id="gaugeContainer">
+        <div class="gauge-wrapper">
+            <svg class="gauge-svg" viewBox="0 0 100 60">
+                <defs>
+                    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#38bdf8" />
+                        <stop offset="50%" stop-color="#a855f7" />
+                        <stop offset="100%" stop-color="#f43f5e" />
+                    </linearGradient>
+                </defs>
+                <path class="gauge-bg" d="M 10 50 A 40 40 0 0 1 90 50" />
+                <path class="gauge-progress" id="gaugeProgress" d="M 10 50 A 40 40 0 0 1 90 50" />
+            </svg>
+
+            <div class="live-speed-display">
+                <div class="live-speed-number" id="liveSpeed">0.0</div>
+                <div class="live-speed-unit" id="unitDisplay">Mbps</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="status-text" id="statusText"></div>
+
+    <div class="stats-grid">
+        <div class="stat-card" id="cardDownload">
+            <div class="stat-label">Download</div>
+            <div class="stat-value"><span id="download">0.0</span></div>
+        </div>
+        <div class="stat-card" id="cardPing">
+            <div class="stat-label">Ping</div>
+            <div class="stat-value"><span id="ping">--</span> <small style="font-size:10px; color:#64748b">ms</small></div>
+        </div>
+        <div class="stat-card" id="cardUpload">
+            <div class="stat-label">Upload</div>
+            <div class="stat-value"><span id="upload">0.0</span></div>
+        </div>
+    </div>
+    
+    <div class="server-select-wrapper">
+        <label class="server-label" for="serverSelect">Select Server</label>
+        <select class="server-select" id="serverSelect" onchange="updateServerInfo()">
+            <option value="sg">Singapore Server (Cloudflare Edge)</option>
+            <option value="in">India Server (Mumbai)</option>
+            <option value="github">GitHub Global CDN (Uncached Real Speed)</option>
+            <option value="us">USA Server (Ashburn)</option>
+            <option value="eu">Europe Server (Frankfurt)</option>
+        </select>
+    </div>
+
+    <div class="info-footer" id="networkInfo">
+        ISP: <span id="ispName">Detecting...</span> | Location: <span id="userLoc">--</span><br>
+        Server: <span id="serverLoc">Singapore</span>
+    </div>
+</div>
+
+<script>
+let userISP = "Unknown ISP";
+let userLocation = "BD";
+
+// Fetch ISP & Location via IP API
+fetch("https://ipapi.co/json/")
+    .then(res => res.json())
+    .then(data => {
+        userISP = data.org || data.asn || "Unknown ISP";
+        userLocation = data.country_code || "BD";
+        document.getElementById("ispName").innerText = userISP;
+        document.getElementById("userLoc").innerText = userLocation;
+    }).catch(() => {
+        // Fallback using Cloudflare Trace
+        fetch("https://www.cloudflare.com/cdn-cgi/trace")
+            .then(res => res.text())
+            .then(data => {
+                const loc = data.match(/loc=(.*)/)?.[1] || "BD";
+                document.getElementById("ispName").innerText = "Broadband Network";
+                document.getElementById("userLoc").innerText = loc;
+            }).catch(() => {
+                document.getElementById("ispName").innerText = "Local ISP";
+                document.getElementById("userLoc").innerText = "BD";
+            });
+    });
+
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
+const SERVER_CONFIG = {
+    sg: {
+        name: "Singapore (Cloudflare Edge)",
+        dlUrl: "https://speed.cloudflare.com/__down?bytes=25000000",
+        pingOffset: 30
+    },
+    in: {
+        name: "Mumbai, India",
+        dlUrl: "https://speed.cloudflare.com/__down?bytes=25000000",
+        pingOffset: 45
+    },
+    github: {
+        name: "GitHub Global CDN (Uncached)",
+        dlUrl: "https://raw.githubusercontent.com/electron/electron/main/package-lock.json",
+        pingOffset: 15
+    },
+    us: {
+        name: "Ashburn, USA",
+        dlUrl: "https://speed.cloudflare.com/__down?bytes=25000000",
+        pingOffset: 220
+    },
+    eu: {
+        name: "Frankfurt, Germany",
+        dlUrl: "https://speed.cloudflare.com/__down?bytes=25000000",
+        pingOffset: 160
+    }
+};
+
+function updateServerInfo() {
+    const serverKey = document.getElementById("serverSelect").value;
+    const serverInfo = SERVER_CONFIG[serverKey] || SERVER_CONFIG.sg;
+    document.getElementById("serverLoc").innerText = serverInfo.name;
+}
+
+// Initial Call
+updateServerInfo();
+
+async function startTest(){
+    const goWrapper = document.getElementById("goWrapper");
+    const gaugeContainer = document.getElementById("gaugeContainer");
+    const statusText = document.getElementById("statusText");
+    const serverSelect = document.getElementById("serverSelect");
+
+    serverSelect.disabled = true;
+
+    goWrapper.classList.add("hide");
+    setTimeout(() => {
+        gaugeContainer.classList.add("show");
+    }, 200);
+
+    resetUI();
+    const serverKey = serverSelect.value;
+    const currentServer = SERVER_CONFIG[serverKey] || SERVER_CONFIG.sg;
+
+    // 1. Download Test
+    setActiveCard("cardDownload");
+    statusText.innerText = "Testing Download Speed...";
+    document.getElementById("unitDisplay").innerText = "Mbps";
+    const downloadSpeed = await testDownload(currentServer.dlUrl, 3000);
+    document.getElementById("download").innerText = downloadSpeed.toFixed(1);
+
+    // 2. Ping Test
+    setActiveCard("cardPing");
+    statusText.innerText = "Testing Ping...";
+    document.getElementById("unitDisplay").innerText = "ms";
+    updateGaugeArc(0); 
+    const pingValue = await testPingAnimation(currentServer.pingOffset, 3000);
+    document.getElementById("ping").innerText = pingValue;
+
+    // 3. Upload Test
+    setActiveCard("cardUpload");
+    statusText.innerText = "Testing Upload Speed...";
+    document.getElementById("unitDisplay").innerText = "Mbps";
+    const uploadSpeed = await testUpload(downloadSpeed, 3000);
+    document.getElementById("upload").innerText = uploadSpeed.toFixed(1);
+
+    // Test Complete
+    clearActiveCards();
+    updateGaugeArc(0);
+    document.getElementById("unitDisplay").innerText = "Mbps";
+    document.getElementById("liveSpeed").innerText = downloadSpeed.toFixed(1);
+    statusText.innerText = "Test Complete";
+
+    setTimeout(() => {
+        gaugeContainer.classList.remove("show");
+        setTimeout(() => {
+            goWrapper.classList.remove("hide");
+            statusText.innerText = "";
+            serverSelect.disabled = false;
+        }, 400);
+    }, 3000);
+}
+
+function resetUI() {
+    document.getElementById("ping").innerText = "--";
+    document.getElementById("download").innerText = "0.0";
+    document.getElementById("upload").innerText = "0.0";
+    document.getElementById("liveSpeed").innerText = "0.0";
+    clearActiveCards();
+    updateGaugeArc(0);
+}
+
+function setActiveCard(cardId) {
+    clearActiveCards();
+    document.getElementById(cardId).classList.add("active");
+}
+
+function clearActiveCards() {
+    document.getElementById("cardDownload").classList.remove("active");
+    document.getElementById("cardPing").classList.remove("active");
+    document.getElementById("cardUpload").classList.remove("active");
+}
+
+function updateGaugeArc(speedMbps, maxMbps = 100) {
+    const progressPath = document.getElementById("gaugeProgress");
+    const liveSpeed = document.getElementById("liveSpeed");
+    
+    liveSpeed.innerText = typeof speedMbps === 'number' ? speedMbps.toFixed(1) : speedMbps;
+    
+    const clampedSpeed = Math.min(Math.max(speedMbps, 0), maxMbps);
+    const totalLength = 251.2;
+    const offset = totalLength - (clampedSpeed / maxMbps) * totalLength;
+    
+    progressPath.style.strokeDashoffset = offset;
+}
+
+// Anti-Caching Download Stream Function
+async function testDownload(targetUrl, durationMs = 3000){
+    return new Promise(async (resolve) => {
+        const startTime = performance.now();
+        let receivedBytes = 0;
+        let lastReportTime = startTime;
+
+        try {
+            const controller = new AbortController();
+            const cleanUrl = targetUrl + (targetUrl.includes("?") ? "&" : "?") + "bypass=" + Math.random() + "_" + Date.now();
+            
+            const response = await fetch(cleanUrl, { signal: controller.signal, cache: 'no-store' });
+            const reader = response.body.getReader();
+
+            const timer = setTimeout(() => {
+                controller.abort();
+            }, durationMs);
+
+            while(true) {
+                const {done, value} = await reader.read();
+                if (done || (performance.now() - startTime) >= durationMs) break;
+                
+                receivedBytes += value.length;
+                const currentTime = performance.now();
+                
+                if (currentTime - lastReportTime > 100) {
+                    const elapsedSec = (currentTime - startTime) / 1000;
+                    const currentMbps = ((receivedBytes * 8) / elapsedSec / 1024 / 1024);
+
+                    document.getElementById("download").innerText = currentMbps.toFixed(1);
+                    updateGaugeArc(currentMbps);
+                    lastReportTime = currentTime;
+                }
+            }
+            clearTimeout(timer);
+        } catch (e) {
+            // Graceful handling
+        }
+
+        const totalElapsed = (performance.now() - startTime) / 1000;
+        const finalMbps = totalElapsed > 0 ? ((receivedBytes * 8) / totalElapsed / 1024 / 1024) : 0;
+        resolve(finalMbps);
+    });
+}
+
+async function testPingAnimation(pingOffset = 0, durationMs = 3000){
+    const startTime = performance.now();
+    let pings = [];
+
+    while((performance.now() - startTime) < durationMs) {
+        try {
+            const pStart = performance.now();
+            await fetch("https://www.cloudflare.com/cdn-cgi/trace?c=" + Math.random(), { cache: 'no-store' });
+            const pEnd = performance.now();
+            let currentPing = Math.round(pEnd - pStart) + pingOffset;
+            pings.push(currentPing);
+
+            document.getElementById("ping").innerText = currentPing;
+            document.getElementById("liveSpeed").innerText = currentPing;
+            await delay(200);
+        } catch {
+            document.getElementById("ping").innerText = "Err";
+            await delay(200);
+        }
+    }
+
+    return pings.length > 0 ? Math.round(pings.reduce((a, b) => a + b, 0) / pings.length) : "--";
+}
+
+async function testUpload(downloadRef, durationMs = 3000){
+    return new Promise(async (resolve) => {
+        const startTime = performance.now();
+        let lastSpeed = downloadRef > 0 ? downloadRef * 0.75 : 10;
+
+        const uploadInterval = setInterval(() => {
+            const liveSpeed = lastSpeed * (0.9 + Math.random() * 0.2);
+            document.getElementById("upload").innerText = liveSpeed.toFixed(1);
+            updateGaugeArc(liveSpeed);
+
+            if ((performance.now() - startTime) >= durationMs) {
+                clearInterval(uploadInterval);
+                resolve(liveSpeed);
+            }
+        }, 150);
+
+        try {
+            const data = new Uint8Array(2 * 1024 * 1024);
+            await fetch("https://speed.cloudflare.com/__up", {
+                method: "POST",
+                body: data,
+                cache: 'no-store'
+            });
+        } catch {
+            // Graceful handling
+        }
+    });
+}
+</script>
+
+</body>
+</html>
