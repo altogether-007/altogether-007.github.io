@@ -50,7 +50,6 @@
             border-radius: 12px;
             background-color: #1a1a1a;
             padding: 12px;
-            /* এখানে সাদা বর্ডার/আউটলাইন যোগ করা হয়েছে */
             border: 2px solid #00FFFF; 
             transition: transform .3s ease, border-color .3s ease;
             box-sizing: border-box;
@@ -61,7 +60,7 @@
 
         .directory-item:hover {
             transform: scale(1.03);
-            border-color: #00bfff; /* হোভার করলে বর্ডার নীল হয়ে যাবে */
+            border-color: #00bfff;
             box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
         }
 
@@ -91,7 +90,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 18px;
+            min-height: 32px;
         }
 
         .tool-title {
@@ -99,9 +98,10 @@
             color: #00bfff;
             font-weight: 700;
             font-size: 12px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            white-space: normal;
+            word-break: break-word;
+            line-height: 1.3;
+            text-align: center;
             display: block;
             width: 100%;
         }
@@ -140,7 +140,6 @@
     <h2 id="all-heading" class="section-title" style="display:block;">ALL TOOLS (A-Z)</h2>
     <div id="main-container" class="file-container">
 
-        <!-- সবগুলো আইটেম আগের মতোই আছে -->
         <div class="directory-item" data-id="avd">
             <a href="https://altogether-007.github.io/AVD.html"><img src="https://images.dwncdn.net/images/t_app-icon-l/p/363c7a4b-d622-4380-91f3-ffc609ffffe2/296503600/2071_4-78704196-logo" alt="AVD"></a>
             <div class="title-wrapper">
@@ -268,6 +267,14 @@
                 <span class="fav-star" onclick="toggleFav('virustotal')">★</span>
             </div>
         </div>
+        
+        <div class="directory-item" data-id="apkinfo">
+            <a href="https://sisik.eu/apk-tool"><img src="https://img.utdstc.com/icon/f22/766/f22766bca56b5848a032fa9328383a7edd0dc1b73043a46adb25f3217001ae29:600" alt="apkinfo"></a>
+            <div class="title-wrapper">
+                <a href="https://sisik.eu/apk-tool" class="tool-title">APK Info</a>
+                <span class="fav-star" onclick="toggleFav('apkinfo')">★</span>
+            </div>
+        </div>
 
         <div class="directory-item" data-id="namaztime">
             <a href="https://altogether-007.github.io/NamazTime.html"><img src="https://cdn-icons-png.freepik.com/256/14929/14929883.png?semt=ais_white_label" alt="Namaz Time"></a>
@@ -292,9 +299,17 @@
                 <span class="fav-star" onclick="toggleFav('cashoutcharge')">★</span>
             </div>
         </div>
+        
+        <div class="directory-item" data-id="Gmailinfo">
+            <a href="https://intelbase.is/"><img src="https://static.vecteezy.com/system/resources/thumbnails/046/719/190/small/email-icon-glyph-icon-for-your-website-mobile-presentation-and-logo-design-vector.jpg" alt="Gmailinfo"></a>
+            <div class="title-wrapper">
+                <a href="https://intelbase.is/" class="tool-title">Gmail Info</a>
+                <span class="fav-star" onclick="toggleFav('Gmailinfo')">★</span>
+            </div>
+        </div>
 
         <div class="directory-item" data-id="speedtester">
-            <a href="https://altogether.unaux.com/SPEEDTESTER/"><img src="https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F3053%2FPNG%2F512%2Fspeedtest_macos_bigsur_icon_189707.png&id=189707&pack_or_individual=pack" alt="SPEED TESTER"></a>
+            <a href="https://altogether.unaux.com/SPEEDTESTER/"><img src="https://static.vecteezy.com/system/resources/previews/004/948/021/non_2x/flat-illustration-of-speed-test-gauge-suitable-for-design-element-of-internet-speed-test-and-poor-or-good-speed-indicator-measurement-free-vector.jpg" alt="SPEED TESTER"></a>
             <div class="title-wrapper">
                 <a href="https://altogether.unaux.com/SPEEDTESTER/" class="tool-title">SPEED TESTER</a>
                 <span class="fav-star" onclick="toggleFav('speedtester')">★</span>
