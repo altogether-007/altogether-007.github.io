@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QuickDrop</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  background:linear-gradient(135deg,#111827,#312e81);
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.app{
+  width:min(94%,650px);
+  text-align:center;
+}
+
+.logo{
+  font-size:38px;
+  font-weight:800;
+  margin-bottom:5px;
+}
+
+.sub{
+  color:#cbd5e1;
+  margin-bottom:25px;
+}
+
+.card{
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:25px;
+  padding:25px;
+  backdrop-filter:blur(18px);
+  box-shadow:0 25px 70px #0006;
+}
+
+button{
+  border:0;
+  border-radius:14px;
+  padding:14px 22px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  color:white;
+  background:#6366f1;
+}
+
+button:hover{
+  background:#4f46e5;
+}
+
+.drop{
+  margin-top:20px;
+  padding:50px 20px;
+  border:2px dashed #818cf8;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.drop:hover{
+  background:#6366f122;
+}
+
+.icon{
+  font-size:55px;
+}
+
+input[type=file]{
+  display:none;
+}
+
+#qr{
+  margin:20px auto;
+  padding:15px;
+  background:white;
+  width:max-content;
+  border-radius:15px;
+}
+
+textarea{
+  width:100%;
+  min-height:100px;
+  margin-top:15px;
+  border:0;
+  border-radius:12px;
+  padding:12px;
+  resize:vertical;
+}
+
+.progress{
+  margin-top:20px;
+  text-align:left;
+}
+
+.bar{
+  height:9px;
+  background:#334155;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#6366f1,#22c55e);
+}
+
+.status{
+  margin:15px 0;
+  color:#cbd5e1;
+}
+
+.hidden{
+  display:none;
+}
+
+footer{
+  margin-top:18px;
+  color:#94a3b8;
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <div class="logo">⚡ QuickDrop</div>
+
+  <div class="sub">
+    Send files directly between browsers
+  </div>
+
+  <div class="card">
+
+    <div id="status" class="status">
+      Ready
+    </div>
+
+    <button id="createBtn">
+      Create Connection
+    </button>
+
+    <div id="qrBox" class="hidden">
+      <p>📱 Scan this QR from the other device</p>
+      <div id="qr"></div>
+      <small>
+        Then send the generated answer back to this device.
+      </small>
+    </div>
+
+    <div id="answerBox" class="hidden">
+
+      <p>Paste the answer from the other device:</p>
+
+      <textarea
+        id="answerInput"
+        placeholder="Paste answer here..."
+      ></textarea>
+
+      <br><br>
+
+      <button id="answerBtn">
+        Connect
+      </button>
+
+    </div>
+
+    <label class="drop">
+
+      <div class="icon">📁</div>
+
+      <h2>Choose files</h2>
+
+      <p>Click here to select files</p>
+
+      <input
+        id="fileInput"
+        type="file"
+        multiple
+      >
+
+    </label>
+
+    <div id="progress"></div>
+
+  </div>
+
+  <footer>
+    WebRTC • Browser-to-browser transfer
+  </footer>
+
+</div>
+
+<script>
+
+const statusEl =
+  document.getElementById("status");
+
+const createBtn =
+  document.getElementById("createBtn");
+
+const qrBox =
+  document.getElementById("qrBox");
+
+const answerBox =
+  document.getElementById("answerBox");
+
+const answerInput =
+  document.getElementById("answerInput");
+
+const answerBtn =
+  document.getElementById("answerBtn");
+
+const fileInput =
+  document.getElementById("fileInput");
+
+const progress =
+  document.getElementById("progress");
+
+let pc = null;
+let channel = null;
+
+const CHUNK = 64 * 1024;
+
+function status(text){
+  statusEl.textContent = text;
+}
+
+function createPeer(){
+
+  pc = new RTCPeerConnection({
+    iceServers:[
+      {
+        urls:"stun:stun.l.google.com:19302"
+      }
+    ]
+  });
+
+  pc.onconnectionstatechange = () => {
+    status(
+      "Connection: " +
+      pc.connectionState
+    );
+  };
+
+  pc.onicecandidate = () => {};
+
+}
+
+function setupChannel(ch){
+
+  channel = ch;
+
+  channel.binaryType =
+    "arraybuffer";
+
+  channel.onopen = () => {
+    status("🟢 Connected! Ready to send files.");
+  };
+
+  channel.onmessage =
+    receiveData;
+
+}
+
+function createProgress(name){
+
+  const box =
+    document.createElement("div");
+
+  box.className =
+    "progress";
+
+  box.innerHTML = `
+    <b>${escapeHTML(name)}</b>
+    <div class="bar">
+      <div class="fill"></div>
+    </div>
+  `;
+
+  progress.appendChild(box);
+
+  return box.querySelector(".fill");
+}
+
+function escapeHTML(text){
+
+  return text.replace(
+    /[&<>"']/g,
+    c => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[c])
+  );
+
+}
+
+async function sendFile(file){
+
+  const fill =
+    createProgress(file.name);
+
+  channel.send(JSON.stringify({
+    type:"start",
+    name:file.name,
+    size:file.size,
+    mime:file.type
+  }));
+
+  let offset = 0;
+
+  while(offset < file.size){
+
+    while(
+      channel.bufferedAmount >
+      CHUNK * 8
+    ){
+
+      await new Promise(
+        r => setTimeout(r,20)
+      );
+
+    }
+
+    const chunk =
+      await file
+        .slice(
+          offset,
+          offset + CHUNK
+        )
+        .arrayBuffer();
+
+    channel.send(chunk);
+
+    offset += chunk.byteLength;
+
+    fill.style.width =
+      Math.round(
+        offset / file.size * 100
+      ) + "%";
+  }
+
+  channel.send(
+    JSON.stringify({
+      type:"end"
+    })
+  );
+
+}
+
+async function sendFiles(files){
+
+  if(
+    !channel ||
+    channel.readyState !== "open"
+  ){
+
+    alert(
+      "Connect another device first."
+    );
+
+    return;
+  }
+
+  for(const file of files){
+    await sendFile(file);
+  }
+
+}
+
+let incoming = null;
+
+function receiveData(event){
+
+  if(typeof event.data === "string"){
+
+    const msg =
+      JSON.parse(event.data);
+
+    if(msg.type === "start"){
+
+      incoming = {
+        name:msg.name,
+        size:msg.size,
+        mime:msg.mime,
+        received:0,
+        chunks:[],
+        fill:createProgress(
+          "Receiving: " +
+          msg.name
+        )
+      };
+
+    }
+
+    if(msg.type === "end"){
+
+      if(!incoming) return;
+
+      const blob =
+        new Blob(
+          incoming.chunks,
+          {type:incoming.mime}
+        );
+
+      const url =
+        URL.createObjectURL(blob);
+
+      const a =
+        document.createElement("a");
+
+      a.href = url;
+      a.download = incoming.name;
+
+      a.click();
+
+      setTimeout(
+        () => URL.revokeObjectURL(url),
+        2000
+      );
+
+      status(
+        "✅ Received: " +
+        incoming.name
+      );
+
+      incoming = null;
+
+    }
+
+    return;
+  }
+
+  if(!incoming) return;
+
+  incoming.chunks.push(
+    event.data
+  );
+
+  incoming.received +=
+    event.data.byteLength;
+
+  incoming.fill.style.width =
+    Math.round(
+      incoming.received /
+      incoming.size * 100
+    ) + "%";
+
+}
+
+createBtn.onclick =
+async function(){
+
+  createPeer();
+
+  channel =
+    pc.createDataChannel("files");
+
+  setupChannel(channel);
+
+  const offer =
+    await pc.createOffer();
+
+  await pc.setLocalDescription(
+    offer
+  );
+
+  await waitIce();
+
+  const data =
+    JSON.stringify(
+      pc.localDescription
+    );
+
+  document.getElementById("qr").innerHTML = "";
+
+  new QRCode(
+    document.getElementById("qr"),
+    {
+      text:data,
+      width:240,
+      height:240
+    }
+  );
+
+  qrBox.classList.remove(
+    "hidden"
+  );
+
+  answerBox.classList.remove(
+    "hidden"
+  );
+
+  status(
+    "Scan the QR on the other device."
+  );
+
+};
+
+answerBtn.onclick =
+async function(){
+
+  try{
+
+    const data =
+      JSON.parse(
+        answerInput.value
+      );
+
+    await pc.setRemoteDescription(
+      new RTCSessionDescription(data)
+    );
+
+    status(
+      "Connecting..."
+    );
+
+  }catch(e){
+
+    alert(
+      "Invalid connection data."
+    );
+
+  }
+
+};
+
+async function waitIce(){
+
+  if(pc.iceGatheringState === "complete")
+    return;
+
+  await new Promise(resolve => {
+
+    const timeout =
+      setTimeout(
+        resolve,
+        5000
+      );
+
+    pc.onicegatheringstatechange =
+      () => {
+
+        if(
+          pc.iceGatheringState ===
+          "complete"
+        ){
+
+          clearTimeout(timeout);
+          resolve();
+
+        }
+
+      };
+
+  });
+
+}
+
+fileInput.onchange =
+() => sendFiles(
+  fileInput.files
+);
+
+</script>
+
+</body>
+</html>
+
