@@ -137,7 +137,7 @@
     <h2 id="fav-heading" class="section-title">⭐ FAVORITES</h2>
     <div id="fav-container" class="file-container"></div>
 
-    <h2 id="all-heading" class="section-title" style="display:block;">ALL TOOLS (A-Z)</h2>
+    <h2 id="all-heading" class="section-title" style="display:block;">ALL TOOLS</h2>
     <div id="main-container" class="file-container">
 
         <div class="directory-item" data-id="avd">
@@ -308,6 +308,14 @@
             </div>
         </div>
 
+        <div class="directory-item" data-id="File Share">
+            <a href="https://pairdrop.net/"><img src="https://aroundsketch.com/Apple-App-Icons/App-Icon/Apple/AirDrop/@SVG.svg" alt="File Share"></a>
+            <div class="title-wrapper">
+                <a href="https://pairdrop.net/" class="tool-title">File Share</a>
+                <span class="fav-star" onclick="toggleFav('File Share')">★</span>
+            </div>
+        </div>
+
         <div class="directory-item" data-id="speedtester">
             <a href="https://altogether.unaux.com/SPEEDTESTER/"><img src="https://static.vecteezy.com/system/resources/previews/004/948/021/non_2x/flat-illustration-of-speed-test-gauge-suitable-for-design-element-of-internet-speed-test-and-poor-or-good-speed-indicator-measurement-free-vector.jpg" alt="SPEED TESTER"></a>
             <div class="title-wrapper">
@@ -325,6 +333,27 @@
         </div>
 
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
     <script>
         let favorites = JSON.parse(localStorage.getItem('altogether_favs')) || [];
