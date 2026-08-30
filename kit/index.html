@@ -3,16 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>QuickDrop</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -34,7 +31,6 @@ body{
 .logo{
   font-size:38px;
   font-weight:800;
-  margin-bottom:5px;
 }
 
 .sub{
@@ -49,6 +45,25 @@ body{
   padding:25px;
   backdrop-filter:blur(18px);
   box-shadow:0 25px 70px #0006;
+}
+
+.status{
+  margin:15px 0;
+  color:#cbd5e1;
+}
+
+.dot{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#64748b;
+  margin-right:6px;
+}
+
+.dot.online{
+  background:#22c55e;
+  box-shadow:0 0 10px #22c55e;
 }
 
 button{
@@ -79,59 +94,48 @@ button:disabled{
   cursor:not-allowed;
 }
 
-.status{
-  margin:15px 0;
-  color:#cbd5e1;
+.buttons{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.panel{
+  margin-top:20px;
+  padding:18px;
+  background:#0002;
+  border-radius:18px;
 }
 
 .hidden{
   display:none!important;
 }
 
-.panel{
-  margin-top:18px;
-  padding:18px;
-  background:#0002;
-  border-radius:18px;
+.room{
+  font-size:42px;
+  font-weight:900;
+  letter-spacing:8px;
+  margin:15px 0;
+  color:#a5b4fc;
 }
 
 #qr{
-  margin:20px auto;
-  padding:15px;
-  background:white;
   width:max-content;
+  margin:15px auto;
+  padding:15px;
+  background:#fff;
   border-radius:15px;
-}
-
-.code{
-  margin-top:10px;
-  background:#020617;
-  color:#94a3b8;
-  padding:8px;
-  border-radius:10px;
-  font-size:9px;
-  line-height:1.2;
-  max-height:55px;
-  overflow:auto;
-  word-break:break-all;
-  text-align:left;
 }
 
 textarea{
   width:100%;
-  min-height:65px;
-  margin-top:8px;
+  min-height:70px;
   border:0;
-  border-radius:10px;
-  padding:10px;
+  border-radius:12px;
+  padding:12px;
   resize:vertical;
   font-family:monospace;
-  font-size:11px;
-  outline:none;
-}
-
-textarea:focus{
-  box-shadow:0 0 0 2px #818cf8;
 }
 
 .drop{
@@ -157,14 +161,14 @@ input[type=file]{
 }
 
 .progress{
-  margin-top:20px;
+  margin-top:18px;
   text-align:left;
 }
 
 .progress-head{
   display:flex;
   justify-content:space-between;
-  margin-bottom:6px;
+  margin-bottom:7px;
   font-size:14px;
 }
 
@@ -181,21 +185,12 @@ input[type=file]{
   background:linear-gradient(90deg,#6366f1,#22c55e);
 }
 
-.actions{
-  display:flex;
-  gap:8px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
-
 #scanner{
   position:relative;
-  width:100%;
   max-width:420px;
   margin:15px auto;
-  border-radius:18px;
   overflow:hidden;
+  border-radius:18px;
   background:#000;
 }
 
@@ -250,11 +245,12 @@ Send files directly between browsers
 
 <div class="card">
 
-<div id="status" class="status">
-Ready
+<div class="status">
+<span id="dot" class="dot"></span>
+<span id="status">Ready</span>
 </div>
 
-<div class="actions">
+<div class="buttons">
 
 <button id="createBtn">
 📤 Create Connection
@@ -267,46 +263,21 @@ Ready
 </div>
 
 
-<!-- CREATOR -->
+<!-- CREATE -->
 
-<div id="creatorPanel" class="panel hidden">
+<div id="createPanel" class="panel hidden">
 
-<h3>📱 Scan this QR</h3>
+<h3>Share this code</h3>
+
+<div id="roomCode" class="room">
+------
+</div>
 
 <div id="qr"></div>
 
 <small>
-Scan this QR from the other device.
+Scan this QR or enter the 6-digit code on the other device.
 </small>
-
-<div class="code" id="offerCode"></div>
-
-<div class="actions">
-
-<button id="copyOfferBtn" class="secondary">
-📋 Copy
-</button>
-
-</div>
-
-<hr style="border-color:#ffffff18;margin:18px 0">
-
-<small>
-Paste answer:
-</small>
-
-<textarea
-id="answerInput"
-placeholder="Paste answer..."
-></textarea>
-
-<div class="actions">
-
-<button id="connectBtn">
-Connect
-</button>
-
-</div>
 
 </div>
 
@@ -315,9 +286,9 @@ Connect
 
 <div id="joinPanel" class="panel hidden">
 
-<h3>📥 Join Connection</h3>
+<h3>Join Connection</h3>
 
-<div class="actions">
+<div class="buttons">
 
 <button id="scanBtn">
 📷 Scan QR
@@ -327,13 +298,13 @@ Connect
 id="manualBtn"
 class="secondary"
 >
-⌨️ Paste
+⌨️ Enter Code
 </button>
 
 </div>
 
 
-<!-- CAMERA -->
+<!-- SCANNER -->
 
 <div
 id="scannerPanel"
@@ -373,54 +344,38 @@ class="danger"
 </div>
 
 
-<!-- MANUAL -->
+<!-- CODE INPUT -->
 
 <div
-id="manualPanel"
+id="codePanel"
 class="hidden"
 >
 
-<textarea
-id="offerInput"
-placeholder="Paste offer..."
-></textarea>
+<p>
+Enter the 6-digit code:
+</p>
 
-<div class="actions">
-
-<button id="generateAnswerBtn">
-Generate Answer
-</button>
-
-</div>
-
-</div>
-
-
-<!-- ANSWER -->
-
-<div
-id="answerPanel"
-class="hidden"
+<input
+id="codeInput"
+inputmode="numeric"
+maxlength="6"
+placeholder="123456"
+style="
+width:100%;
+padding:16px;
+border:0;
+border-radius:12px;
+font-size:28px;
+font-weight:800;
+text-align:center;
+letter-spacing:8px;
+"
 >
 
-<hr style="border-color:#ffffff18">
+<div class="buttons" style="margin-top:12px">
 
-<small>
-Copy this answer to Device A:
-</small>
-
-<div
-id="answerCode"
-class="code"
-></div>
-
-<div class="actions">
-
-<button
-id="copyAnswerBtn"
-class="secondary"
->
-📋 Copy Answer
+<button id="joinCodeBtn">
+Join
 </button>
 
 </div>
@@ -430,7 +385,7 @@ class="secondary"
 </div>
 
 
-<!-- FILE -->
+<!-- FILE DROP -->
 
 <label
 id="drop"
@@ -459,7 +414,7 @@ multiple
 </div>
 
 <footer>
-WebRTC • Browser-to-browser transfer
+WebRTC • Peer-to-peer file transfer
 </footer>
 
 </div>
@@ -468,116 +423,21 @@ WebRTC • Browser-to-browser transfer
 <script>
 "use strict";
 
-
 /* =========================
-ELEMENTS
+CONFIG
 ========================= */
 
-const statusEl =
-document.getElementById("status");
+/*
+ IMPORTANT:
+ Replace this with your deployed
+ WebSocket server URL.
 
-const createBtn =
-document.getElementById("createBtn");
+ Example:
+ wss://quickdrop-server.example.com
+*/
+const SIGNALING_SERVER =
+"wss://YOUR-SERVER-DOMAIN";
 
-const joinBtn =
-document.getElementById("joinBtn");
-
-const creatorPanel =
-document.getElementById("creatorPanel");
-
-const joinPanel =
-document.getElementById("joinPanel");
-
-const qr =
-document.getElementById("qr");
-
-const offerCode =
-document.getElementById("offerCode");
-
-const answerCode =
-document.getElementById("answerCode");
-
-const answerInput =
-document.getElementById("answerInput");
-
-const offerInput =
-document.getElementById("offerInput");
-
-const connectBtn =
-document.getElementById("connectBtn");
-
-const generateAnswerBtn =
-document.getElementById(
-"generateAnswerBtn"
-);
-
-const copyOfferBtn =
-document.getElementById(
-"copyOfferBtn"
-);
-
-const copyAnswerBtn =
-document.getElementById(
-"copyAnswerBtn"
-);
-
-const scanBtn =
-document.getElementById("scanBtn");
-
-const stopScanBtn =
-document.getElementById(
-"stopScanBtn"
-);
-
-const manualBtn =
-document.getElementById("manualBtn");
-
-const scannerPanel =
-document.getElementById(
-"scannerPanel"
-);
-
-const manualPanel =
-document.getElementById(
-"manualPanel"
-);
-
-const answerPanel =
-document.getElementById(
-"answerPanel"
-);
-
-const video =
-document.getElementById("video");
-
-const canvas =
-document.getElementById("canvas");
-
-const scanMessage =
-document.getElementById(
-"scanMessage"
-);
-
-const fileInput =
-document.getElementById(
-"fileInput"
-);
-
-const drop =
-document.getElementById("drop");
-
-const progress =
-document.getElementById(
-"progress"
-);
-
-
-/* =========================
-WEBRTC
-========================= */
-
-let pc = null;
-let channel = null;
 
 const CHUNK =
 64 * 1024;
@@ -596,15 +456,85 @@ urls:
 
 
 /* =========================
-RECEIVE
+ELEMENTS
 ========================= */
 
-let incoming = null;
+const statusEl =
+document.getElementById("status");
+
+const dot =
+document.getElementById("dot");
+
+const createBtn =
+document.getElementById("createBtn");
+
+const joinBtn =
+document.getElementById("joinBtn");
+
+const createPanel =
+document.getElementById("createPanel");
+
+const joinPanel =
+document.getElementById("joinPanel");
+
+const roomCode =
+document.getElementById("roomCode");
+
+const qr =
+document.getElementById("qr");
+
+const scanBtn =
+document.getElementById("scanBtn");
+
+const manualBtn =
+document.getElementById("manualBtn");
+
+const scannerPanel =
+document.getElementById("scannerPanel");
+
+const codePanel =
+document.getElementById("codePanel");
+
+const codeInput =
+document.getElementById("codeInput");
+
+const joinCodeBtn =
+document.getElementById("joinCodeBtn");
+
+const stopScanBtn =
+document.getElementById("stopScanBtn");
+
+const video =
+document.getElementById("video");
+
+const canvas =
+document.getElementById("canvas");
+
+const scanMessage =
+document.getElementById("scanMessage");
+
+const fileInput =
+document.getElementById("fileInput");
+
+const drop =
+document.getElementById("drop");
+
+const progress =
+document.getElementById("progress");
 
 
 /* =========================
-CAMERA
+STATE
 ========================= */
+
+let socket = null;
+let pc = null;
+let channel = null;
+
+let currentRoom = null;
+let role = null;
+
+let incoming = null;
 
 let cameraStream = null;
 let scanning = false;
@@ -618,6 +548,16 @@ function status(text){
 
 statusEl.textContent =
 text;
+
+}
+
+
+function online(value){
+
+dot.classList.toggle(
+"online",
+value
+);
 
 }
 
@@ -640,50 +580,88 @@ el.classList.add(
 }
 
 
-function sleep(ms){
+function randomId(){
+
+return Math.random()
+.toString(36)
+.slice(2,10);
+
+}
+
+
+/* =========================
+SIGNALING
+========================= */
+
+function connectSocket(){
 
 return new Promise(
-resolve =>
-setTimeout(resolve,ms)
+(resolve,reject)=>{
+
+socket =
+new WebSocket(
+SIGNALING_SERVER
 );
 
-}
+
+socket.onopen = () => {
+
+resolve();
+
+};
 
 
-function escapeHTML(text){
+socket.onerror = () => {
 
-return text.replace(
-/[&<>"']/g,
-c => ({
-
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#039;"
-
-}[c])
+reject(
+new Error(
+"WebSocket connection failed"
+)
 );
 
-}
+};
 
 
-async function copyText(text){
+socket.onclose = () => {
 
-try{
-
-await navigator.clipboard.writeText(
-text
-);
+if(
+pc &&
+pc.connectionState !==
+"connected"
+){
 
 status(
-"✅ Copied"
+"Signaling server disconnected."
 );
 
-}catch{
+}
 
-alert(
-"Copy failed. Copy manually."
+};
+
+
+socket.onmessage =
+event => {
+
+handleSignal(
+JSON.parse(event.data)
+);
+
+};
+
+});
+}
+
+
+function sendSignal(data){
+
+if(
+socket &&
+socket.readyState ===
+WebSocket.OPEN
+){
+
+socket.send(
+JSON.stringify(data)
 );
 
 }
@@ -692,7 +670,275 @@ alert(
 
 
 /* =========================
-CREATE PEER
+CREATE ROOM
+========================= */
+
+async function createConnection(){
+
+try{
+
+role = "host";
+
+status(
+"Connecting to server..."
+);
+
+await connectSocket();
+
+
+sendSignal({
+
+type:"create-room"
+
+});
+
+
+}catch(error){
+
+console.error(error);
+
+status(
+"❌ Cannot connect to server."
+);
+
+alert(
+"Signaling server unavailable."
+);
+
+}
+
+}
+
+
+/* =========================
+JOIN ROOM
+========================= */
+
+async function joinRoom(code){
+
+code =
+code.replace(
+/[^0-9]/g,
+""
+);
+
+
+if(
+code.length !== 6
+){
+
+alert(
+"Enter a valid 6-digit code."
+);
+
+return;
+
+}
+
+
+try{
+
+role = "guest";
+
+status(
+"Connecting to server..."
+);
+
+await connectSocket();
+
+
+sendSignal({
+
+type:"join-room",
+
+room:code
+
+});
+
+
+currentRoom =
+code;
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Signaling server unavailable."
+);
+
+}
+
+}
+
+
+/* =========================
+SIGNAL HANDLER
+========================= */
+
+async function handleSignal(msg){
+
+try{
+
+/*
+ Server created a room.
+*/
+
+if(
+msg.type === "room-created"
+){
+
+currentRoom =
+msg.room;
+
+roomCode.textContent =
+msg.room;
+
+qr.innerHTML = "";
+
+
+/*
+ QR contains only a small
+ QuickDrop join URL.
+*/
+
+const joinUrl =
+location.origin +
+location.pathname +
+"?join=" +
+msg.room;
+
+
+new QRCode(
+qr,
+{
+text:joinUrl,
+width:240,
+height:240
+}
+);
+
+
+show(createPanel);
+
+status(
+"🟢 Room created. Waiting for device..."
+);
+
+return;
+
+}
+
+
+/*
+ Guest joined.
+ Host creates WebRTC offer.
+*/
+
+if(
+msg.type === "peer-joined"
+){
+
+status(
+"Creating secure connection..."
+);
+
+await createOffer();
+
+return;
+
+}
+
+
+/*
+ Guest receives offer.
+*/
+
+if(
+msg.type === "offer"
+){
+
+await receiveOffer(
+msg.data
+);
+
+return;
+
+}
+
+
+/*
+ Host receives answer.
+*/
+
+if(
+msg.type === "answer"
+){
+
+await receiveAnswer(
+msg.data
+);
+
+return;
+
+}
+
+
+/*
+ ICE candidate.
+*/
+
+if(
+msg.type === "candidate"
+){
+
+if(pc){
+
+await pc.addIceCandidate(
+msg.data
+);
+
+}
+
+return;
+
+}
+
+
+/*
+ Error.
+*/
+
+if(
+msg.type === "error"
+){
+
+status(
+"❌ " +
+msg.message
+);
+
+alert(
+msg.message
+);
+
+}
+
+}catch(error){
+
+console.error(
+"Signal error:",
+error
+);
+
+}
+
+}
+
+
+/* =========================
+PEER
 ========================= */
 
 function createPeer(){
@@ -705,6 +951,7 @@ pc.close();
 
 }
 
+
 pc =
 new RTCPeerConnection({
 
@@ -714,13 +961,54 @@ ICE_SERVERS
 });
 
 
+pc.onicecandidate =
+event => {
+
+if(
+event.candidate
+){
+
+sendSignal({
+
+type:"candidate",
+
+room:
+currentRoom,
+
+data:
+event.candidate
+
+});
+
+}
+
+};
+
+
 pc.onconnectionstatechange =
 () => {
 
+const state =
+pc.connectionState;
+
+
 status(
 "Connection: " +
-pc.connectionState
+state
 );
+
+
+if(
+state === "connected"
+){
+
+online(true);
+
+status(
+"🟢 Connected! Ready to transfer files."
+);
+
+}
 
 };
 
@@ -734,7 +1022,7 @@ pc.iceConnectionState ===
 ){
 
 status(
-"❌ Connection failed"
+"❌ Connection failed."
 );
 
 }
@@ -745,12 +1033,13 @@ status(
 
 
 /* =========================
-DATA CHANNEL
+CHANNEL
 ========================= */
 
 function setupChannel(ch){
 
-channel = ch;
+channel =
+ch;
 
 channel.binaryType =
 "arraybuffer";
@@ -759,16 +1048,22 @@ channel.bufferedAmountLowThreshold =
 CHUNK * 2;
 
 
-channel.onopen = () => {
+channel.onopen =
+() => {
+
+online(true);
 
 status(
-"🟢 Connected! Ready to send files."
+"🟢 Connected! Ready to transfer files."
 );
 
 };
 
 
-channel.onclose = () => {
+channel.onclose =
+() => {
+
+online(false);
 
 status(
 "Connection closed."
@@ -777,7 +1072,8 @@ status(
 };
 
 
-channel.onerror = () => {
+channel.onerror =
+() => {
 
 status(
 "❌ Data channel error."
@@ -793,12 +1089,10 @@ receiveData;
 
 
 /* =========================
-CREATE CONNECTION
+CREATE OFFER
 ========================= */
 
-async function createConnection(){
-
-stopScanner();
+async function createOffer(){
 
 createPeer();
 
@@ -817,102 +1111,40 @@ setupChannel(channel);
 const offer =
 await pc.createOffer();
 
+
 await pc.setLocalDescription(
 offer
-);
-
-
-status(
-"Preparing QR..."
 );
 
 
 await waitForICE();
 
 
-const data =
-JSON.stringify(
+sendSignal({
+
+type:"offer",
+
+room:
+currentRoom,
+
+data:
 pc.localDescription
-);
 
-
-offerCode.textContent =
-data;
-
-
-qr.innerHTML = "";
-
-
-new QRCode(
-qr,
-{
-text:data,
-width:240,
-height:240,
-correctLevel:
-QRCode.CorrectLevel.M
-}
-);
-
-
-show(creatorPanel);
-
-hide(joinPanel);
+});
 
 
 status(
-"📱 Scan this QR from Device B."
+"Waiting for device..."
 );
 
 }
 
 
 /* =========================
-JOIN
+RECEIVE OFFER
 ========================= */
 
-function openJoin(){
-
-stopScanner();
-
-hide(creatorPanel);
-
-show(joinPanel);
-
-status(
-"Scan the QR from Device A."
-);
-
-}
-
-
-/* =========================
-PROCESS OFFER
-========================= */
-
-async function processOffer(raw){
-
-try{
-
-const offer =
-JSON.parse(
-raw.trim()
-);
-
-
-if(
-offer.type !== "offer" ||
-!offer.sdp
-){
-
-throw new Error(
-"Invalid offer"
-);
-
-}
-
-
-stopScanner();
+async function receiveOffer(offer){
 
 createPeer();
 
@@ -943,68 +1175,34 @@ answer
 );
 
 
-status(
-"Creating answer..."
-);
-
-
 await waitForICE();
 
 
-const data =
-JSON.stringify(
+sendSignal({
+
+type:"answer",
+
+room:
+currentRoom,
+
+data:
 pc.localDescription
-);
 
-
-answerCode.textContent =
-data;
-
-
-show(answerPanel);
+});
 
 
 status(
-"✅ Answer ready."
+"Connecting..."
 );
-
-
-}catch(error){
-
-console.error(error);
-
-alert(
-"Invalid offer / QR."
-);
-
-}
 
 }
 
 
 /* =========================
-CONNECT ANSWER
+RECEIVE ANSWER
 ========================= */
 
-async function connectAnswer(){
-
-try{
-
-const answer =
-JSON.parse(
-answerInput.value.trim()
-);
-
-
-if(
-answer.type !== "answer" ||
-!answer.sdp
-){
-
-throw new Error();
-
-}
-
+async function receiveAnswer(answer){
 
 await pc.setRemoteDescription(
 new RTCSessionDescription(
@@ -1017,25 +1215,17 @@ status(
 "Connecting..."
 );
 
-
-}catch(error){
-
-alert(
-"Invalid answer."
-);
-
-}
-
 }
 
 
 /* =========================
-ICE
+ICE WAIT
 ========================= */
 
 function waitForICE(){
 
-return new Promise(resolve => {
+return new Promise(
+resolve => {
 
 if(
 pc.iceGatheringState ===
@@ -1043,6 +1233,7 @@ pc.iceGatheringState ===
 ){
 
 resolve();
+
 return;
 
 }
@@ -1099,7 +1290,6 @@ check
 );
 
 });
-
 }
 
 
@@ -1110,7 +1300,9 @@ PROGRESS
 function createProgress(name){
 
 const box =
-document.createElement("div");
+document.createElement(
+"div"
+);
 
 box.className =
 "progress";
@@ -1139,13 +1331,17 @@ ${escapeHTML(name)}
 `;
 
 
-progress.appendChild(box);
+progress.appendChild(
+box
+);
 
 
 return {
 
 fill:
-box.querySelector(".fill"),
+box.querySelector(
+".fill"
+),
 
 percent:
 box.querySelector(
@@ -1153,6 +1349,24 @@ box.querySelector(
 )
 
 };
+
+}
+
+
+function escapeHTML(text){
+
+return text.replace(
+/[&<>"']/g,
+c => ({
+
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#039;"
+
+}[c])
+);
 
 }
 
@@ -1169,7 +1383,13 @@ channel.bufferedAmount >
 MAX_BUFFER
 ){
 
-await sleep(30);
+await new Promise(
+resolve =>
+setTimeout(
+resolve,
+30
+)
+);
 
 }
 
@@ -1194,9 +1414,11 @@ JSON.stringify({
 
 type:"start",
 
-name:file.name,
+name:
+file.name,
 
-size:file.size,
+size:
+file.size,
 
 mime:
 file.type ||
@@ -1271,7 +1493,8 @@ async function sendFiles(files){
 
 if(
 !channel ||
-channel.readyState !== "open"
+channel.readyState !==
+"open"
 ){
 
 alert(
@@ -1287,7 +1510,9 @@ for(
 const file of files
 ){
 
-await sendFile(file);
+await sendFile(
+file
+);
 
 }
 
@@ -1355,7 +1580,6 @@ msg.name
 
 };
 
-
 return;
 
 }
@@ -1377,7 +1601,9 @@ return;
 }
 
 
-if(!incoming)
+if(
+!incoming
+)
 return;
 
 
@@ -1386,32 +1612,12 @@ event.data instanceof
 ArrayBuffer
 ){
 
-handleChunk(
+incoming.chunks.push(
 event.data
 );
 
-}
-
-}
-
-
-/* =========================
-CHUNK
-========================= */
-
-function handleChunk(chunk){
-
-if(!incoming)
-return;
-
-
-incoming.chunks.push(
-chunk
-);
-
-
 incoming.received +=
-chunk.byteLength;
+event.data.byteLength;
 
 
 const percent =
@@ -1436,14 +1642,18 @@ percent + "%";
 
 }
 
+}
+
 
 /* =========================
-FINISH
+FINISH RECEIVE
 ========================= */
 
 function finishIncoming(){
 
-if(!incoming)
+if(
+!incoming
+)
 return;
 
 
@@ -1467,16 +1677,21 @@ blob
 
 
 const a =
-document.createElement("a");
+document.createElement(
+"a"
+);
 
 
-a.href = url;
+a.href =
+url;
 
 a.download =
 info.name;
 
 
-document.body.appendChild(a);
+document.body.appendChild(
+a
+);
 
 a.click();
 
@@ -1485,7 +1700,9 @@ a.remove();
 
 setTimeout(
 () =>
-URL.revokeObjectURL(url),
+URL.revokeObjectURL(
+url
+),
 5000
 );
 
@@ -1506,20 +1723,6 @@ QR SCANNER
 ========================= */
 
 async function startScanner(){
-
-if(
-!navigator.mediaDevices ||
-!navigator.mediaDevices.getUserMedia
-){
-
-alert(
-"Camera is not supported."
-);
-
-return;
-
-}
-
 
 try{
 
@@ -1549,11 +1752,6 @@ scanning = true;
 
 show(scannerPanel);
 
-
-scanMessage.textContent =
-"Point camera at QR code.";
-
-
 scanLoop();
 
 
@@ -1562,8 +1760,7 @@ scanLoop();
 console.error(error);
 
 alert(
-"Camera permission denied.\n\n" +
-"Use HTTPS or localhost."
+"Camera permission denied.\n\nUse HTTPS and allow camera access."
 );
 
 }
@@ -1573,7 +1770,9 @@ alert(
 
 function scanLoop(){
 
-if(!scanning)
+if(
+!scanning
+)
 return;
 
 
@@ -1644,21 +1843,44 @@ code.data
 
 scanning = false;
 
-scanMessage.textContent =
-"✅ QR detected!";
-
-
 stopCamera();
 
 
-offerInput.value =
+const url =
 code.data;
 
 
-processOffer(
-code.data
+try{
+
+const parsed =
+new URL(url);
+
+
+const codeValue =
+parsed.searchParams
+.get("join");
+
+
+if(
+codeValue
+){
+
+codeInput.value =
+codeValue;
+
+hide(scannerPanel);
+
+joinRoom(
+codeValue
 );
 
+return;
+
+}
+
+}catch{}
+
+scanLoop();
 
 return;
 
@@ -1678,7 +1900,9 @@ scanLoop
 
 function stopCamera(){
 
-if(cameraStream){
+if(
+cameraStream
+){
 
 cameraStream
 .getTracks()
@@ -1714,38 +1938,25 @@ BUTTONS
 createBtn.onclick =
 createConnection;
 
+
 joinBtn.onclick =
-openJoin;
+() => {
 
-connectBtn.onclick =
-connectAnswer;
+show(joinPanel);
 
+hide(createPanel);
 
-generateAnswerBtn.onclick =
-() =>
-processOffer(
-offerInput.value
+status(
+"Scan or enter the room code."
 );
 
-
-copyOfferBtn.onclick =
-() =>
-copyText(
-offerCode.textContent
-);
-
-
-copyAnswerBtn.onclick =
-() =>
-copyText(
-answerCode.textContent
-);
+};
 
 
 scanBtn.onclick =
 () => {
 
-hide(manualPanel);
+hide(codePanel);
 
 startScanner();
 
@@ -1761,7 +1972,17 @@ manualBtn.onclick =
 
 stopScanner();
 
-show(manualPanel);
+show(codePanel);
+
+};
+
+
+joinCodeBtn.onclick =
+() => {
+
+joinRoom(
+codeInput.value
+);
 
 };
 
@@ -1796,13 +2017,13 @@ DRAG DROP
 "dragenter",
 "dragover"
 ].forEach(
-eventName => {
+name => {
 
 drop.addEventListener(
-eventName,
-event => {
+name,
+e => {
 
-event.preventDefault();
+e.preventDefault();
 
 drop.classList.add(
 "drag"
@@ -1819,13 +2040,13 @@ drop.classList.add(
 "dragleave",
 "drop"
 ].forEach(
-eventName => {
+name => {
 
 drop.addEventListener(
-eventName,
-event => {
+name,
+e => {
 
-event.preventDefault();
+e.preventDefault();
 
 drop.classList.remove(
 "drag"
@@ -1840,14 +2061,16 @@ drop.classList.remove(
 
 drop.addEventListener(
 "drop",
-event => {
+e => {
 
 const files =
-event.dataTransfer.files;
+e.dataTransfer.files;
 
 if(files.length){
 
-sendFiles(files);
+sendFiles(
+files
+);
 
 }
 
@@ -1856,25 +2079,27 @@ sendFiles(files);
 
 
 /* =========================
-CLEANUP
+AUTO JOIN FROM QR URL
 ========================= */
 
-window.addEventListener(
-"beforeunload",
-() => {
-
-stopScanner();
-
-if(pc){
-
-try{
-pc.close();
-}catch{}
-
-}
-
-}
+const params =
+new URLSearchParams(
+location.search
 );
+
+const autoJoin =
+params.get("join");
+
+
+if(autoJoin){
+
+show(joinPanel);
+
+joinRoom(
+autoJoin
+);
+
+}
 
 </script>
 
