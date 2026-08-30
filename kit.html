@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>QuickDrop</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
   min-height:100vh;
   font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-  background:
-    radial-gradient(circle at top left,#4f46e555,transparent 35%),
-    linear-gradient(135deg,#111827,#312e81);
+  background:linear-gradient(135deg,#111827,#312e81);
   color:#fff;
   display:flex;
   justify-content:center;
@@ -26,60 +27,34 @@ body{
 }
 
 .app{
-  width:min(94%,720px);
+  width:min(94%,650px);
   text-align:center;
 }
 
 .logo{
-  font-size:40px;
+  font-size:38px;
   font-weight:800;
+  margin-bottom:5px;
 }
 
 .sub{
   color:#cbd5e1;
-  margin:5px 0 25px;
+  margin-bottom:25px;
 }
 
 .card{
   background:rgba(255,255,255,.09);
   border:1px solid rgba(255,255,255,.15);
   border-radius:25px;
-  padding:24px;
+  padding:25px;
   backdrop-filter:blur(18px);
   box-shadow:0 25px 70px #0006;
-}
-
-.status{
-  min-height:25px;
-  margin-bottom:20px;
-  color:#cbd5e1;
-}
-
-.dot{
-  display:inline-block;
-  width:10px;
-  height:10px;
-  background:#64748b;
-  border-radius:50%;
-  margin-right:6px;
-}
-
-.dot.online{
-  background:#22c55e;
-  box-shadow:0 0 12px #22c55e;
-}
-
-.buttons{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
 }
 
 button{
   border:0;
   border-radius:14px;
-  padding:14px 20px;
+  padding:14px 22px;
   font-size:16px;
   font-weight:700;
   cursor:pointer;
@@ -104,47 +79,54 @@ button:disabled{
   cursor:not-allowed;
 }
 
-.panel{
-  margin-top:20px;
-  padding:18px;
-  border-radius:18px;
-  background:#0002;
+.status{
+  margin:15px 0;
+  color:#cbd5e1;
 }
 
 .hidden{
   display:none!important;
 }
 
+.panel{
+  margin-top:18px;
+  padding:18px;
+  background:#0002;
+  border-radius:18px;
+}
+
 #qr{
-  width:max-content;
-  margin:15px auto;
+  margin:20px auto;
   padding:15px;
   background:white;
+  width:max-content;
   border-radius:15px;
 }
 
 .code{
   margin-top:10px;
-  padding:12px;
   background:#020617;
-  border-radius:10px;
-  text-align:left;
-  word-break:break-all;
-  max-height:130px;
-  overflow:auto;
   color:#94a3b8;
-  font-size:11px;
+  padding:8px;
+  border-radius:10px;
+  font-size:9px;
+  line-height:1.2;
+  max-height:55px;
+  overflow:auto;
+  word-break:break-all;
+  text-align:left;
 }
 
 textarea{
   width:100%;
-  min-height:110px;
+  min-height:65px;
+  margin-top:8px;
   border:0;
-  border-radius:12px;
-  padding:12px;
-  font-family:monospace;
-  font-size:13px;
+  border-radius:10px;
+  padding:10px;
   resize:vertical;
+  font-family:monospace;
+  font-size:11px;
   outline:none;
 }
 
@@ -155,17 +137,15 @@ textarea:focus{
 .drop{
   display:block;
   margin-top:20px;
-  padding:45px 20px;
+  padding:50px 20px;
   border:2px dashed #818cf8;
   border-radius:20px;
   cursor:pointer;
-  transition:.2s;
 }
 
 .drop:hover,
 .drop.drag{
   background:#6366f122;
-  border-color:#a5b4fc;
 }
 
 .icon{
@@ -177,14 +157,14 @@ input[type=file]{
 }
 
 .progress{
-  margin-top:18px;
+  margin-top:20px;
   text-align:left;
 }
 
-.progress-title{
+.progress-head{
   display:flex;
   justify-content:space-between;
-  margin-bottom:7px;
+  margin-bottom:6px;
   font-size:14px;
 }
 
@@ -201,23 +181,27 @@ input[type=file]{
   background:linear-gradient(90deg,#6366f1,#22c55e);
 }
 
+.actions{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
 #scanner{
   position:relative;
   width:100%;
   max-width:420px;
   margin:15px auto;
-  overflow:hidden;
   border-radius:18px;
+  overflow:hidden;
   background:#000;
 }
 
 #video{
   width:100%;
   display:block;
-}
-
-#scanCanvas{
-  display:none;
 }
 
 .scan-frame{
@@ -228,7 +212,6 @@ input[type=file]{
   top:17.5%;
   border:3px solid #22c55e;
   border-radius:20px;
-  box-shadow:0 0 0 9999px rgba(0,0,0,.35);
 }
 
 .scan-line{
@@ -247,25 +230,10 @@ input[type=file]{
   100%{top:20%}
 }
 
-#scannerMessage{
-  color:#cbd5e1;
-  margin:10px 0;
-}
-
 footer{
   margin-top:18px;
   color:#94a3b8;
   font-size:13px;
-}
-
-@media(max-width:600px){
-  .card{
-    padding:17px;
-  }
-
-  .logo{
-    font-size:32px;
-  }
 }
 </style>
 </head>
@@ -274,1578 +242,1638 @@ footer{
 
 <div class="app">
 
-  <div class="logo">⚡ QuickDrop</div>
+<div class="logo">⚡ QuickDrop</div>
 
-  <div class="sub">
-    Send files directly between browsers
-  </div>
+<div class="sub">
+Send files directly between browsers
+</div>
 
-  <div class="card">
+<div class="card">
 
-    <div class="status">
-      <span id="dot" class="dot"></span>
-      <span id="status">Ready</span>
-    </div>
+<div id="status" class="status">
+Ready
+</div>
 
-    <!-- MAIN BUTTONS -->
-    <div class="buttons">
+<div class="actions">
 
-      <button id="createBtn">
-        📤 Create Connection
-      </button>
+<button id="createBtn">
+📤 Create Connection
+</button>
 
-      <button id="joinBtn" class="secondary">
-        📥 Join Connection
-      </button>
-
-    </div>
-
-    <!-- CREATOR PANEL -->
-    <div id="creatorPanel" class="panel hidden">
-
-      <h3>📱 Scan this QR from the other device</h3>
-
-      <div id="qr"></div>
-
-      <p>
-        Or copy the offer code:
-      </p>
-
-      <div id="offerCode" class="code"></div>
-
-      <div class="buttons" style="margin-top:12px">
-        <button id="copyOfferBtn" class="secondary">
-          📋 Copy Offer
-        </button>
-      </div>
-
-      <hr style="border-color:#ffffff18;margin:20px 0">
-
-      <p>
-        Paste the answer from the other device:
-      </p>
-
-      <textarea
-        id="answerInput"
-        placeholder="Paste answer here..."
-      ></textarea>
-
-      <div class="buttons" style="margin-top:12px">
-
-        <button id="connectBtn">
-          🔗 Connect
-        </button>
-
-      </div>
-
-    </div>
-
-    <!-- JOIN PANEL -->
-    <div id="joinPanel" class="panel hidden">
-
-      <h3>📥 Join Connection</h3>
-
-      <div class="buttons">
-
-        <button id="scanBtn">
-          📷 Scan QR
-        </button>
-
-        <button
-          id="manualBtn"
-          class="secondary"
-        >
-          ⌨️ Paste Code
-        </button>
-
-      </div>
-
-      <!-- SCANNER -->
-      <div id="scannerPanel" class="hidden">
-
-        <div id="scanner">
-
-          <video
-            id="video"
-            autoplay
-            playsinline
-            muted
-          ></video>
-
-          <div class="scan-frame"></div>
-          <div class="scan-line"></div>
-
-        </div>
-
-        <canvas id="scanCanvas"></canvas>
-
-        <div id="scannerMessage">
-          Point your camera at the QR code.
-        </div>
-
-        <button
-          id="stopScanBtn"
-          class="danger"
-        >
-          ✕ Stop Scanner
-        </button>
-
-      </div>
-
-      <!-- MANUAL OFFER -->
-      <div id="manualPanel" class="hidden">
-
-        <p>
-          Paste the offer from Device A:
-        </p>
-
-        <textarea
-          id="offerInput"
-          placeholder="Paste offer code here..."
-        ></textarea>
-
-        <div class="buttons" style="margin-top:12px">
-
-          <button id="generateAnswerBtn">
-            Generate Answer
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- ANSWER -->
-      <div id="answerPanel" class="hidden">
-
-        <hr style="border-color:#ffffff18;margin:20px 0">
-
-        <p>
-          Send this answer back to Device A:
-        </p>
-
-        <div
-          id="answerCode"
-          class="code"
-        ></div>
-
-        <div class="buttons" style="margin-top:12px">
-
-          <button
-            id="copyAnswerBtn"
-            class="secondary"
-          >
-            📋 Copy Answer
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- FILE DROP -->
-    <label
-      id="drop"
-      class="drop"
-      for="fileInput"
-    >
-
-      <div class="icon">📁</div>
-
-      <h2>Choose files</h2>
-
-      <p>
-        Click here or drag & drop files
-      </p>
-
-      <input
-        id="fileInput"
-        type="file"
-        multiple
-      >
-
-    </label>
-
-    <div id="progress"></div>
-
-  </div>
-
-  <footer>
-    WebRTC • Browser-to-browser • No upload server
-  </footer>
+<button id="joinBtn" class="secondary">
+📥 Join Connection
+</button>
 
 </div>
+
+
+<!-- CREATOR -->
+
+<div id="creatorPanel" class="panel hidden">
+
+<h3>📱 Scan this QR</h3>
+
+<div id="qr"></div>
+
+<small>
+Scan this QR from the other device.
+</small>
+
+<div class="code" id="offerCode"></div>
+
+<div class="actions">
+
+<button id="copyOfferBtn" class="secondary">
+📋 Copy
+</button>
+
+</div>
+
+<hr style="border-color:#ffffff18;margin:18px 0">
+
+<small>
+Paste answer:
+</small>
+
+<textarea
+id="answerInput"
+placeholder="Paste answer..."
+></textarea>
+
+<div class="actions">
+
+<button id="connectBtn">
+Connect
+</button>
+
+</div>
+
+</div>
+
+
+<!-- JOIN -->
+
+<div id="joinPanel" class="panel hidden">
+
+<h3>📥 Join Connection</h3>
+
+<div class="actions">
+
+<button id="scanBtn">
+📷 Scan QR
+</button>
+
+<button
+id="manualBtn"
+class="secondary"
+>
+⌨️ Paste
+</button>
+
+</div>
+
+
+<!-- CAMERA -->
+
+<div
+id="scannerPanel"
+class="hidden"
+>
+
+<div id="scanner">
+
+<video
+id="video"
+autoplay
+playsinline
+muted
+></video>
+
+<div class="scan-frame"></div>
+<div class="scan-line"></div>
+
+</div>
+
+<canvas
+id="canvas"
+style="display:none"
+></canvas>
+
+<p id="scanMessage">
+Point camera at QR code.
+</p>
+
+<button
+id="stopScanBtn"
+class="danger"
+>
+✕ Stop
+</button>
+
+</div>
+
+
+<!-- MANUAL -->
+
+<div
+id="manualPanel"
+class="hidden"
+>
+
+<textarea
+id="offerInput"
+placeholder="Paste offer..."
+></textarea>
+
+<div class="actions">
+
+<button id="generateAnswerBtn">
+Generate Answer
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ANSWER -->
+
+<div
+id="answerPanel"
+class="hidden"
+>
+
+<hr style="border-color:#ffffff18">
+
+<small>
+Copy this answer to Device A:
+</small>
+
+<div
+id="answerCode"
+class="code"
+></div>
+
+<div class="actions">
+
+<button
+id="copyAnswerBtn"
+class="secondary"
+>
+📋 Copy Answer
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FILE -->
+
+<label
+id="drop"
+class="drop"
+for="fileInput"
+>
+
+<div class="icon">📁</div>
+
+<h2>Choose files</h2>
+
+<p>
+Click here or drag & drop files
+</p>
+
+<input
+id="fileInput"
+type="file"
+multiple
+>
+
+</label>
+
+<div id="progress"></div>
+
+</div>
+
+<footer>
+WebRTC • Browser-to-browser transfer
+</footer>
+
+</div>
+
 
 <script>
 "use strict";
 
+
 /* =========================
-   ELEMENTS
+ELEMENTS
 ========================= */
 
 const statusEl =
-  document.getElementById("status");
-
-const dot =
-  document.getElementById("dot");
+document.getElementById("status");
 
 const createBtn =
-  document.getElementById("createBtn");
+document.getElementById("createBtn");
 
 const joinBtn =
-  document.getElementById("joinBtn");
+document.getElementById("joinBtn");
 
 const creatorPanel =
-  document.getElementById("creatorPanel");
+document.getElementById("creatorPanel");
 
 const joinPanel =
-  document.getElementById("joinPanel");
+document.getElementById("joinPanel");
 
 const qr =
-  document.getElementById("qr");
+document.getElementById("qr");
 
 const offerCode =
-  document.getElementById("offerCode");
+document.getElementById("offerCode");
 
 const answerCode =
-  document.getElementById("answerCode");
+document.getElementById("answerCode");
 
 const answerInput =
-  document.getElementById("answerInput");
+document.getElementById("answerInput");
 
 const offerInput =
-  document.getElementById("offerInput");
+document.getElementById("offerInput");
 
 const connectBtn =
-  document.getElementById("connectBtn");
+document.getElementById("connectBtn");
 
 const generateAnswerBtn =
-  document.getElementById(
-    "generateAnswerBtn"
-  );
+document.getElementById(
+"generateAnswerBtn"
+);
 
 const copyOfferBtn =
-  document.getElementById(
-    "copyOfferBtn"
-  );
+document.getElementById(
+"copyOfferBtn"
+);
 
 const copyAnswerBtn =
-  document.getElementById(
-    "copyAnswerBtn"
-  );
+document.getElementById(
+"copyAnswerBtn"
+);
 
 const scanBtn =
-  document.getElementById("scanBtn");
+document.getElementById("scanBtn");
 
 const stopScanBtn =
-  document.getElementById(
-    "stopScanBtn"
-  );
+document.getElementById(
+"stopScanBtn"
+);
 
 const manualBtn =
-  document.getElementById("manualBtn");
+document.getElementById("manualBtn");
 
 const scannerPanel =
-  document.getElementById(
-    "scannerPanel"
-  );
+document.getElementById(
+"scannerPanel"
+);
 
 const manualPanel =
-  document.getElementById(
-    "manualPanel"
-  );
+document.getElementById(
+"manualPanel"
+);
 
 const answerPanel =
-  document.getElementById(
-    "answerPanel"
-  );
+document.getElementById(
+"answerPanel"
+);
 
 const video =
-  document.getElementById("video");
+document.getElementById("video");
 
 const canvas =
-  document.getElementById("scanCanvas");
+document.getElementById("canvas");
 
-const scannerMessage =
-  document.getElementById(
-    "scannerMessage"
-  );
+const scanMessage =
+document.getElementById(
+"scanMessage"
+);
 
 const fileInput =
-  document.getElementById("fileInput");
+document.getElementById(
+"fileInput"
+);
 
 const drop =
-  document.getElementById("drop");
+document.getElementById("drop");
 
 const progress =
-  document.getElementById("progress");
+document.getElementById(
+"progress"
+);
+
 
 /* =========================
-   WEBRTC
+WEBRTC
 ========================= */
 
 let pc = null;
 let channel = null;
 
 const CHUNK =
-  64 * 1024;
+64 * 1024;
 
 const MAX_BUFFER =
-  CHUNK * 8;
+CHUNK * 8;
 
 const ICE_SERVERS = [
-  {
-    urls:
-      "stun:stun.l.google.com:19302"
-  }
+
+{
+urls:
+"stun:stun.l.google.com:19302"
+}
+
 ];
 
+
 /* =========================
-   RECEIVE STATE
+RECEIVE
 ========================= */
 
 let incoming = null;
 
+
 /* =========================
-   CAMERA STATE
+CAMERA
 ========================= */
 
 let cameraStream = null;
 let scanning = false;
 
+
 /* =========================
-   HELPERS
+HELPERS
 ========================= */
 
 function status(text){
-  statusEl.textContent = text;
+
+statusEl.textContent =
+text;
+
 }
 
-function online(value){
-  dot.classList.toggle(
-    "online",
-    value
-  );
-}
 
 function show(el){
-  el.classList.remove(
-    "hidden"
-  );
+
+el.classList.remove(
+"hidden"
+);
+
 }
+
 
 function hide(el){
-  el.classList.add(
-    "hidden"
-  );
+
+el.classList.add(
+"hidden"
+);
+
 }
 
+
 function sleep(ms){
-  return new Promise(
-    r => setTimeout(r,ms)
-  );
+
+return new Promise(
+resolve =>
+setTimeout(resolve,ms)
+);
+
 }
+
 
 function escapeHTML(text){
 
-  return text.replace(
-    /[&<>"']/g,
-    c => ({
-      "&":"&amp;",
-      "<":"&lt;",
-      ">":"&gt;",
-      '"':"&quot;",
-      "'":"&#039;"
-    }[c])
-  );
+return text.replace(
+/[&<>"']/g,
+c => ({
+
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#039;"
+
+}[c])
+);
 
 }
+
 
 async function copyText(text){
 
-  try{
+try{
 
-    await navigator.clipboard.writeText(
-      text
-    );
+await navigator.clipboard.writeText(
+text
+);
 
-    status(
-      "✅ Copied to clipboard"
-    );
+status(
+"✅ Copied"
+);
 
-  }catch{
+}catch{
 
-    alert(
-      "Clipboard permission denied. Copy manually."
-    );
-
-  }
+alert(
+"Copy failed. Copy manually."
+);
 
 }
 
+}
+
+
 /* =========================
-   CREATE PEER
+CREATE PEER
 ========================= */
 
 function createPeer(){
 
-  if(pc){
+if(pc){
 
-    try{
-      pc.close();
-    }catch{}
-
-  }
-
-  pc =
-    new RTCPeerConnection({
-      iceServers:ICE_SERVERS
-    });
-
-  pc.onconnectionstatechange =
-    () => {
-
-      const state =
-        pc.connectionState;
-
-      if(
-        state === "connected"
-      ){
-
-        online(true);
-
-        status(
-          "🟢 Connected! Ready to transfer files."
-        );
-
-      }else{
-
-        online(false);
-
-        status(
-          "Connection: " +
-          state
-        );
-
-      }
-
-    };
-
-  pc.oniceconnectionstatechange =
-    () => {
-
-      if(
-        pc.iceConnectionState ===
-        "failed"
-      ){
-
-        status(
-          "❌ Connection failed."
-        );
-
-      }
-
-    };
+try{
+pc.close();
+}catch{}
 
 }
 
+pc =
+new RTCPeerConnection({
+
+iceServers:
+ICE_SERVERS
+
+});
+
+
+pc.onconnectionstatechange =
+() => {
+
+status(
+"Connection: " +
+pc.connectionState
+);
+
+};
+
+
+pc.oniceconnectionstatechange =
+() => {
+
+if(
+pc.iceConnectionState ===
+"failed"
+){
+
+status(
+"❌ Connection failed"
+);
+
+}
+
+};
+
+}
+
+
 /* =========================
-   DATA CHANNEL
+DATA CHANNEL
 ========================= */
 
 function setupChannel(ch){
 
-  channel = ch;
+channel = ch;
 
-  channel.binaryType =
-    "arraybuffer";
+channel.binaryType =
+"arraybuffer";
 
-  channel.bufferedAmountLowThreshold =
-    CHUNK * 2;
+channel.bufferedAmountLowThreshold =
+CHUNK * 2;
 
-  channel.onopen = () => {
 
-    online(true);
+channel.onopen = () => {
 
-    status(
-      "🟢 Connected! Ready to transfer files."
-    );
+status(
+"🟢 Connected! Ready to send files."
+);
 
-  };
+};
 
-  channel.onclose = () => {
 
-    online(false);
+channel.onclose = () => {
 
-    status(
-      "Connection closed."
-    );
+status(
+"Connection closed."
+);
 
-  };
+};
 
-  channel.onerror = () => {
 
-    status(
-      "❌ Data channel error."
-    );
+channel.onerror = () => {
 
-  };
+status(
+"❌ Data channel error."
+);
 
-  channel.onmessage =
-    receiveData;
+};
+
+
+channel.onmessage =
+receiveData;
 
 }
 
+
 /* =========================
-   CREATE OFFER
+CREATE CONNECTION
 ========================= */
 
 async function createConnection(){
 
-  stopScanner();
+stopScanner();
 
-  createPeer();
+createPeer();
 
-  channel =
-    pc.createDataChannel(
-      "quickdrop-files",
-      {
-        ordered:true
-      }
-    );
 
-  setupChannel(channel);
+channel =
+pc.createDataChannel(
+"quickdrop",
+{
+ordered:true
+}
+);
 
-  const offer =
-    await pc.createOffer();
+setupChannel(channel);
 
-  await pc.setLocalDescription(
-    offer
-  );
 
-  status(
-    "Preparing QR..."
-  );
+const offer =
+await pc.createOffer();
 
-  await waitForICE();
+await pc.setLocalDescription(
+offer
+);
 
-  const data =
-    JSON.stringify(
-      pc.localDescription
-    );
 
-  offerCode.textContent =
-    data;
+status(
+"Preparing QR..."
+);
 
-  qr.innerHTML = "";
 
-  new QRCode(
-    qr,
-    {
-      text:data,
-      width:240,
-      height:240,
-      correctLevel:
-        QRCode.CorrectLevel.M
-    }
-  );
+await waitForICE();
 
-  show(creatorPanel);
-  hide(joinPanel);
 
-  status(
-    "📱 Scan this QR from the other device."
-  );
+const data =
+JSON.stringify(
+pc.localDescription
+);
+
+
+offerCode.textContent =
+data;
+
+
+qr.innerHTML = "";
+
+
+new QRCode(
+qr,
+{
+text:data,
+width:240,
+height:240,
+correctLevel:
+QRCode.CorrectLevel.M
+}
+);
+
+
+show(creatorPanel);
+
+hide(joinPanel);
+
+
+status(
+"📱 Scan this QR from Device B."
+);
 
 }
 
+
 /* =========================
-   JOIN
+JOIN
 ========================= */
 
 function openJoin(){
 
-  stopScanner();
+stopScanner();
 
-  hide(creatorPanel);
-  show(joinPanel);
+hide(creatorPanel);
 
-  status(
-    "Scan the QR from Device A."
-  );
+show(joinPanel);
+
+status(
+"Scan the QR from Device A."
+);
 
 }
 
+
 /* =========================
-   PROCESS OFFER
+PROCESS OFFER
 ========================= */
 
 async function processOffer(raw){
 
-  try{
+try{
 
-    const offer =
-      JSON.parse(
-        raw.trim()
-      );
+const offer =
+JSON.parse(
+raw.trim()
+);
 
-    if(
-      offer.type !== "offer" ||
-      !offer.sdp
-    ){
 
-      throw new Error(
-        "Invalid offer"
-      );
+if(
+offer.type !== "offer" ||
+!offer.sdp
+){
 
-    }
-
-    stopScanner();
-
-    createPeer();
-
-    pc.ondatachannel =
-      event => {
-
-        setupChannel(
-          event.channel
-        );
-
-      };
-
-    await pc.setRemoteDescription(
-      new RTCSessionDescription(
-        offer
-      )
-    );
-
-    const answer =
-      await pc.createAnswer();
-
-    await pc.setLocalDescription(
-      answer
-    );
-
-    status(
-      "Creating answer..."
-    );
-
-    await waitForICE();
-
-    const answerData =
-      JSON.stringify(
-        pc.localDescription
-      );
-
-    answerCode.textContent =
-      answerData;
-
-    show(answerPanel);
-
-    status(
-      "✅ Answer ready. Send it to Device A."
-    );
-
-  }catch(error){
-
-    console.error(error);
-
-    alert(
-      "❌ Invalid QR / offer code."
-    );
-
-    status(
-      "Invalid offer."
-    );
-
-  }
+throw new Error(
+"Invalid offer"
+);
 
 }
 
+
+stopScanner();
+
+createPeer();
+
+
+pc.ondatachannel =
+event => {
+
+setupChannel(
+event.channel
+);
+
+};
+
+
+await pc.setRemoteDescription(
+new RTCSessionDescription(
+offer
+)
+);
+
+
+const answer =
+await pc.createAnswer();
+
+
+await pc.setLocalDescription(
+answer
+);
+
+
+status(
+"Creating answer..."
+);
+
+
+await waitForICE();
+
+
+const data =
+JSON.stringify(
+pc.localDescription
+);
+
+
+answerCode.textContent =
+data;
+
+
+show(answerPanel);
+
+
+status(
+"✅ Answer ready."
+);
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Invalid offer / QR."
+);
+
+}
+
+}
+
+
 /* =========================
-   MANUAL ANSWER
+CONNECT ANSWER
 ========================= */
 
 async function connectAnswer(){
 
-  try{
+try{
 
-    const raw =
-      answerInput.value.trim();
+const answer =
+JSON.parse(
+answerInput.value.trim()
+);
 
-    if(!raw){
 
-      alert(
-        "Paste the answer first."
-      );
+if(
+answer.type !== "answer" ||
+!answer.sdp
+){
 
-      return;
-
-    }
-
-    const answer =
-      JSON.parse(raw);
-
-    if(
-      answer.type !== "answer" ||
-      !answer.sdp
-    ){
-
-      throw new Error(
-        "Invalid answer"
-      );
-
-    }
-
-    await pc.setRemoteDescription(
-      new RTCSessionDescription(
-        answer
-      )
-    );
-
-    status(
-      "Connecting..."
-    );
-
-  }catch(error){
-
-    console.error(error);
-
-    alert(
-      "Invalid answer code."
-    );
-
-  }
+throw new Error();
 
 }
 
+
+await pc.setRemoteDescription(
+new RTCSessionDescription(
+answer
+)
+);
+
+
+status(
+"Connecting..."
+);
+
+
+}catch(error){
+
+alert(
+"Invalid answer."
+);
+
+}
+
+}
+
+
 /* =========================
-   ICE
+ICE
 ========================= */
 
 function waitForICE(){
 
-  return new Promise(resolve => {
+return new Promise(resolve => {
 
-    if(
-      pc.iceGatheringState ===
-      "complete"
-    ){
+if(
+pc.iceGatheringState ===
+"complete"
+){
 
-      resolve();
-      return;
-
-    }
-
-    let done = false;
-
-    const finish = () => {
-
-      if(done) return;
-
-      done = true;
-
-      clearTimeout(
-        timeout
-      );
-
-      pc.removeEventListener(
-        "icegatheringstatechange",
-        check
-      );
-
-      resolve();
-
-    };
-
-    const check = () => {
-
-      if(
-        pc.iceGatheringState ===
-        "complete"
-      ){
-
-        finish();
-
-      }
-
-    };
-
-    const timeout =
-      setTimeout(
-        finish,
-        7000
-      );
-
-    pc.addEventListener(
-      "icegatheringstatechange",
-      check
-    );
-
-  });
+resolve();
+return;
 
 }
 
+
+let finished = false;
+
+
+const finish = () => {
+
+if(finished)
+return;
+
+finished = true;
+
+clearTimeout(
+timeout
+);
+
+pc.removeEventListener(
+"icegatheringstatechange",
+check
+);
+
+resolve();
+
+};
+
+
+const check = () => {
+
+if(
+pc.iceGatheringState ===
+"complete"
+){
+
+finish();
+
+}
+
+};
+
+
+const timeout =
+setTimeout(
+finish,
+7000
+);
+
+
+pc.addEventListener(
+"icegatheringstatechange",
+check
+);
+
+});
+
+}
+
+
 /* =========================
-   PROGRESS
+PROGRESS
 ========================= */
 
 function createProgress(name){
 
-  const box =
-    document.createElement(
-      "div"
-    );
+const box =
+document.createElement("div");
 
-  box.className =
-    "progress";
+box.className =
+"progress";
 
-  box.innerHTML = `
-    <div class="progress-title">
-      <b>${escapeHTML(name)}</b>
-      <span>0%</span>
-    </div>
 
-    <div class="bar">
-      <div class="fill"></div>
-    </div>
-  `;
+box.innerHTML = `
 
-  progress.appendChild(box);
+<div class="progress-head">
 
-  return {
-    fill:
-      box.querySelector(".fill"),
+<b>
+${escapeHTML(name)}
+</b>
 
-    percent:
-      box.querySelector(
-        ".progress-title span"
-      )
-  };
+<span>
+0%
+</span>
+
+</div>
+
+<div class="bar">
+
+<div class="fill"></div>
+
+</div>
+
+`;
+
+
+progress.appendChild(box);
+
+
+return {
+
+fill:
+box.querySelector(".fill"),
+
+percent:
+box.querySelector(
+".progress-head span"
+)
+
+};
 
 }
 
+
 /* =========================
-   BUFFER CONTROL
+BUFFER
 ========================= */
 
 async function waitForBuffer(){
 
-  while(
-    channel &&
-    channel.bufferedAmount >
-    MAX_BUFFER
-  ){
+while(
+channel &&
+channel.bufferedAmount >
+MAX_BUFFER
+){
 
-    await new Promise(
-      resolve => {
-
-        let finished = false;
-
-        const done = () => {
-
-          if(finished)
-            return;
-
-          finished = true;
-
-          clearTimeout(
-            timeout
-          );
-
-          channel.removeEventListener(
-            "bufferedamountlow",
-            done
-          );
-
-          resolve();
-
-        };
-
-        const timeout =
-          setTimeout(
-            done,
-            100
-          );
-
-        channel.addEventListener(
-          "bufferedamountlow",
-          done
-        );
-
-      }
-    );
-
-  }
+await sleep(30);
 
 }
 
+}
+
+
 /* =========================
-   SEND FILE
+SEND
 ========================= */
 
 async function sendFile(file){
 
-  const ui =
-    createProgress(
-      "Sending: " +
-      file.name
-    );
+const ui =
+createProgress(
+"Sending: " +
+file.name
+);
 
-  channel.send(
-    JSON.stringify({
-      type:"start",
-      name:file.name,
-      size:file.size,
-      mime:
-        file.type ||
-        "application/octet-stream"
-    })
-  );
 
-  let offset = 0;
+channel.send(
+JSON.stringify({
 
-  while(
-    offset < file.size
-  ){
+type:"start",
 
-    await waitForBuffer();
+name:file.name,
 
-    const chunk =
-      await file
-        .slice(
-          offset,
-          offset + CHUNK
-        )
-        .arrayBuffer();
+size:file.size,
 
-    channel.send(chunk);
+mime:
+file.type ||
+"application/octet-stream"
 
-    offset +=
-      chunk.byteLength;
+})
+);
 
-    const percent =
-      file.size === 0
-        ? 100
-        : Math.round(
-            offset /
-            file.size *
-            100
-          );
 
-    ui.fill.style.width =
-      percent + "%";
+let offset = 0;
 
-    ui.percent.textContent =
-      percent + "%";
 
-  }
+while(
+offset < file.size
+){
 
-  channel.send(
-    JSON.stringify({
-      type:"end"
-    })
-  );
+await waitForBuffer();
+
+
+const chunk =
+await file
+.slice(
+offset,
+offset + CHUNK
+)
+.arrayBuffer();
+
+
+channel.send(
+chunk
+);
+
+
+offset +=
+chunk.byteLength;
+
+
+const percent =
+file.size === 0
+? 100
+: Math.round(
+offset /
+file.size *
+100
+);
+
+
+ui.fill.style.width =
+percent + "%";
+
+
+ui.percent.textContent =
+percent + "%";
 
 }
 
+
+channel.send(
+JSON.stringify({
+type:"end"
+})
+);
+
+}
+
+
 /* =========================
-   SEND FILES
+SEND FILES
 ========================= */
 
 async function sendFiles(files){
 
-  if(
-    !channel ||
-    channel.readyState !==
-      "open"
-  ){
+if(
+!channel ||
+channel.readyState !== "open"
+){
 
-    alert(
-      "Connect another device first."
-    );
+alert(
+"Connect another device first."
+);
 
-    return;
-
-  }
-
-  for(
-    const file of files
-  ){
-
-    try{
-
-      await sendFile(file);
-
-    }catch(error){
-
-      console.error(error);
-
-      status(
-        "❌ Failed to send " +
-        file.name
-      );
-
-      return;
-
-    }
-
-  }
-
-  status(
-    "✅ Transfer complete."
-  );
+return;
 
 }
 
+
+for(
+const file of files
+){
+
+await sendFile(file);
+
+}
+
+
+status(
+"✅ Transfer complete."
+);
+
+}
+
+
 /* =========================
-   RECEIVE
+RECEIVE
 ========================= */
 
 function receiveData(event){
 
-  if(
-    typeof event.data ===
-    "string"
-  ){
+if(
+typeof event.data ===
+"string"
+){
 
-    let msg;
+let msg;
 
-    try{
 
-      msg =
-        JSON.parse(
-          event.data
-        );
+try{
 
-    }catch{
+msg =
+JSON.parse(
+event.data
+);
 
-      return;
+}catch{
 
-    }
-
-    if(
-      msg.type === "start"
-    ){
-
-      incoming = {
-
-        name:msg.name,
-
-        size:Number(
-          msg.size
-        ),
-
-        mime:
-          msg.mime ||
-          "application/octet-stream",
-
-        received:0,
-
-        chunks:[],
-
-        ui:createProgress(
-          "Receiving: " +
-          msg.name
-        )
-
-      };
-
-      status(
-        "Receiving " +
-        msg.name + "..."
-      );
-
-      return;
-
-    }
-
-    if(
-      msg.type === "end"
-    ){
-
-      finishIncoming();
-
-      return;
-
-    }
-
-    return;
-
-  }
-
-  if(!incoming)
-    return;
-
-  if(
-    event.data instanceof
-    ArrayBuffer
-  ){
-
-    handleChunk(
-      event.data
-    );
-
-  }else if(
-    event.data instanceof
-    Blob
-  ){
-
-    event.data
-      .arrayBuffer()
-      .then(
-        handleChunk
-      );
-
-  }
+return;
 
 }
 
+
+if(
+msg.type === "start"
+){
+
+incoming = {
+
+name:
+msg.name,
+
+size:
+Number(msg.size),
+
+mime:
+msg.mime ||
+"application/octet-stream",
+
+received:0,
+
+chunks:[],
+
+ui:
+createProgress(
+"Receiving: " +
+msg.name
+)
+
+};
+
+
+return;
+
+}
+
+
+if(
+msg.type === "end"
+){
+
+finishIncoming();
+
+return;
+
+}
+
+
+return;
+
+}
+
+
+if(!incoming)
+return;
+
+
+if(
+event.data instanceof
+ArrayBuffer
+){
+
+handleChunk(
+event.data
+);
+
+}
+
+}
+
+
 /* =========================
-   CHUNK
+CHUNK
 ========================= */
 
 function handleChunk(chunk){
 
-  if(!incoming)
-    return;
+if(!incoming)
+return;
 
-  incoming.chunks.push(
-    chunk
-  );
 
-  incoming.received +=
-    chunk.byteLength;
+incoming.chunks.push(
+chunk
+);
 
-  const percent =
-    incoming.size === 0
-      ? 100
-      : Math.min(
-          100,
-          Math.round(
-            incoming.received /
-            incoming.size *
-            100
-          )
-        );
 
-  incoming.ui.fill.style.width =
-    percent + "%";
+incoming.received +=
+chunk.byteLength;
 
-  incoming.ui.percent.textContent =
-    percent + "%";
+
+const percent =
+incoming.size === 0
+? 100
+: Math.min(
+100,
+Math.round(
+incoming.received /
+incoming.size *
+100
+)
+);
+
+
+incoming.ui.fill.style.width =
+percent + "%";
+
+
+incoming.ui.percent.textContent =
+percent + "%";
 
 }
 
+
 /* =========================
-   FINISH
+FINISH
 ========================= */
 
 function finishIncoming(){
 
-  if(!incoming)
-    return;
+if(!incoming)
+return;
 
-  const info =
-    incoming;
 
-  const blob =
-    new Blob(
-      info.chunks,
-      {
-        type:info.mime
-      }
-    );
+const info =
+incoming;
 
-  const url =
-    URL.createObjectURL(
-      blob
-    );
 
-  const a =
-    document.createElement("a");
+const blob =
+new Blob(
+info.chunks,
+{
+type:info.mime
+}
+);
 
-  a.href = url;
-  a.download = info.name;
 
-  document.body.appendChild(a);
+const url =
+URL.createObjectURL(
+blob
+);
 
-  a.click();
 
-  a.remove();
+const a =
+document.createElement("a");
 
-  setTimeout(
-    () => URL.revokeObjectURL(url),
-    5000
-  );
 
-  status(
-    "✅ Received: " +
-    info.name
-  );
+a.href = url;
 
-  incoming = null;
+a.download =
+info.name;
+
+
+document.body.appendChild(a);
+
+a.click();
+
+a.remove();
+
+
+setTimeout(
+() =>
+URL.revokeObjectURL(url),
+5000
+);
+
+
+status(
+"✅ Received: " +
+info.name
+);
+
+
+incoming = null;
 
 }
 
+
 /* =========================
-   QR CAMERA SCANNER
+QR SCANNER
 ========================= */
 
 async function startScanner(){
 
-  if(
-    !navigator.mediaDevices ||
-    !navigator.mediaDevices.getUserMedia
-  ){
+if(
+!navigator.mediaDevices ||
+!navigator.mediaDevices.getUserMedia
+){
 
-    alert(
-      "Camera is not supported by this browser."
-    );
+alert(
+"Camera is not supported."
+);
 
-    return;
-
-  }
-
-  try{
-
-    scannerMessage.textContent =
-      "Requesting camera permission...";
-
-    cameraStream =
-      await navigator.mediaDevices
-        .getUserMedia({
-
-          video:{
-            facingMode:{
-              ideal:"environment"
-            },
-
-            width:{
-              ideal:1280
-            },
-
-            height:{
-              ideal:720
-            }
-
-          },
-
-          audio:false
-
-        });
-
-    video.srcObject =
-      cameraStream;
-
-    await video.play();
-
-    scanning = true;
-
-    show(scannerPanel);
-
-    scannerMessage.textContent =
-      "Point your camera at the QR code.";
-
-    scanLoop();
-
-  }catch(error){
-
-    console.error(error);
-
-    alert(
-      "Camera permission denied or unavailable.\n\n" +
-      "Use HTTPS/localhost and allow camera permission."
-    );
-
-    status(
-      "Camera unavailable."
-    );
-
-  }
+return;
 
 }
+
+
+try{
+
+cameraStream =
+await navigator.mediaDevices
+.getUserMedia({
+
+video:{
+facingMode:{
+ideal:"environment"
+}
+},
+
+audio:false
+
+});
+
+
+video.srcObject =
+cameraStream;
+
+
+await video.play();
+
+
+scanning = true;
+
+show(scannerPanel);
+
+
+scanMessage.textContent =
+"Point camera at QR code.";
+
+
+scanLoop();
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Camera permission denied.\n\n" +
+"Use HTTPS or localhost."
+);
+
+}
+
+}
+
 
 function scanLoop(){
 
-  if(!scanning)
-    return;
+if(!scanning)
+return;
 
-  if(
-    video.readyState >=
-    HTMLMediaElement.HAVE_ENOUGH_DATA
-  ){
 
-    const width =
-      video.videoWidth;
+if(
+video.readyState >=
+HTMLMediaElement.HAVE_ENOUGH_DATA
+){
 
-    const height =
-      video.videoHeight;
+const width =
+video.videoWidth;
 
-    if(
-      width &&
-      height
-    ){
+const height =
+video.videoHeight;
 
-      canvas.width =
-        width;
 
-      canvas.height =
-        height;
+if(width && height){
 
-      const ctx =
-        canvas.getContext(
-          "2d",
-          {
-            willReadFrequently:true
-          }
-        );
+canvas.width =
+width;
 
-      ctx.drawImage(
-        video,
-        0,
-        0,
-        width,
-        height
-      );
+canvas.height =
+height;
 
-      const image =
-        ctx.getImageData(
-          0,
-          0,
-          width,
-          height
-        );
 
-      const code =
-        jsQR(
-          image.data,
-          image.width,
-          image.height,
-          {
-            inversionAttempts:
-              "attemptBoth"
-          }
-        );
+const ctx =
+canvas.getContext(
+"2d",
+{
+willReadFrequently:true
+}
+);
 
-      if(
-        code &&
-        code.data
-      ){
 
-        scanning = false;
+ctx.drawImage(
+video,
+0,
+0,
+width,
+height
+);
 
-        scannerMessage.textContent =
-          "✅ QR detected!";
 
-        stopCameraOnly();
+const image =
+ctx.getImageData(
+0,
+0,
+width,
+height
+);
 
-        /*
-          Automatically process the offer.
-        */
-        offerInput.value =
-          code.data;
 
-        processOffer(
-          code.data
-        );
+const code =
+jsQR(
+image.data,
+image.width,
+image.height,
+{
+inversionAttempts:
+"attemptBoth"
+}
+);
 
-        return;
 
-      }
+if(
+code &&
+code.data
+){
 
-    }
+scanning = false;
 
-  }
+scanMessage.textContent =
+"✅ QR detected!";
 
-  requestAnimationFrame(
-    scanLoop
-  );
+
+stopCamera();
+
+
+offerInput.value =
+code.data;
+
+
+processOffer(
+code.data
+);
+
+
+return;
 
 }
 
-function stopCameraOnly(){
-
-  if(cameraStream){
-
-    cameraStream
-      .getTracks()
-      .forEach(
-        track => track.stop()
-      );
-
-    cameraStream = null;
-
-  }
-
-  video.srcObject = null;
+}
 
 }
+
+
+requestAnimationFrame(
+scanLoop
+);
+
+}
+
+
+function stopCamera(){
+
+if(cameraStream){
+
+cameraStream
+.getTracks()
+.forEach(
+track =>
+track.stop()
+);
+
+cameraStream = null;
+
+}
+
+video.srcObject = null;
+
+}
+
 
 function stopScanner(){
 
-  scanning = false;
+scanning = false;
 
-  stopCameraOnly();
+stopCamera();
 
-  hide(scannerPanel);
+hide(scannerPanel);
 
 }
 
+
 /* =========================
-   UI EVENTS
+BUTTONS
 ========================= */
 
 createBtn.onclick =
-  createConnection;
+createConnection;
 
 joinBtn.onclick =
-  openJoin;
+openJoin;
 
 connectBtn.onclick =
-  connectAnswer;
+connectAnswer;
+
 
 generateAnswerBtn.onclick =
-  () => processOffer(
-    offerInput.value
-  );
+() =>
+processOffer(
+offerInput.value
+);
+
 
 copyOfferBtn.onclick =
-  () => copyText(
-    offerCode.textContent
-  );
+() =>
+copyText(
+offerCode.textContent
+);
+
 
 copyAnswerBtn.onclick =
-  () => copyText(
-    answerCode.textContent
-  );
+() =>
+copyText(
+answerCode.textContent
+);
 
-scanBtn.onclick = () => {
 
-  hide(manualPanel);
+scanBtn.onclick =
+() => {
 
-  startScanner();
+hide(manualPanel);
+
+startScanner();
 
 };
+
 
 stopScanBtn.onclick =
-  stopScanner;
+stopScanner;
 
-manualBtn.onclick = () => {
 
-  stopScanner();
+manualBtn.onclick =
+() => {
 
-  show(manualPanel);
+stopScanner();
 
-  status(
-    "Paste the offer code."
-  );
+show(manualPanel);
 
 };
 
+
 /* =========================
-   FILE INPUT
+FILE
 ========================= */
 
-fileInput.onchange = () => {
+fileInput.onchange =
+() => {
 
-  if(
-    fileInput.files.length
-  ){
+if(
+fileInput.files.length
+){
 
-    sendFiles(
-      fileInput.files
-    );
+sendFiles(
+fileInput.files
+);
 
-  }
+}
 
-  fileInput.value = "";
+fileInput.value = "";
 
 };
 
+
 /* =========================
-   DRAG & DROP
+DRAG DROP
 ========================= */
 
 [
-  "dragenter",
-  "dragover"
+"dragenter",
+"dragover"
 ].forEach(
-  eventName => {
-
-    drop.addEventListener(
-      eventName,
-      event => {
-
-        event.preventDefault();
-
-        drop.classList.add(
-          "drag"
-        );
-
-      }
-    );
-
-  }
-);
-
-[
-  "dragleave",
-  "drop"
-].forEach(
-  eventName => {
-
-    drop.addEventListener(
-      eventName,
-      event => {
-
-        event.preventDefault();
-
-        drop.classList.remove(
-          "drag"
-        );
-
-      }
-    );
-
-  }
-);
+eventName => {
 
 drop.addEventListener(
-  "drop",
-  event => {
+eventName,
+event => {
 
-    const files =
-      event.dataTransfer.files;
+event.preventDefault();
 
-    if(files.length){
-
-      sendFiles(files);
-
-    }
-
-  }
+drop.classList.add(
+"drag"
 );
 
+}
+);
+
+}
+);
+
+
+[
+"dragleave",
+"drop"
+].forEach(
+eventName => {
+
+drop.addEventListener(
+eventName,
+event => {
+
+event.preventDefault();
+
+drop.classList.remove(
+"drag"
+);
+
+}
+);
+
+}
+);
+
+
+drop.addEventListener(
+"drop",
+event => {
+
+const files =
+event.dataTransfer.files;
+
+if(files.length){
+
+sendFiles(files);
+
+}
+
+}
+);
+
+
 /* =========================
-   CLEANUP
+CLEANUP
 ========================= */
 
 window.addEventListener(
-  "beforeunload",
-  () => {
+"beforeunload",
+() => {
 
-    stopScanner();
+stopScanner();
 
-    if(pc){
+if(pc){
 
-      try{
-        pc.close();
-      }catch{}
+try{
+pc.close();
+}catch{}
 
-    }
+}
 
-  }
+}
 );
 
 </script>
