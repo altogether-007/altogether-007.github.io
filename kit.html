@@ -6,18 +6,17 @@
 <title>QuickDrop</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
   min-height:100vh;
   font-family:system-ui,-apple-system,Segoe UI,sans-serif;
   background:
-    radial-gradient(circle at top left,#4338ca55,transparent 35%),
+    radial-gradient(circle at top left,#4f46e555,transparent 35%),
     linear-gradient(135deg,#111827,#312e81);
   color:#fff;
   display:flex;
@@ -27,59 +26,73 @@ body{
 }
 
 .app{
-  width:min(94%,700px);
+  width:min(94%,720px);
   text-align:center;
 }
 
 .logo{
   font-size:40px;
   font-weight:800;
-  margin-bottom:5px;
 }
 
 .sub{
   color:#cbd5e1;
-  margin-bottom:25px;
+  margin:5px 0 25px;
 }
 
 .card{
   background:rgba(255,255,255,.09);
   border:1px solid rgba(255,255,255,.15);
   border-radius:25px;
-  padding:25px;
+  padding:24px;
   backdrop-filter:blur(18px);
   box-shadow:0 25px 70px #0006;
 }
 
 .status{
+  min-height:25px;
   margin-bottom:20px;
   color:#cbd5e1;
-  min-height:24px;
+}
+
+.dot{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  background:#64748b;
+  border-radius:50%;
+  margin-right:6px;
+}
+
+.dot.online{
+  background:#22c55e;
+  box-shadow:0 0 12px #22c55e;
+}
+
+.buttons{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
 button{
   border:0;
   border-radius:14px;
-  padding:14px 22px;
+  padding:14px 20px;
   font-size:16px;
   font-weight:700;
   cursor:pointer;
   color:white;
   background:#6366f1;
-  transition:.2s;
 }
 
 button:hover{
   background:#4f46e5;
-  transform:translateY(-1px);
 }
 
 button.secondary{
   background:#334155;
-}
-
-button.secondary:hover{
-  background:#475569;
 }
 
 button.danger{
@@ -89,24 +102,60 @@ button.danger{
 button:disabled{
   opacity:.5;
   cursor:not-allowed;
-  transform:none;
 }
 
-.role-box{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-bottom:20px;
+.panel{
+  margin-top:20px;
+  padding:18px;
+  border-radius:18px;
+  background:#0002;
 }
 
-.role-box button{
-  min-height:55px;
+.hidden{
+  display:none!important;
+}
+
+#qr{
+  width:max-content;
+  margin:15px auto;
+  padding:15px;
+  background:white;
+  border-radius:15px;
+}
+
+.code{
+  margin-top:10px;
+  padding:12px;
+  background:#020617;
+  border-radius:10px;
+  text-align:left;
+  word-break:break-all;
+  max-height:130px;
+  overflow:auto;
+  color:#94a3b8;
+  font-size:11px;
+}
+
+textarea{
+  width:100%;
+  min-height:110px;
+  border:0;
+  border-radius:12px;
+  padding:12px;
+  font-family:monospace;
+  font-size:13px;
+  resize:vertical;
+  outline:none;
+}
+
+textarea:focus{
+  box-shadow:0 0 0 2px #818cf8;
 }
 
 .drop{
   display:block;
   margin-top:20px;
-  padding:50px 20px;
+  padding:45px 20px;
   border:2px dashed #818cf8;
   border-radius:20px;
   cursor:pointer;
@@ -127,63 +176,14 @@ input[type=file]{
   display:none;
 }
 
-textarea{
-  width:100%;
-  min-height:110px;
-  margin-top:10px;
-  border:0;
-  border-radius:12px;
-  padding:12px;
-  resize:vertical;
-  font-family:monospace;
-  font-size:13px;
-  outline:none;
-}
-
-textarea:focus{
-  box-shadow:0 0 0 2px #818cf8;
-}
-
-.panel{
-  margin-top:20px;
-  padding:18px;
-  border-radius:18px;
-  background:#0002;
-}
-
-.hidden{
-  display:none !important;
-}
-
-#qr{
-  margin:15px auto;
-  padding:15px;
-  background:white;
-  width:max-content;
-  border-radius:15px;
-}
-
-.code{
-  word-break:break-all;
-  background:#020617;
-  padding:12px;
-  border-radius:10px;
-  font-size:11px;
-  color:#94a3b8;
-  max-height:100px;
-  overflow:auto;
-  text-align:left;
-}
-
 .progress{
   margin-top:18px;
   text-align:left;
 }
 
-.progress-head{
+.progress-title{
   display:flex;
   justify-content:space-between;
-  gap:10px;
   margin-bottom:7px;
   font-size:14px;
 }
@@ -199,33 +199,57 @@ textarea:focus{
   height:100%;
   width:0;
   background:linear-gradient(90deg,#6366f1,#22c55e);
-  transition:width .1s;
 }
 
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  justify-content:center;
-  margin-top:12px;
+#scanner{
+  position:relative;
+  width:100%;
+  max-width:420px;
+  margin:15px auto;
+  overflow:hidden;
+  border-radius:18px;
+  background:#000;
 }
 
-.connection-dot{
-  display:inline-block;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#64748b;
-  margin-right:6px;
+#video{
+  width:100%;
+  display:block;
 }
 
-.connection-dot.online{
+#scanCanvas{
+  display:none;
+}
+
+.scan-frame{
+  position:absolute;
+  width:65%;
+  aspect-ratio:1;
+  left:17.5%;
+  top:17.5%;
+  border:3px solid #22c55e;
+  border-radius:20px;
+  box-shadow:0 0 0 9999px rgba(0,0,0,.35);
+}
+
+.scan-line{
+  position:absolute;
+  left:20%;
+  width:60%;
+  height:3px;
   background:#22c55e;
   box-shadow:0 0 10px #22c55e;
+  animation:scan 2s linear infinite;
 }
 
-small{
-  color:#94a3b8;
+@keyframes scan{
+  0%{top:20%}
+  50%{top:78%}
+  100%{top:20%}
+}
+
+#scannerMessage{
+  color:#cbd5e1;
+  margin:10px 0;
 }
 
 footer{
@@ -235,12 +259,8 @@ footer{
 }
 
 @media(max-width:600px){
-  .role-box{
-    grid-template-columns:1fr;
-  }
-
   .card{
-    padding:18px;
+    padding:17px;
   }
 
   .logo{
@@ -263,11 +283,13 @@ footer{
   <div class="card">
 
     <div class="status">
-      <span id="dot" class="connection-dot"></span>
+      <span id="dot" class="dot"></span>
       <span id="status">Ready</span>
     </div>
 
-    <div class="role-box">
+    <!-- MAIN BUTTONS -->
+    <div class="buttons">
+
       <button id="createBtn">
         📤 Create Connection
       </button>
@@ -275,35 +297,32 @@ footer{
       <button id="joinBtn" class="secondary">
         📥 Join Connection
       </button>
+
     </div>
 
-    <!-- CREATE / OFFER -->
-    <div id="offerPanel" class="panel hidden">
+    <!-- CREATOR PANEL -->
+    <div id="creatorPanel" class="panel hidden">
 
-      <h3>📱 Scan this QR</h3>
-
-      <p>
-        Scan this QR from the other device.
-      </p>
+      <h3>📱 Scan this QR from the other device</h3>
 
       <div id="qr"></div>
 
-      <small>
-        Or copy the connection code below.
-      </small>
+      <p>
+        Or copy the offer code:
+      </p>
 
       <div id="offerCode" class="code"></div>
 
-      <div class="actions">
+      <div class="buttons" style="margin-top:12px">
         <button id="copyOfferBtn" class="secondary">
-          📋 Copy Code
+          📋 Copy Offer
         </button>
       </div>
 
       <hr style="border-color:#ffffff18;margin:20px 0">
 
       <p>
-        Paste the answer generated by the other device:
+        Paste the answer from the other device:
       </p>
 
       <textarea
@@ -311,52 +330,113 @@ footer{
         placeholder="Paste answer here..."
       ></textarea>
 
-      <div class="actions">
+      <div class="buttons" style="margin-top:12px">
+
         <button id="connectBtn">
           🔗 Connect
         </button>
+
       </div>
 
     </div>
 
-    <!-- JOIN -->
+    <!-- JOIN PANEL -->
     <div id="joinPanel" class="panel hidden">
 
       <h3>📥 Join Connection</h3>
 
-      <p>
-        Scan the QR from the sender or paste the code.
-      </p>
+      <div class="buttons">
 
-      <textarea
-        id="offerInput"
-        placeholder="Paste offer code here..."
-      ></textarea>
-
-      <div class="actions">
-        <button id="generateAnswerBtn">
-          Generate Answer
-        </button>
-
-        <button id="scanBtn" class="secondary">
+        <button id="scanBtn">
           📷 Scan QR
         </button>
+
+        <button
+          id="manualBtn"
+          class="secondary"
+        >
+          ⌨️ Paste Code
+        </button>
+
       </div>
 
+      <!-- SCANNER -->
+      <div id="scannerPanel" class="hidden">
+
+        <div id="scanner">
+
+          <video
+            id="video"
+            autoplay
+            playsinline
+            muted
+          ></video>
+
+          <div class="scan-frame"></div>
+          <div class="scan-line"></div>
+
+        </div>
+
+        <canvas id="scanCanvas"></canvas>
+
+        <div id="scannerMessage">
+          Point your camera at the QR code.
+        </div>
+
+        <button
+          id="stopScanBtn"
+          class="danger"
+        >
+          ✕ Stop Scanner
+        </button>
+
+      </div>
+
+      <!-- MANUAL OFFER -->
+      <div id="manualPanel" class="hidden">
+
+        <p>
+          Paste the offer from Device A:
+        </p>
+
+        <textarea
+          id="offerInput"
+          placeholder="Paste offer code here..."
+        ></textarea>
+
+        <div class="buttons" style="margin-top:12px">
+
+          <button id="generateAnswerBtn">
+            Generate Answer
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- ANSWER -->
       <div id="answerPanel" class="hidden">
 
         <hr style="border-color:#ffffff18;margin:20px 0">
 
         <p>
-          Send this answer back to the first device:
+          Send this answer back to Device A:
         </p>
 
-        <div id="answerCode" class="code"></div>
+        <div
+          id="answerCode"
+          class="code"
+        ></div>
 
-        <div class="actions">
-          <button id="copyAnswerBtn" class="secondary">
+        <div class="buttons" style="margin-top:12px">
+
+          <button
+            id="copyAnswerBtn"
+            class="secondary"
+          >
             📋 Copy Answer
           </button>
+
         </div>
 
       </div>
@@ -391,7 +471,7 @@ footer{
   </div>
 
   <footer>
-    WebRTC • Browser-to-browser • No file server
+    WebRTC • Browser-to-browser • No upload server
   </footer>
 
 </div>
@@ -415,26 +495,14 @@ const createBtn =
 const joinBtn =
   document.getElementById("joinBtn");
 
-const offerPanel =
-  document.getElementById("offerPanel");
+const creatorPanel =
+  document.getElementById("creatorPanel");
 
 const joinPanel =
   document.getElementById("joinPanel");
 
-const offerInput =
-  document.getElementById("offerInput");
-
-const answerInput =
-  document.getElementById("answerInput");
-
-const connectBtn =
-  document.getElementById("connectBtn");
-
-const generateAnswerBtn =
-  document.getElementById("generateAnswerBtn");
-
-const answerPanel =
-  document.getElementById("answerPanel");
+const qr =
+  document.getElementById("qr");
 
 const offerCode =
   document.getElementById("offerCode");
@@ -442,14 +510,66 @@ const offerCode =
 const answerCode =
   document.getElementById("answerCode");
 
-const qr =
-  document.getElementById("qr");
+const answerInput =
+  document.getElementById("answerInput");
+
+const offerInput =
+  document.getElementById("offerInput");
+
+const connectBtn =
+  document.getElementById("connectBtn");
+
+const generateAnswerBtn =
+  document.getElementById(
+    "generateAnswerBtn"
+  );
 
 const copyOfferBtn =
-  document.getElementById("copyOfferBtn");
+  document.getElementById(
+    "copyOfferBtn"
+  );
 
 const copyAnswerBtn =
-  document.getElementById("copyAnswerBtn");
+  document.getElementById(
+    "copyAnswerBtn"
+  );
+
+const scanBtn =
+  document.getElementById("scanBtn");
+
+const stopScanBtn =
+  document.getElementById(
+    "stopScanBtn"
+  );
+
+const manualBtn =
+  document.getElementById("manualBtn");
+
+const scannerPanel =
+  document.getElementById(
+    "scannerPanel"
+  );
+
+const manualPanel =
+  document.getElementById(
+    "manualPanel"
+  );
+
+const answerPanel =
+  document.getElementById(
+    "answerPanel"
+  );
+
+const video =
+  document.getElementById("video");
+
+const canvas =
+  document.getElementById("scanCanvas");
+
+const scannerMessage =
+  document.getElementById(
+    "scannerMessage"
+  );
 
 const fileInput =
   document.getElementById("fileInput");
@@ -467,29 +587,31 @@ const progress =
 let pc = null;
 let channel = null;
 
-let role = null;
+const CHUNK =
+  64 * 1024;
 
-const CHUNK = 64 * 1024;
-const MAX_BUFFER = CHUNK * 8;
+const MAX_BUFFER =
+  CHUNK * 8;
 
-/*
-  Google's public STUN server helps peers
-  discover their public network address.
-
-  The app can work without TURN on many networks,
-  but a TURN server is required for difficult NATs.
-*/
 const ICE_SERVERS = [
   {
-    urls: "stun:stun.l.google.com:19302"
+    urls:
+      "stun:stun.l.google.com:19302"
   }
 ];
 
 /* =========================
-   STATE
+   RECEIVE STATE
 ========================= */
 
 let incoming = null;
+
+/* =========================
+   CAMERA STATE
+========================= */
+
+let cameraStream = null;
+let scanning = false;
 
 /* =========================
    HELPERS
@@ -499,19 +621,33 @@ function status(text){
   statusEl.textContent = text;
 }
 
-function setOnline(online){
-  dot.classList.toggle("online", online);
+function online(value){
+  dot.classList.toggle(
+    "online",
+    value
+  );
 }
 
-function show(element){
-  element.classList.remove("hidden");
+function show(el){
+  el.classList.remove(
+    "hidden"
+  );
 }
 
-function hide(element){
-  element.classList.add("hidden");
+function hide(el){
+  el.classList.add(
+    "hidden"
+  );
+}
+
+function sleep(ms){
+  return new Promise(
+    r => setTimeout(r,ms)
+  );
 }
 
 function escapeHTML(text){
+
   return text.replace(
     /[&<>"']/g,
     c => ({
@@ -522,26 +658,25 @@ function escapeHTML(text){
       "'":"&#039;"
     }[c])
   );
-}
 
-function sleep(ms){
-  return new Promise(
-    resolve => setTimeout(resolve, ms)
-  );
 }
 
 async function copyText(text){
 
   try{
 
-    await navigator.clipboard.writeText(text);
+    await navigator.clipboard.writeText(
+      text
+    );
 
-    status("✅ Copied to clipboard");
+    status(
+      "✅ Copied to clipboard"
+    );
 
   }catch{
 
     alert(
-      "Clipboard permission denied. Please copy manually."
+      "Clipboard permission denied. Copy manually."
     );
 
   }
@@ -549,7 +684,7 @@ async function copyText(text){
 }
 
 /* =========================
-   PEER CREATION
+   CREATE PEER
 ========================= */
 
 function createPeer(){
@@ -567,44 +702,50 @@ function createPeer(){
       iceServers:ICE_SERVERS
     });
 
-  pc.onconnectionstatechange = () => {
+  pc.onconnectionstatechange =
+    () => {
 
-    const state =
-      pc.connectionState;
+      const state =
+        pc.connectionState;
 
-    if(state === "connected"){
+      if(
+        state === "connected"
+      ){
 
-      setOnline(true);
+        online(true);
 
-      status(
-        "🟢 Connected! Ready to transfer files."
-      );
+        status(
+          "🟢 Connected! Ready to transfer files."
+        );
 
-    }else{
+      }else{
 
-      setOnline(false);
+        online(false);
 
-      status(
-        "Connection: " + state
-      );
+        status(
+          "Connection: " +
+          state
+        );
 
-    }
+      }
 
-  };
+    };
 
-  pc.oniceconnectionstatechange = () => {
+  pc.oniceconnectionstatechange =
+    () => {
 
-    if(
-      pc.iceConnectionState === "failed"
-    ){
+      if(
+        pc.iceConnectionState ===
+        "failed"
+      ){
 
-      status(
-        "❌ Connection failed. Try reconnecting."
-      );
+        status(
+          "❌ Connection failed."
+        );
 
-    }
+      }
 
-  };
+    };
 
 }
 
@@ -624,17 +765,17 @@ function setupChannel(ch){
 
   channel.onopen = () => {
 
-    setOnline(true);
+    online(true);
 
     status(
-      "🟢 Connected! Ready to send files."
+      "🟢 Connected! Ready to transfer files."
     );
 
   };
 
   channel.onclose = () => {
 
-    setOnline(false);
+    online(false);
 
     status(
       "Connection closed."
@@ -656,12 +797,12 @@ function setupChannel(ch){
 }
 
 /* =========================
-   OFFER CREATION
+   CREATE OFFER
 ========================= */
 
 async function createConnection(){
 
-  role = "offer";
+  stopScanner();
 
   createPeer();
 
@@ -683,7 +824,7 @@ async function createConnection(){
   );
 
   status(
-    "Preparing connection..."
+    "Preparing QR..."
   );
 
   await waitForICE();
@@ -704,40 +845,49 @@ async function createConnection(){
       text:data,
       width:240,
       height:240,
-      correctLevel:QRCode.CorrectLevel.M
+      correctLevel:
+        QRCode.CorrectLevel.M
     }
   );
 
-  show(offerPanel);
+  show(creatorPanel);
   hide(joinPanel);
 
   status(
     "📱 Scan this QR from the other device."
   );
+
 }
 
 /* =========================
-   JOIN / ANSWER
+   JOIN
 ========================= */
 
-async function generateAnswer(){
+function openJoin(){
+
+  stopScanner();
+
+  hide(creatorPanel);
+  show(joinPanel);
+
+  status(
+    "Scan the QR from Device A."
+  );
+
+}
+
+/* =========================
+   PROCESS OFFER
+========================= */
+
+async function processOffer(raw){
 
   try{
 
-    const raw =
-      offerInput.value.trim();
-
-    if(!raw){
-
-      alert(
-        "Paste the offer code first."
-      );
-
-      return;
-    }
-
     const offer =
-      JSON.parse(raw);
+      JSON.parse(
+        raw.trim()
+      );
 
     if(
       offer.type !== "offer" ||
@@ -750,17 +900,18 @@ async function generateAnswer(){
 
     }
 
-    role = "answer";
+    stopScanner();
 
     createPeer();
 
-    pc.ondatachannel = event => {
+    pc.ondatachannel =
+      event => {
 
-      setupChannel(
-        event.channel
-      );
+        setupChannel(
+          event.channel
+        );
 
-    };
+      };
 
     await pc.setRemoteDescription(
       new RTCSessionDescription(
@@ -781,18 +932,18 @@ async function generateAnswer(){
 
     await waitForICE();
 
-    const data =
+    const answerData =
       JSON.stringify(
         pc.localDescription
       );
 
     answerCode.textContent =
-      data;
+      answerData;
 
     show(answerPanel);
 
     status(
-      "✅ Answer created. Send it back to the first device."
+      "✅ Answer ready. Send it to Device A."
     );
 
   }catch(error){
@@ -800,7 +951,11 @@ async function generateAnswer(){
     console.error(error);
 
     alert(
-      "Invalid offer code."
+      "❌ Invalid QR / offer code."
+    );
+
+    status(
+      "Invalid offer."
     );
 
   }
@@ -808,10 +963,10 @@ async function generateAnswer(){
 }
 
 /* =========================
-   SET ANSWER
+   MANUAL ANSWER
 ========================= */
 
-async function connectWithAnswer(){
+async function connectAnswer(){
 
   try{
 
@@ -842,16 +997,6 @@ async function connectWithAnswer(){
 
     }
 
-    if(!pc){
-
-      alert(
-        "Create a connection first."
-      );
-
-      return;
-
-    }
-
     await pc.setRemoteDescription(
       new RTCSessionDescription(
         answer
@@ -875,7 +1020,7 @@ async function connectWithAnswer(){
 }
 
 /* =========================
-   ICE WAIT
+   ICE
 ========================= */
 
 function waitForICE(){
@@ -883,7 +1028,8 @@ function waitForICE(){
   return new Promise(resolve => {
 
     if(
-      pc.iceGatheringState === "complete"
+      pc.iceGatheringState ===
+      "complete"
     ){
 
       resolve();
@@ -891,15 +1037,17 @@ function waitForICE(){
 
     }
 
-    let finished = false;
+    let done = false;
 
-    const done = () => {
+    const finish = () => {
 
-      if(finished) return;
+      if(done) return;
 
-      finished = true;
+      done = true;
 
-      clearTimeout(timeout);
+      clearTimeout(
+        timeout
+      );
 
       pc.removeEventListener(
         "icegatheringstatechange",
@@ -913,10 +1061,11 @@ function waitForICE(){
     const check = () => {
 
       if(
-        pc.iceGatheringState === "complete"
+        pc.iceGatheringState ===
+        "complete"
       ){
 
-        done();
+        finish();
 
       }
 
@@ -924,7 +1073,7 @@ function waitForICE(){
 
     const timeout =
       setTimeout(
-        done,
+        finish,
         7000
       );
 
@@ -938,19 +1087,21 @@ function waitForICE(){
 }
 
 /* =========================
-   PROGRESS UI
+   PROGRESS
 ========================= */
 
 function createProgress(name){
 
   const box =
-    document.createElement("div");
+    document.createElement(
+      "div"
+    );
 
   box.className =
     "progress";
 
   box.innerHTML = `
-    <div class="progress-head">
+    <div class="progress-title">
       <b>${escapeHTML(name)}</b>
       <span>0%</span>
     </div>
@@ -963,14 +1114,19 @@ function createProgress(name){
   progress.appendChild(box);
 
   return {
-    fill:box.querySelector(".fill"),
-    percent:box.querySelector(".progress-head span")
+    fill:
+      box.querySelector(".fill"),
+
+    percent:
+      box.querySelector(
+        ".progress-title span"
+      )
   };
 
 }
 
 /* =========================
-   SEND FILE
+   BUFFER CONTROL
 ========================= */
 
 async function waitForBuffer(){
@@ -981,49 +1137,59 @@ async function waitForBuffer(){
     MAX_BUFFER
   ){
 
-    await new Promise(resolve => {
+    await new Promise(
+      resolve => {
 
-      let done = false;
+        let finished = false;
 
-      const finish = () => {
+        const done = () => {
 
-        if(done) return;
+          if(finished)
+            return;
 
-        done = true;
+          finished = true;
 
-        clearTimeout(timeout);
+          clearTimeout(
+            timeout
+          );
 
-        channel.removeEventListener(
+          channel.removeEventListener(
+            "bufferedamountlow",
+            done
+          );
+
+          resolve();
+
+        };
+
+        const timeout =
+          setTimeout(
+            done,
+            100
+          );
+
+        channel.addEventListener(
           "bufferedamountlow",
-          finish
+          done
         );
 
-        resolve();
-
-      };
-
-      const timeout =
-        setTimeout(
-          finish,
-          100
-        );
-
-      channel.addEventListener(
-        "bufferedamountlow",
-        finish
-      );
-
-    });
+      }
+    );
 
   }
 
 }
 
+/* =========================
+   SEND FILE
+========================= */
+
 async function sendFile(file){
 
   const ui =
     createProgress(
-      "Sending: " + file.name
+      "Sending: " +
+      file.name
     );
 
   channel.send(
@@ -1031,7 +1197,9 @@ async function sendFile(file){
       type:"start",
       name:file.name,
       size:file.size,
-      mime:file.type || "application/octet-stream"
+      mime:
+        file.type ||
+        "application/octet-stream"
     })
   );
 
@@ -1070,6 +1238,7 @@ async function sendFile(file){
 
     ui.percent.textContent =
       percent + "%";
+
   }
 
   channel.send(
@@ -1081,14 +1250,15 @@ async function sendFile(file){
 }
 
 /* =========================
-   SEND MULTIPLE FILES
+   SEND FILES
 ========================= */
 
 async function sendFiles(files){
 
   if(
     !channel ||
-    channel.readyState !== "open"
+    channel.readyState !==
+      "open"
   ){
 
     alert(
@@ -1116,30 +1286,27 @@ async function sendFiles(files){
         file.name
       );
 
-      break;
+      return;
 
     }
 
   }
 
   status(
-    "✅ File transfer complete."
+    "✅ Transfer complete."
   );
 
 }
 
 /* =========================
-   RECEIVE FILE
+   RECEIVE
 ========================= */
 
 function receiveData(event){
 
-  /*
-    Control messages are JSON strings.
-  */
-
   if(
-    typeof event.data === "string"
+    typeof event.data ===
+    "string"
   ){
 
     let msg;
@@ -1147,7 +1314,9 @@ function receiveData(event){
     try{
 
       msg =
-        JSON.parse(event.data);
+        JSON.parse(
+          event.data
+        );
 
     }catch{
 
@@ -1201,55 +1370,39 @@ function receiveData(event){
 
     }
 
-  }
-
-  /*
-    Binary file chunk.
-  */
-
-  if(
-    !incoming
-  ){
-
     return;
 
   }
 
-  let chunk;
+  if(!incoming)
+    return;
 
   if(
-    event.data instanceof ArrayBuffer
+    event.data instanceof
+    ArrayBuffer
   ){
 
-    chunk =
-      event.data;
+    handleChunk(
+      event.data
+    );
 
   }else if(
-    event.data instanceof Blob
+    event.data instanceof
+    Blob
   ){
 
     event.data
       .arrayBuffer()
-      .then(buffer => {
-
-        handleChunk(buffer);
-
-      });
-
-    return;
-
-  }else{
-
-    return;
+      .then(
+        handleChunk
+      );
 
   }
-
-  handleChunk(chunk);
 
 }
 
 /* =========================
-   HANDLE CHUNK
+   CHUNK
 ========================= */
 
 function handleChunk(chunk){
@@ -1285,7 +1438,7 @@ function handleChunk(chunk){
 }
 
 /* =========================
-   FINISH FILE
+   FINISH
 ========================= */
 
 function finishIncoming(){
@@ -1293,27 +1446,27 @@ function finishIncoming(){
   if(!incoming)
     return;
 
-  const fileInfo =
+  const info =
     incoming;
 
   const blob =
     new Blob(
-      fileInfo.chunks,
+      info.chunks,
       {
-        type:fileInfo.mime
+        type:info.mime
       }
     );
 
   const url =
-    URL.createObjectURL(blob);
+    URL.createObjectURL(
+      blob
+    );
 
   const a =
     document.createElement("a");
 
   a.href = url;
-
-  a.download =
-    fileInfo.name;
+  a.download = info.name;
 
   document.body.appendChild(a);
 
@@ -1328,7 +1481,7 @@ function finishIncoming(){
 
   status(
     "✅ Received: " +
-    fileInfo.name
+    info.name
   );
 
   incoming = null;
@@ -1336,28 +1489,226 @@ function finishIncoming(){
 }
 
 /* =========================
-   BUTTONS
+   QR CAMERA SCANNER
+========================= */
+
+async function startScanner(){
+
+  if(
+    !navigator.mediaDevices ||
+    !navigator.mediaDevices.getUserMedia
+  ){
+
+    alert(
+      "Camera is not supported by this browser."
+    );
+
+    return;
+
+  }
+
+  try{
+
+    scannerMessage.textContent =
+      "Requesting camera permission...";
+
+    cameraStream =
+      await navigator.mediaDevices
+        .getUserMedia({
+
+          video:{
+            facingMode:{
+              ideal:"environment"
+            },
+
+            width:{
+              ideal:1280
+            },
+
+            height:{
+              ideal:720
+            }
+
+          },
+
+          audio:false
+
+        });
+
+    video.srcObject =
+      cameraStream;
+
+    await video.play();
+
+    scanning = true;
+
+    show(scannerPanel);
+
+    scannerMessage.textContent =
+      "Point your camera at the QR code.";
+
+    scanLoop();
+
+  }catch(error){
+
+    console.error(error);
+
+    alert(
+      "Camera permission denied or unavailable.\n\n" +
+      "Use HTTPS/localhost and allow camera permission."
+    );
+
+    status(
+      "Camera unavailable."
+    );
+
+  }
+
+}
+
+function scanLoop(){
+
+  if(!scanning)
+    return;
+
+  if(
+    video.readyState >=
+    HTMLMediaElement.HAVE_ENOUGH_DATA
+  ){
+
+    const width =
+      video.videoWidth;
+
+    const height =
+      video.videoHeight;
+
+    if(
+      width &&
+      height
+    ){
+
+      canvas.width =
+        width;
+
+      canvas.height =
+        height;
+
+      const ctx =
+        canvas.getContext(
+          "2d",
+          {
+            willReadFrequently:true
+          }
+        );
+
+      ctx.drawImage(
+        video,
+        0,
+        0,
+        width,
+        height
+      );
+
+      const image =
+        ctx.getImageData(
+          0,
+          0,
+          width,
+          height
+        );
+
+      const code =
+        jsQR(
+          image.data,
+          image.width,
+          image.height,
+          {
+            inversionAttempts:
+              "attemptBoth"
+          }
+        );
+
+      if(
+        code &&
+        code.data
+      ){
+
+        scanning = false;
+
+        scannerMessage.textContent =
+          "✅ QR detected!";
+
+        stopCameraOnly();
+
+        /*
+          Automatically process the offer.
+        */
+        offerInput.value =
+          code.data;
+
+        processOffer(
+          code.data
+        );
+
+        return;
+
+      }
+
+    }
+
+  }
+
+  requestAnimationFrame(
+    scanLoop
+  );
+
+}
+
+function stopCameraOnly(){
+
+  if(cameraStream){
+
+    cameraStream
+      .getTracks()
+      .forEach(
+        track => track.stop()
+      );
+
+    cameraStream = null;
+
+  }
+
+  video.srcObject = null;
+
+}
+
+function stopScanner(){
+
+  scanning = false;
+
+  stopCameraOnly();
+
+  hide(scannerPanel);
+
+}
+
+/* =========================
+   UI EVENTS
 ========================= */
 
 createBtn.onclick =
   createConnection;
 
-joinBtn.onclick = () => {
-
-  show(joinPanel);
-  hide(offerPanel);
-
-  status(
-    "Paste the offer from the other device."
-  );
-
-};
-
-generateAnswerBtn.onclick =
-  generateAnswer;
+joinBtn.onclick =
+  openJoin;
 
 connectBtn.onclick =
-  connectWithAnswer;
+  connectAnswer;
+
+generateAnswerBtn.onclick =
+  () => processOffer(
+    offerInput.value
+  );
 
 copyOfferBtn.onclick =
   () => copyText(
@@ -1368,6 +1719,29 @@ copyAnswerBtn.onclick =
   () => copyText(
     answerCode.textContent
   );
+
+scanBtn.onclick = () => {
+
+  hide(manualPanel);
+
+  startScanner();
+
+};
+
+stopScanBtn.onclick =
+  stopScanner;
+
+manualBtn.onclick = () => {
+
+  stopScanner();
+
+  show(manualPanel);
+
+  status(
+    "Paste the offer code."
+  );
+
+};
 
 /* =========================
    FILE INPUT
@@ -1396,42 +1770,46 @@ fileInput.onchange = () => {
 [
   "dragenter",
   "dragover"
-].forEach(eventName => {
+].forEach(
+  eventName => {
 
-  drop.addEventListener(
-    eventName,
-    event => {
+    drop.addEventListener(
+      eventName,
+      event => {
 
-      event.preventDefault();
+        event.preventDefault();
 
-      drop.classList.add(
-        "drag"
-      );
+        drop.classList.add(
+          "drag"
+        );
 
-    }
-  );
+      }
+    );
 
-});
+  }
+);
 
 [
   "dragleave",
   "drop"
-].forEach(eventName => {
+].forEach(
+  eventName => {
 
-  drop.addEventListener(
-    eventName,
-    event => {
+    drop.addEventListener(
+      eventName,
+      event => {
 
-      event.preventDefault();
+        event.preventDefault();
 
-      drop.classList.remove(
-        "drag"
-      );
+        drop.classList.remove(
+          "drag"
+        );
 
-    }
-  );
+      }
+    );
 
-});
+  }
+);
 
 drop.addEventListener(
   "drop",
@@ -1450,10 +1828,25 @@ drop.addEventListener(
 );
 
 /* =========================
-   INITIAL STATE
+   CLEANUP
 ========================= */
 
-status("Ready");
+window.addEventListener(
+  "beforeunload",
+  () => {
+
+    stopScanner();
+
+    if(pc){
+
+      try{
+        pc.close();
+      }catch{}
+
+    }
+
+  }
+);
 
 </script>
 
