@@ -1,8 +1,19 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Altogether 007</title>
+
+    <meta name="title" content="Altogether 007 - All-in-One Useful Tools Hub">
+    <meta name="description" content="Altogether 007 is a versatile web portal featuring video downloaders, AI tools, games, speed testers, music, medical info, and more. All your essential tools in one place.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://altogether-007.github.io/">
+    <meta property="og:title" content="Altogether 007 - All-in-One Useful Tools Hub">
+    <meta property="og:image" content="https://i.postimg.cc/63nNfFKF/Altogether.png">
+
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/63nNfFKF/Altogether.png">
+
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -11,90 +22,419 @@
             background-color: #000;
             color: #fff;
         }
-        .file-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            padding: 10px;
-        }
-        .directory-item, .file-item {
-            margin: 10px;
-            text-align: center;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform .3s ease, box-shadow .3s ease;
-            background-color: #1a1a1a;
-            padding: 10px;
-            width: calc(14.28% - 20px);
-            box-sizing: border-box;
-        }
-        .directory-item img, .file-item img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 10px;
-            transition: transform .3s ease;
-        }
-        .directory-item a, .file-item a {
-            text-decoration: none;
-            color: #00bfff;
-            font-weight: 700;
-            display: block;
-            margin-top: 5px;
-            transition: color .3s ease;
-        }
-        .directory-item:hover, .file-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(255, 255, 255, .3);
-        }
-        .directory-item img:hover, .file-item img:hover {
-            transform: scale(1.1);
-        }
-        .directory-item a:hover, .file-item a:hover {
-            color: #fff;
-        }
+
         h1 {
             text-align: center;
             color: #00bfff;
             margin-bottom: 20px;
         }
-        
-        @media (max-width: 1024px) {
-            .directory-item, .file-item {
-                width: calc(25% - 20px);
-            }
+
+        .section-title {
+            color: #00bfff;
+            margin: 20px 0 10px 10px;
+            font-size: 18px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            display: none;
         }
-        @media (max-width: 768px) {
-            .directory-item, .file-item {
-                width: calc(33.333% - 20px);
-            }
+
+        .file-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 15px;
+            padding: 10px;
         }
-        @media (max-width: 480px) {
-            .directory-item, .file-item {
-                width: calc(50% - 20px);
-                margin: 5px;
-                padding: 5px;
-            }
-        
-            h1 {
-                font-size: 24px;
-                margin-bottom: 10px;
-            }
+
+        .directory-item {
+            text-align: center;
+            border-radius: 12px;
+            background-color: #1a1a1a;
+            padding: 12px;
+            border: 2px solid #00FFFF; 
+            transition: transform .3s ease, border-color .3s ease;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .directory-item:hover {
+            transform: scale(1.03);
+            border-color: #00bfff;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+        }
+
+        .directory-item img {
+            width: 80%;
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            border: 2px solid #00FFFF;
+            transition: transform .3s ease;
+        }
+
+        .directory-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .title-wrapper {
+            position: relative;
+            margin-top: 10px;
+            padding: 8px 28px 8px 8px;
+            border: 1px solid #00FFFF;
+            border-radius: 6px;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 32px;
+        }
+
+        .tool-title {
+            text-decoration: none;
+            color: #00bfff;
+            font-weight: 700;
+            font-size: 12px;
+            white-space: normal;
+            word-break: break-word;
+            line-height: 1.3;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+
+        .fav-star {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #555;
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.2s, transform 0.2s;
+            line-height: 1;
+        }
+
+        .fav-star:hover {
+            transform: translateY(-50%) scale(1.2);
+            color: #fff;
+        }
+
+        .fav-star.active {
+            color: #ffd700;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
         }
     </style>
-   </head>
+</head>
 <body>
 
     <h1>Altogether 007</h1>
-           
+
+    <h2 id="fav-heading" class="section-title">⭐ FAVORITES</h2>
+    <div id="fav-container" class="file-container"></div>
+
+    <h2 id="all-heading" class="section-title" style="display:block;">Ai</h2>
+    <div id="main-container" class="file-container">
 
 
-    <div class="file-container">
- 
-<div class="directory-item"><a href="https://chatgpt.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/3840px-ChatGPT_logo.svg.png" alt="CHATGPT"></a><a href="https://chatgpt.com/">CHATGPT</a></div>
 
-<div class="directory-item"><a href="https://gemini.google.com/app"><img src="https://static.vecteezy.com/system/resources/previews/055/687/055/non_2x/rectangle-gemini-google-icon-symbol-logo-free-png.png" alt="GEMINI"></a><a href="https://gemini.google.com/app">GEMINI</a></div>
+        <div class="directory-item" data-id="CHATGPT">
+            <a href="https://chatgpt.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/3840px-ChatGPT_logo.svg.png" alt="CHATGPT"></a>
+            <div class="title-wrapper">
+                <a href="https://chatgpt.com" class="tool-title">CHATGPT</a>
+                <span class="fav-star" onclick="toggleFav('CHATGPT')">★</span>
+            </div>
+        </div>
 
-</body></html>
+        
+            <div class="directory-item" data-id="GEMINI">
+            <a href="https://gemini.google.com/app"><img src="https://static.vecteezy.com/system/resources/previews/055/687/055/non_2x/rectangle-gemini-google-icon-symbol-logo-free-png.png" alt="GEMINI"></a>
+            <div class="title-wrapper">
+                <a href="https://gemini.google.com/app" class="tool-title">GEMINI</a>
+                <span class="fav-star" onclick="toggleFav('GEMINI')">★</span>
+            </div>
+        </div>
+
+      
+                <div class="directory-item" data-id="PERPLEXITY">
+            <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/perplexity" alt="PERPLEXITY">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://www.perplexity.ai" class="tool-title" target="_blank" rel="noopener noreferrer">PERPLEXITY</a>
+                <span class="fav-star" onclick="toggleFav('PERPLEXITY')">★</span>
+            </div>
+        </div>
+        
+          <div class="directory-item" data-id="GROK">
+            <a href="https://grok.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/grok-icon.png" alt="GROK">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://grok.com" class="tool-title" target="_blank" rel="noopener noreferrer">GROK</a>
+                <span class="fav-star" onclick="toggleFav('GROK')">★</span>
+            </div>
+        </div>
+        
+        
+                <div class="directory-item" data-id="META AI">
+            <a href="https://www.meta.ai" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/meta" alt="META AI">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://www.meta.ai" class="tool-title" target="_blank" rel="noopener noreferrer">META AI</a>
+                <span class="fav-star" onclick="toggleFav('META AI')">★</span>
+            </div>
+        </div>
+        
+                <div class="directory-item" data-id="LE CHAT">
+            <a href="https://chat.mistral.ai" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/mistralai" alt="LE CHAT">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://chat.mistral.ai" class="tool-title" target="_blank" rel="noopener noreferrer">LE CHAT</a>
+                <span class="fav-star" onclick="toggleFav('LE CHAT')">★</span>
+            </div>
+        </div>
+        
+                <div class="directory-item" data-id="QWEN">
+            <a href="https://chat.qwen.ai" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/qwen" alt="QWEN">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://chat.qwen.ai" class="tool-title" target="_blank" rel="noopener noreferrer">QWEN</a>
+                <span class="fav-star" onclick="toggleFav('QWEN')">★</span>
+            </div>
+        </div>
+        
+          <div class="directory-item" data-id="HUGGING CHAT">
+            <a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/huggingface" alt="HUGGING CHAT">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://huggingface.co/" class="tool-title" target="_blank" rel="noopener noreferrer">HUGGING CHAT</a>
+                <span class="fav-star" onclick="toggleFav('HUGGING CHAT')">★</span>
+            </div>
+        </div>
+        
+        
+        <div class="directory-item" data-id="CANVA AI">
+            <a href="https://www.canva.com/ai-image-generator/" target="_blank" rel="noopener noreferrer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTajnOpIShkdRUNHMD7J_8cYXR0E-q-axeWcgdu55HrzlSW683riKXskhxA&s=10" alt="CANVA AI">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://www.canva.com/ai-image-generator/" class="tool-title" target="_blank" rel="noopener noreferrer">CANVA AI</a>
+                <span class="fav-star" onclick="toggleFav('CANVA AI')">★</span>
+            </div>
+        </div>
+              
+
+        <div class="directory-item" data-id="SUNO">
+            <a href="https://suno.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://pbs.twimg.com/profile_images/1917978610683514880/JbHhI1yH_400x400.jpg" alt="SUNO">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://suno.com" class="tool-title" target="_blank" rel="noopener noreferrer">SUNO</a>
+                <span class="fav-star" onclick="toggleFav('SUNO')">★</span>
+            </div>
+        </div>
+                
+
+        <div class="directory-item" data-id="UDIO">
+            <a href="https://udio.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn-1.webcatalog.io/catalog/udio/udio-icon-filled-256.png?v=1716619278194" alt="UDIO">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://udio.com" class="tool-title" target="_blank" rel="noopener noreferrer">UDIO</a>
+                <span class="fav-star" onclick="toggleFav('UDIO')">★</span>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                  <div class="directory-item" data-id="CLAUDE">
+            <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/claude" alt="CLAUDE">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://claude.ai" class="tool-title" target="_blank" rel="noopener noreferrer">CLAUDE</a>
+                <span class="fav-star" onclick="toggleFav('CLAUDE')">★</span>
+            </div>
+        </div>
+        
+               <div class="directory-item" data-id="GOOGLE AI STUDIO">
+            <a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/googlegemini" alt="GOOGLE AI STUDIO">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://aistudio.google.com" class="tool-title" target="_blank" rel="noopener noreferrer">GOOGLE AI STUDIO</a>
+                <span class="fav-star" onclick="toggleFav('GOOGLE AI STUDIO')">★</span>
+            </div>
+        </div>
+        
+        <div class="directory-item" data-id="MICROSOFT COPILOT">
+            <a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://res.cdn.office.net/officehub/images/content/images/unauth-copilotcom/copilot-mobile-logo-static-286643fc8c.png" alt="MICROSOFT COPILOT">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://copilot.microsoft.com" class="tool-title" target="_blank" rel="noopener noreferrer">MICROSOFT COPILOT</a>
+                <span class="fav-star" onclick="toggleFav('MICROSOFT COPILOT')">★</span>
+            </div>
+        </div>
+        
+        
+        <div class="directory-item" data-id="DEEPSEEK">
+            <a href="https://chat.deepseek.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/deepseek" alt="DEEPSEEK">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://chat.deepseek.com" class="tool-title" target="_blank" rel="noopener noreferrer">DEEPSEEK</a>
+                <span class="fav-star" onclick="toggleFav('DEEPSEEK')">★</span>
+            </div>
+        </div>
+        
+        <div class="directory-item" data-id="POE">
+            <a href="https://poe.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/poe" alt="POE">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://poe.com" class="tool-title" target="_blank" rel="noopener noreferrer">POE</a>
+                <span class="fav-star" onclick="toggleFav('POE')">★</span>
+            </div>
+        </div>
+        
+                <div class="directory-item" data-id="ADOBE FIREFLY">
+            <a href="https://firefly.adobe.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Adobe_Firefly_Logo.svg/960px-Adobe_Firefly_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="ADOBE FIREFLY">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://firefly.adobe.com" class="tool-title" target="_blank" rel="noopener noreferrer">ADOBE FIREFLY</a>
+                <span class="fav-star" onclick="toggleFav('ADOBE FIREFLY')">★</span>
+            </div>
+        </div>
+        
+                <div class="directory-item" data-id="LEONARDO AI">
+            <a href="https://leonardo.ai" target="_blank" rel="noopener noreferrer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTt-2jlQJWKEYCPYQme7hougWIIf9Z23ebVl2ay5c1VzTeSXbpJeVyQpQ&s=10" alt="LEONARDO AI">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://leonardo.ai" class="tool-title" target="_blank" rel="noopener noreferrer">LEONARDO AI</a>
+                <span class="fav-star" onclick="toggleFav('LEONARDO AI')">★</span>
+            </div>
+        </div>
+
+
+        <div class="directory-item" data-id="ELEVENLABS">
+            <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer">
+                <img src="https://avatars.githubusercontent.com/u/94471909?s=280&v=4" alt="ELEVENLABS">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://elevenlabs.io" class="tool-title" target="_blank" rel="noopener noreferrer">ELEVENLABS</a>
+                <span class="fav-star" onclick="toggleFav('ELEVENLABS')">★</span>
+            </div>
+        </div>
+
+        <div class="directory-item" data-id="PICSART AI">
+            <a href="https://picsart.com/ai-image-generator/" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.simpleicons.org/picsart" alt="PICSART AI">
+            </a>
+            <div class="title-wrapper">
+                <a href="https://picsart.com/ai-image-generator/" class="tool-title" target="_blank" rel="noopener noreferrer">PICSART AI</a>
+                <span class="fav-star" onclick="toggleFav('PICSART AI')">★</span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        
+        
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <script>
+        let favorites = JSON.parse(localStorage.getItem('altogether_favs')) || [];
+
+        function sortMainContainer() {
+            const mainContainer = document.getElementById('main-container');
+            const items = Array.from(mainContainer.children);
+            items.sort((a, b) => {
+                const titleA = a.querySelector('.tool-title').innerText.trim().toUpperCase();
+                const titleB = b.querySelector('.tool-title').innerText.trim().toUpperCase();
+                return titleA.localeCompare(titleB);
+            });
+            items.forEach(item => mainContainer.appendChild(item));
+        }
+
+        function renderFavorites() {
+            const favContainer = document.getElementById('fav-container');
+            const favHeading = document.getElementById('fav-heading');
+            favContainer.innerHTML = '';
+            
+            const allItems = document.querySelectorAll('#main-container .directory-item');
+
+            allItems.forEach(item => {
+                const id = item.getAttribute('data-id');
+                const star = item.querySelector('.fav-star');
+                if (favorites.includes(id)) {
+                    star.classList.add('active');
+                    const clone = item.cloneNode(true);
+                    favContainer.appendChild(clone);
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+            
+            favHeading.style.display = favorites.length > 0 ? 'block' : 'none';
+        }
+
+        function toggleFav(id) {
+            favorites = favorites.includes(id) ? favorites.filter(favId => favId !== id) : [...favorites, id];
+            localStorage.setItem('altogether_favs', JSON.stringify(favorites));
+            renderFavorites();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            sortMainContainer();
+            renderFavorites();
+        });
+    </script>
+</body>
+</html>
