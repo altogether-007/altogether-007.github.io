@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Namaz Time</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#eef8f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.card{
+    width:380px;
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+h1{
+    text-align:center;
+    color:#0b7d5c;
+    margin-bottom:10px;
+}
+
+#location,#date{
+    text-align:center;
+    color:#555;
+    margin-bottom:8px;
+}
+
+.loading{
+    text-align:center;
+    color:#0b7d5c;
+    padding:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    display:none;
+}
+
+th{
+    background:#0b7d5c;
+    color:#fff;
+}
+
+th,td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f5f5f5;
+}
+
+.footer{
+    text-align:center;
+    margin-top:15px;
+    color:#666;
+    font-size:13px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<h1>🕌 Live Namaz Time</h1>
+
+<div id="location"></div>
+<div id="date"></div>
+
+<div class="loading" id="loading">
+Loading prayer times...
+</div>
+
+<table id="prayerTable">
+<tr>
+<td>Prayer</td>
+<td>Time</td>
+</tr>
+
+<tr>
+<td>Fajr</td>
+<td id="Fajr"></td>
+</tr>
+
+<tr>
+<td>Sunrise</td>
+<td id="Sunrise"></td>
+</tr>
+
+<tr>
+<td>Dhuhr</td>
+<td id="Dhuhr"></td>
+</tr>
+
+<tr>
+<td>Asr</td>
+<td id="Asr"></td>
+</tr>
+
+<tr>
+<td>Maghrib</td>
+<td id="Maghrib"></td>
+</tr>
+
+<tr>
+<td>Isha</td>
+<td id="Isha"></td>
+</tr>
+
+</table>
+
+<div class="footer">
+ Daily Updated
+</div>
+
+</div>
+
+<script>
+
+// Change these if needed
+const city = "Maijdi";
+const country = "Bangladesh";
+
+// Convert 24-hour time to 12-hour AM/PM
+function to12Hour(time){
+
+    let parts = time.split(":");
+
+    let hour = parseInt(parts[0]);
+    let minute = parts[1];
+
+    let ampm = hour >= 12 ? "PM" : "AM";
+
+    hour = hour % 12;
+
+    if(hour == 0){
+        hour = 12;
+    }
+
+    return hour + ":" + minute + " " + ampm;
+}
+
+fetch(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=2`)
+
+.then(response => response.json())
+
+.then(result=>{
+
+    let t = result.data.timings;
+
+    document.getElementById("location").innerHTML =
+        city + ", " + country;
+
+    document.getElementById("date").innerHTML =
+        result.data.date.readable;
+
+    document.getElementById("Fajr").innerHTML =
+        to12Hour(t.Fajr);
+
+    document.getElementById("Sunrise").innerHTML =
+        to12Hour(t.Sunrise);
+
+    document.getElementById("Dhuhr").innerHTML =
+        to12Hour(t.Dhuhr);
+
+    document.getElementById("Asr").innerHTML =
+        to12Hour(t.Asr);
+
+    document.getElementById("Maghrib").innerHTML =
+        to12Hour(t.Maghrib);
+
+    document.getElementById("Isha").innerHTML =
+        to12Hour(t.Isha);
+
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("prayerTable").style.display = "table";
+
+})
+
+.catch(error=>{
+
+    document.getElementById("loading").innerHTML =
+    "Unable to load prayer times.";
+
+    console.log(error);
+
+});
+
+</script>
+
+</body>
+</html>
